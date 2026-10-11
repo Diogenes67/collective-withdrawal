@@ -1,0 +1,12 @@
+*.parquet
+*.csv.gz
+*.pt
+*.npy
+results/
+derived/
+hosp/
+eicu/
+__pycache__/
+.DS_Store
+nohup.out
+*.log
