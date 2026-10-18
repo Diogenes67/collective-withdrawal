@@ -1,0 +1,278 @@
+figure,panel,label,value,lo,hi,source
+1,A,"Clustered groups, MIMIC-IV (n=25) mean",-0.010641476068338172,-0.015734362275066464,-0.006127923590054331,two-stage bootstrap
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.017792055093642456,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.0009684526354842848,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.006739761815427792,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.009473988182504778,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.011266375508859006,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.02334298680017699,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.004105152531258538,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.003749306609769465,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",0.005999254998548587,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.0017250846381946516,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.01711119608794287,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.0033185929206018816,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.01871818579495721,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.012513401475611197,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.002099674286353048,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.02545889353939157,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.007890639302674085,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.008282988108937572,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.008017341985044113,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.010646479546500998,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.04516017916882753,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.009654418255071184,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.007050480049166863,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.016064664502164483,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.0008858843590048293,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) mean",-0.0015221721155794946,-0.005503781501412895,0.0019390235807654518,bootstrap over groups
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) point",-0.008179773275863722,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) point",0.00019770063701263219,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) point",-0.0009384960518251662,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) point",-0.004931439890812683,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) point",-0.0033970012558734997,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) point",0.00039585496575234025,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) point",0.0054296962853086495,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) point",-0.0014127031666403278,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) point",-0.0026154701838292382,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) point",0.0006651044130361328,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) point",0.0040616246498599295,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) point",-0.0003108801446183307,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) point",0.011039723661485534,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=14) point",-0.021314350261105175,,,
+1,A,"Hospital consortia, eICU (n=10) mean",-0.006648107091467325,-0.008374798545290064,-0.004584285825935533,hospital-cluster bootstrap
+1,A,"Hospital consortia, eICU (n=10) point",0.00028574646818557703,,,
+1,A,"Hospital consortia, eICU (n=10) point",-0.007846695893189204,,,
+1,A,"Hospital consortia, eICU (n=10) point",-0.003932987681633304,,,
+1,A,"Hospital consortia, eICU (n=10) point",-0.007163726118220026,,,
+1,A,"Hospital consortia, eICU (n=10) point",-0.009467686286174337,,,
+1,A,"Hospital consortia, eICU (n=10) point",-0.009055794975243003,,,
+1,A,"Hospital consortia, eICU (n=10) point",-0.00288343350070952,,,
+1,A,"Hospital consortia, eICU (n=10) point",-0.012543461719197957,,,
+1,A,"Hospital consortia, eICU (n=10) point",-0.008025461930472488,,,
+1,A,"Hospital consortia, eICU (n=10) point",-0.005847539806626445,,,
+1,B,"MIMIC-IV, retrained without the group",0.7837211597398545,-0.14341378247655015,1.9133733773585555,matched_flags.json
+1,B,"eICU centralised, without the consortium",1.76085585591097,1.086616482409148,2.245219578555317,matched_flags.json
+1,B,"eICU centralised, random removal",0.6866772921862696,0.3359013343794035,1.036544746434173,matched_flags.json
+1,B,"eICU federation, without the consortium",0.7763239041244806,0.42133369199384085,1.17919337899364,matched_flags.json
+1,B,"eICU federation, random removal",0.5295242138702658,0.21841015361216945,0.885173598575577,matched_flags.json
+1,C,Region West centralised,-0.012543461719197957,,,
+1,C,Region West federated,-0.012434578391684603,,,
+1,C,Region Midwest centralised,-0.009467686286174337,,,
+1,C,Region Midwest federated,-0.0014481200878915246,,,
+1,C,Region Northeast centralised,-0.009055794975243003,,,
+1,C,Region Northeast federated,-0.009522663365731376,,,
+1,C,Non-teaching centralised,-0.008025461930472488,,,
+1,C,Non-teaching federated,0.009063736081188822,,,
+1,C,Beds 250 to 499 centralised,-0.007846695893189204,,,
+1,C,Beds 250 to 499 federated,0.0012476047724536699,,,
+1,C,Beds ≥500 centralised,-0.007163726118220026,,,
+1,C,Beds ≥500 federated,-0.01421163838972428,,,
+1,C,Teaching centralised,-0.005847539806626445,,,
+1,C,Teaching federated,-0.007446149764118837,,,
+1,C,Beds <100 centralised,-0.003932987681633304,,,
+1,C,Beds <100 federated,0.0003661921321725936,,,
+1,C,Region South centralised,-0.00288343350070952,,,
+1,C,Region South federated,0.0005198132836237157,,,
+1,C,Beds 100 to 249 centralised,0.00028574646818557703,,,
+1,C,Beds 100 to 249 federated,0.00195516981758459,,,
+2,A,Base (state 3) mean,-0.008345133148711577,-0.012127777948597823,-0.004771159344517323,"v11_confinement_1, bootstrap over groups"
+2,A,Base (state 3) point,-0.014785420340975866,,,
+2,A,Base (state 3) point,-0.0010347374548195668,,,
+2,A,Base (state 3) point,-0.0015341643390168677,,,
+2,A,Base (state 3) point,-0.0096890132835754,,,
+2,A,Base (state 3) point,-0.011901933103168666,,,
+2,A,Base (state 3) point,-0.0246255600921427,,,
+2,A,Base (state 3) point,-0.009058249183431432,,,
+2,A,Base (state 3) point,-0.0032795836354688663,,,
+2,A,Base (state 3) point,0.008779306401157067,,,
+2,A,Base (state 3) point,-0.0025034211383433997,,,
+2,A,Base (state 3) point,-0.015049006559280468,,,
+2,A,Base (state 3) point,-0.0005408151428240334,,,
+2,A,Base (state 3) point,-0.020865644635329566,,,
+2,A,Base (state 3) point,-0.0055671963267882665,,,
+2,A,Base (state 3) point,0.0012638373862562332,,,
+2,A,Base (state 3) point,-0.021012137868050163,,,
+2,A,Base (state 3) point,-0.005243068398773067,,,
+2,A,Base (state 3) point,-0.0031363296088693666,,,
+2,A,Base (state 3) point,-0.0014509499383707665,,,
+2,A,Base (state 3) point,-0.0060527879848951,,,
+2,A,Base (state 3) point,-0.037018394801866895,,,
+2,A,Base (state 3) point,-0.0045822299712469,,,
+2,A,Base (state 3) point,-0.00321141014120003,,,
+2,A,Base (state 3) point,-0.012217898523045565,,,
+2,A,Base (state 3) point,-0.0043115200337198,,,
+2,A,Base + control component mean,-0.005941903754786734,-0.009751255595360877,-0.002507655363777705,"v11_confinement_1, bootstrap over groups"
+2,A,Base + control component point,-0.0136348366507096,,,
+2,A,Base + control component point,0.0034770736083929014,,,
+2,A,Base + control component point,-0.0023762871555425675,,,
+2,A,Base + control component point,-0.004573281798391767,,,
+2,A,Base + control component point,-0.009324123360437166,,,
+2,A,Base + control component point,-0.021428468981410567,,,
+2,A,Base + control component point,-0.006534200688308634,,,
+2,A,Base + control component point,0.0005477565456907668,,,
+2,A,Base + control component point,0.008264159076497166,,,
+2,A,Base + control component point,0.00045956691971116656,,,
+2,A,Base + control component point,-0.0126186091154316,,,
+2,A,Base + control component point,0.0004054113515178,,,
+2,A,Base + control component point,-0.016337091386303935,,,
+2,A,Base + control component point,-0.006688664404111134,,,
+2,A,Base + control component point,0.0035578200049370336,,,
+2,A,Base + control component point,-0.018890577430869235,,,
+2,A,Base + control component point,0.0029245173752386667,,,
+2,A,Base + control component point,0.00020029820458569993,,,
+2,A,Base + control component point,-0.001683294745777667,,,
+2,A,Base + control component point,-0.004337576822202633,,,
+2,A,Base + control component point,-0.03568250917706393,,,
+2,A,Base + control component point,-0.0035646242451255,,,
+2,A,Base + control component point,-0.0018088996312478327,,,
+2,A,Base + control component point,-0.0060964158390630005,,,
+2,A,Base + control component point,-0.0028047355242428,,,
+2,A,Base + residual component mean,0.01081168664001172,0.006386358182894724,0.015064128997779473,"v11_confinement_1, bootstrap over groups"
+2,A,Base + residual component point,0.029972565157750364,,,
+2,A,Base + residual component point,0.014264558894186133,,,
+2,A,Base + residual component point,-0.0050999847139422,,,
+2,A,Base + residual component point,0.0114194322271091,,,
+2,A,Base + residual component point,0.015448433427830333,,,
+2,A,Base + residual component point,-0.013593155068130034,,,
+2,A,Base + residual component point,0.009878240918590867,,,
+2,A,Base + residual component point,0.012564491812343766,,,
+2,A,Base + residual component point,0.024418107771062667,,,
+2,A,Base + residual component point,0.011139969272865568,,,
+2,A,Base + residual component point,0.0081739905135229,,,
+2,A,Base + residual component point,0.0101397839139495,,,
+2,A,Base + residual component point,-0.003285810864551033,,,
+2,A,Base + residual component point,0.032386748476034836,,,
+2,A,Base + residual component point,0.0166997957373928,,,
+2,A,Base + residual component point,-0.004043637310158167,,,
+2,A,Base + residual component point,0.024014014518907032,,,
+2,A,Base + residual component point,0.013353858099162267,,,
+2,A,Base + residual component point,9.68906769476333e-05,,,
+2,A,Base + residual component point,0.022579642397351097,,,
+2,A,Base + residual component point,-0.0012036952299604338,,,
+2,A,Base + residual component point,0.010622318065423934,,,
+2,A,Base + residual component point,0.015684231456519267,,,
+2,A,Base + residual component point,0.009193829046770133,,,
+2,A,Base + residual component point,0.0054675468033147,,,
+2,A,Base + representation head mean,0.0030640568080286057,-0.0023541085315486265,0.0074808875262003995,"v11_confinement_1, bootstrap over groups"
+2,A,Base + representation head point,0.009355841101872766,,,
+2,A,Base + representation head point,0.0091604670263206,,,
+2,A,Base + representation head point,-0.04608607440141183,,,
+2,A,Base + representation head point,0.0037429472655382667,,,
+2,A,Base + representation head point,0.007328925727650999,,,
+2,A,Base + representation head point,-0.015914304250826367,,,
+2,A,Base + representation head point,0.0016759155067369667,,,
+2,A,Base + representation head point,0.0098017990759435,,,
+2,A,Base + representation head point,0.013895273725742334,,,
+2,A,Base + representation head point,0.0049805103342602,,,
+2,A,Base + representation head point,-0.002558763506024,,,
+2,A,Base + representation head point,0.0069591948574559,,,
+2,A,Base + representation head point,-0.0027514316392268667,,,
+2,A,Base + representation head point,0.022655134153600234,,,
+2,A,Base + representation head point,0.011411476167844067,,,
+2,A,Base + representation head point,0.001418038677148,,,
+2,A,Base + representation head point,0.009039756996984833,,,
+2,A,Base + representation head point,0.0102438224630957,,,
+2,A,Base + representation head point,0.0022954895702728666,,,
+2,A,Base + representation head point,0.010280025298661934,,,
+2,A,Base + representation head point,-0.011123059089106468,,,
+2,A,Base + representation head point,0.0014059673317428,,,
+2,A,Base + representation head point,0.008166516893392366,,,
+2,A,Base + representation head point,0.007189542483659966,,,
+2,A,Base + representation head point,0.0040284084293863666,,,
+2,A,Base + fine-tuned copy mean,0.008703798786098416,0.005986150619477181,0.011164353069345804,"v11_confinement_1, bootstrap over groups"
+2,A,Base + fine-tuned copy point,0.022051454326586468,,,
+2,A,Base + fine-tuned copy point,0.0135366901895193,,,
+2,A,Base + fine-tuned copy point,0.010897569516821567,,,
+2,A,Base + fine-tuned copy point,0.009747656492958466,,,
+2,A,Base + fine-tuned copy point,0.007627114695590867,,,
+2,A,Base + fine-tuned copy point,-0.0011748791834237666,,,
+2,A,Base + fine-tuned copy point,0.0036280024734083004,,,
+2,A,Base + fine-tuned copy point,0.0097131146828315,,,
+2,A,Base + fine-tuned copy point,0.0167338787541283,,,
+2,A,Base + fine-tuned copy point,0.011743818049473635,,,
+2,A,Base + fine-tuned copy point,0.008684752318809033,,,
+2,A,Base + fine-tuned copy point,0.008779845835683335,,,
+2,A,Base + fine-tuned copy point,-0.0090943887695856,,,
+2,A,Base + fine-tuned copy point,0.0201525444089889,,,
+2,A,Base + fine-tuned copy point,0.01565554120925323,,,
+2,A,Base + fine-tuned copy point,0.00660433085774,,,
+2,A,Base + fine-tuned copy point,0.007265291368236933,,,
+2,A,Base + fine-tuned copy point,0.008190572528057233,,,
+2,A,Base + fine-tuned copy point,-0.0005591700759170667,,,
+2,A,Base + fine-tuned copy point,0.011712972602565567,,,
+2,A,Base + fine-tuned copy point,0.0114853116134346,,,
+2,A,Base + fine-tuned copy point,0.009465426531379132,,,
+2,A,Base + fine-tuned copy point,0.006702676809932567,,,
+2,A,Base + fine-tuned copy point,0.006502392623716067,,,
+2,A,Base + fine-tuned copy point,0.0015424497922718,,,
+2,B,Federation without the consortium (state 3) mean,-0.0076045432623026874,-0.011579092425238146,-0.003746131510147905,"preds_eicu (v13.1), bootstrap over consortia"
+2,B,Federation without the consortium (state 3) point,-0.007393725606364643,,,
+2,B,Federation without the consortium (state 3) point,-0.011099776881227541,,,
+2,B,Federation without the consortium (state 3) point,-0.003102468412963799,,,
+2,B,Federation without the consortium (state 3) point,-0.014836909427178413,,,
+2,B,Federation without the consortium (state 3) point,-0.006039082986478372,,,
+2,B,Federation without the consortium (state 3) point,-0.01142672757772667,,,
+2,B,Federation without the consortium (state 3) point,-6.817602456710148e-05,,,
+2,B,Federation without the consortium (state 3) point,-0.0015555462824515809,,,
+2,B,Federation without the consortium (state 3) point,-0.0008847538641688635,,,
+2,B,Federation without the consortium (state 3) point,-0.019638265559899892,,,
+2,B,+ control component mean,0.009474547135397481,0.005266615242299777,0.013986857526813477,"preds_eicu (v13.1), bootstrap over consortia"
+2,B,+ control component point,0.0023387146360751565,,,
+2,B,+ control component point,0.004180420563604126,,,
+2,B,+ control component point,0.013483574735770776,,,
+2,B,+ control component point,0.013306992244252136,,,
+2,B,+ control component point,0.0052301411010714505,,,
+2,B,+ control component point,0.001639699136279038,,,
+2,B,+ control component point,0.018364916617757743,,,
+2,B,+ control component point,0.0207573188396748,,,
+2,B,+ control component point,0.01445659192138049,,,
+2,B,+ control component point,0.0009871015581091047,,,
+2,B,+ consortium component mean,0.021980679381403502,0.017902081559378807,0.026458809142939847,"preds_eicu (v13.1), bootstrap over consortia"
+2,B,+ consortium component point,0.015894248450625037,,,
+2,B,+ consortium component point,0.023792713491044726,,,
+2,B,+ consortium component point,0.019383065634731356,,,
+2,B,+ consortium component point,0.032321507865682,,,
+2,B,+ consortium component point,0.0264623590637606,,,
+2,B,+ consortium component point,0.012334930755742324,,,
+2,B,+ consortium component point,0.0232421701317872,,,
+2,B,+ consortium component point,0.03280551772704443,,,
+2,B,+ consortium component point,0.020909991657553917,,,
+2,B,+ consortium component point,0.012660289036063421,,,
+2,C,Residual component at 0.1,-0.007720979278505452,-0.016996772403066393,-0.0007625075394428327,"v11_confinement_1, bootstrap over groups"
+2,C,Residual component at 0.25,-0.0018896630127329403,-0.011721062758084324,0.0053647046773264845,"v11_confinement_1, bootstrap over groups"
+2,C,Residual component at 0.5,0.004589283366632217,-0.0011542578157190692,0.009697990683163762,"v11_confinement_1, bootstrap over groups"
+2,C,Residual component at 1,0.01081168664001172,0.006386358182894724,0.015064128997779473,"v11_confinement_1, bootstrap over groups"
+2,C,Representation head at 0.1,-0.01686283745697645,-0.028169496249033334,-0.006780225071663922,"v11_confinement_1, bootstrap over groups"
+2,C,Representation head at 0.25,-0.0033798082906647204,-0.009857534330435047,0.0018793385855060962,"v11_confinement_1, bootstrap over groups"
+2,C,Representation head at 0.5,-0.00031725095603154645,-0.006583041275135223,0.004650172035451431,"v11_confinement_1, bootstrap over groups"
+2,C,Representation head at 1,0.0030640568080286057,-0.0023541085315486265,0.0074808875262003995,"v11_confinement_1, bootstrap over groups"
+2,C,Fine-tuned copy at 0.1,-0.004928120226505273,-0.008904240945204618,-0.001572092782771007,"v11_confinement_1, bootstrap over groups"
+2,C,Fine-tuned copy at 0.25,-0.0013493960292892823,-0.005696225131765781,0.002114411402344332,"v11_confinement_1, bootstrap over groups"
+2,C,Fine-tuned copy at 0.5,0.0034638228590548386,0.00015436947332737565,0.0063013910453730265,"v11_confinement_1, bootstrap over groups"
+2,C,Fine-tuned copy at 1,0.008703798786098416,0.005986150619477181,0.011164353069345804,"v11_confinement_1, bootstrap over groups"
+2,D,c00,0.02292349038380781,,,v14b summary; isolation ratio 1.206
+2,D,c01,0.012156898959075457,,,v14b summary; isolation ratio 1.041
+2,D,c02,-0.019385500479426332,,,v14b summary; isolation ratio 1.529
+2,D,c03,0.01426540494913131,,,v14b summary; isolation ratio 1.193
+2,D,c04,0.01768485068738057,,,v14b summary; isolation ratio 1.130
+2,D,c05,-0.018126409954691947,,,v14b summary; isolation ratio 1.727
+2,D,c06,0.01749016661510594,,,v14b summary; isolation ratio 1.124
+2,D,c07,0.01336873753419121,,,v14b summary; isolation ratio 1.142
+2,D,c08,0.021643662566667055,,,v14b summary; isolation ratio 1.123
+2,D,c09,0.009883300483530144,,,v14b summary; isolation ratio 1.025
+2,D,c10,0.010881388407328663,,,v14b summary; isolation ratio 1.041
+2,D,c11,0.007161200513614463,,,v14b summary; isolation ratio 1.119
+2,D,c12,-0.001454008589835576,,,v14b summary; isolation ratio 1.482
+2,D,c13,0.03237739158990993,,,v14b summary; isolation ratio 1.150
+2,D,c14,0.016973260551586655,,,v14b summary; isolation ratio 0.985
+2,D,c15,-0.006539762358752865,,,v14b summary; isolation ratio 1.509
+2,D,c16,0.02381085816978079,,,v14b summary; isolation ratio 1.120
+2,D,c17,0.01487929519779252,,,v14b summary; isolation ratio 1.099
+2,D,c18,0.011054213949075908,,,v14b summary; isolation ratio 1.145
+2,D,c19,0.01918367825732492,,,v14b summary; isolation ratio 1.099
+2,D,c20,-0.016170444261411565,,,v14b summary; isolation ratio 2.883
+2,D,c21,0.005727650909345017,,,v14b summary; isolation ratio 1.174
+2,D,c22,0.019334309441913833,,,v14b summary; isolation ratio 1.258
+2,D,c23,0.006627196333078733,,,v14b summary; isolation ratio 1.264
+2,D,c24,0.005776007286328766,,,v14b summary; isolation ratio 1.219
