@@ -1,0 +1,34 @@
+v27 churn: other patients' predictions after a withdrawal (2026-10-23 15:55; seeds [0, 1, 2]; 1000 bootstrap draws; capacity = top decile of the held-out set)
+
+MIMIC-IV, held-out admissions outside the withdrawing group (82434 to 105292 rows), 25 groups
+arm                                                          mean |dp|  p99 |dp|  max |dp|         reclassified/1000              dropped/1000  fixed cut, reclassified/1000
+exact_group                                    0.0458 [0.0450, 0.0467]    0.2191    0.5620         51.2 [49.5, 53.2]         25.4 [24.5, 26.4]             52.3 [50.5, 54.3]
+exact_random                                   0.0457 [0.0447, 0.0469]    0.2179    0.5581         51.0 [49.1, 53.1]         25.6 [24.6, 26.7]             52.4 [50.4, 54.7]
+seed_floor                                     0.0514 [0.0508, 0.0521]    0.2173    0.5473         60.7 [58.7, 62.9]         30.4 [29.4, 31.5]             60.8 [58.8, 62.9]
+five groups (most_isolated) common_base        0.0531 [0.0526, 0.0536]    0.2400    0.5398         62.1 [59.8, 64.2]         32.0 [30.6, 33.3]             64.2 [61.9, 66.3]
+five groups (random) common_base               0.0475 [0.0471, 0.0480]    0.2300    0.5913         52.4 [50.5, 54.3]         25.5 [24.4, 26.6]             50.9 [49.0, 52.9]
+confinement, deletion of the component               0 by construction                                             0                         0                             0
+exact_group minus exact_random                0.0001 [-0.0007, 0.0008]                               0.2 [-0.6, 0.9]          -0.1 [-0.6, 0.3]              -0.2 [-1.3, 1.0]
+exact_group minus seed_floor                -0.0056 [-0.0062, -0.0050]                            -9.5 [-10.5, -8.5]         -4.9 [-5.5, -4.4]             -8.5 [-9.5, -7.4]
+exact_random minus seed_floor               -0.0057 [-0.0064, -0.0048]                            -9.7 [-10.8, -8.5]         -4.8 [-5.4, -4.1]             -8.3 [-9.5, -7.0]
+
+eICU, held-out stays outside the withdrawing consortium (10367 to 37399 rows), 10 consortia
+arm                                                          mean |dp|  p99 |dp|  max |dp|         reclassified/1000              dropped/1000  fixed cut, reclassified/1000
+exact_group                                    0.0174 [0.0163, 0.0185]    0.1396    0.5235         26.4 [24.1, 28.7]         13.4 [12.0, 14.9]             26.6 [24.4, 28.9]
+exact_random                                   0.0171 [0.0160, 0.0183]    0.1383    0.4785         25.9 [23.5, 28.3]         12.9 [11.6, 14.2]             26.1 [23.8, 28.5]
+seed_floor                                     0.0184 [0.0170, 0.0200]    0.1325    0.4104         27.9 [24.8, 31.3]         14.0 [12.4, 15.7]             28.1 [25.0, 31.4]
+fl_without                                     0.0160 [0.0152, 0.0169]    0.1170    0.3346         21.2 [19.5, 23.4]         11.5 [10.4, 12.9]             22.4 [20.7, 24.6]
+fl_random                                      0.0132 [0.0126, 0.0141]    0.1025    0.3001         19.4 [17.7, 21.4]           9.6 [8.7, 10.8]             19.5 [17.8, 21.6]
+fl_seed_floor                                  0.0207 [0.0195, 0.0224]    0.1444    0.3509         30.9 [28.0, 34.6]         15.4 [14.0, 17.3]             30.8 [27.9, 34.6]
+confinement, deletion of the component               0 by construction                                             0                         0                             0
+exact_group minus exact_random                 0.0003 [0.0001, 0.0004]                               0.5 [-0.0, 1.0]            0.5 [0.1, 1.0]                0.5 [0.0, 1.0]
+exact_group minus seed_floor                -0.0010 [-0.0015, -0.0006]                             -1.5 [-2.9, -0.2]          -0.5 [-1.1, 0.2]             -1.4 [-2.6, -0.2]
+exact_random minus seed_floor               -0.0013 [-0.0017, -0.0010]                             -2.1 [-3.2, -1.0]         -1.1 [-1.7, -0.4]             -2.0 [-3.0, -0.9]
+fl_without minus fl_random                     0.0028 [0.0023, 0.0032]                                1.8 [1.1, 2.4]            1.9 [1.4, 2.3]                2.9 [2.1, 3.6]
+fl_without minus fl_seed_floor              -0.0047 [-0.0056, -0.0039]                            -9.7 [-11.3, -8.3]         -3.9 [-4.6, -3.2]            -8.4 [-10.1, -6.8]
+  region       exact_group mean |dp| 0.0168 [0.0159, 0.0178]; reclassified/1000 25.5 [23.1, 27.8]; exact minus random, reclassified/1000 0.8 [-0.0, 1.6]
+  teaching     exact_group mean |dp| 0.0219 [0.0201, 0.0244]; reclassified/1000 32.6 [29.3, 36.6]; exact minus random, reclassified/1000 -0.7 [-2.2, 0.8]
+  bedsize      exact_group mean |dp| 0.0156 [0.0147, 0.0166]; reclassified/1000 24.2 [22.0, 26.3]; exact minus random, reclassified/1000 0.9 [0.3, 1.5]
+
+|dp| is the absolute change in predicted risk against the pooled model (federated arms: against the full federation). Intervals: 95% bootstrap.
+exact_group also gives the one-off cost of adopting confinement for a model already in use (B2 then B3).
