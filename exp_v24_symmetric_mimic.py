@@ -12,7 +12,7 @@ by log loss on the held-back patients, summed over both halves; the type with th
 choice. Held-out (test) patients play no part. Confined arms are read from v19 on the same patients (strict base with the
 validation-chosen component). Two-stage bootstrap (groups, then patients; 1,000 draws).
 
-Env: ROOT, QUICK=1, DEVICE, ONLY_GROUPS, NBOOT. Writes results/v24_symmetric_mimic/{runs, preds, summary.csv, intervals.json}.
+Env: SEEDS (comma list of training seeds, default 0,1,2), SUMMARY=0 (stop before the summary and bootstrap stage), ROOT, QUICK=1, DEVICE, ONLY_GROUPS, NBOOT. Writes results/v24_symmetric_mimic/{runs, preds, summary.csv, intervals.json}.
 """
 import os, json, time, glob, hashlib, copy, gc
 import numpy as np
@@ -28,7 +28,7 @@ QUICK = os.environ.get("QUICK", "0") == "1"
 ROOT = os.environ.get("ROOT", os.path.expanduser("~/mimic")); V5 = f"{ROOT}/results/v5_partitions"
 OUT = f"{ROOT}/results/v24_symmetric_mimic" + ("_quick" if QUICK else ""); V17 = f"{ROOT}/results/v17_crossfit" + ("_quick" if QUICK else ""); V19 = f"{ROOT}/results/v19_protocol" + ("_quick" if QUICK else "")
 for d in ["runs", "preds", "ckpt"]: os.makedirs(f"{OUT}/{d}", exist_ok=True)
-CFG = dict(seeds=[0] if QUICK else [0, 1, 2], epochs=2 if QUICK else 12, lr=1e-3, batch=2048, n_top=100, min_patients=300,
+CFG = dict(seeds=[int(x) for x in os.environ["SEEDS"].split(",")] if os.environ.get("SEEDS") else ([0] if QUICK else [0, 1, 2]), epochs=2 if QUICK else 12, lr=1e-3, batch=2048, n_top=100, min_patients=300,
            adapter_C_grid=[1e-4, 1e-3, 1e-2, 1e-1, 1.0], adapter_cv_folds=3, adapter_min_patients_cv=30, logit_scale=100.0,
            n_boot=int(os.environ.get("NBOOT", 50 if QUICK else 1000)), n_folds=2, full_lr=1e-4, full_batch=256, full_max_epochs=2 if QUICK else 30, full_patience=5, full_val_frac=0.2, select_val_frac=0.2, version="v24.0")
 DEVICE = os.environ.get("DEVICE") or ("cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu"))

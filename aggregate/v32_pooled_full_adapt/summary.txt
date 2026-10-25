@@ -1,0 +1,100 @@
+v32 full pooled-adaptation comparator (2026-10-25 12:05)
+MIMIC-IV, AUROC on each group's held-out patients, seed means
+                        pooled  full_residual  full_head  full_finetuned  full_chosen  pooled_cf_chosen  confined_chosen type  ft epochs
+community_trainfit/c00  0.6082         0.6153     0.6177          0.6216       0.6154            0.6313           0.6214    R        3.0
+community_trainfit/c01  0.6977         0.6998     0.6959          0.7058       0.6998            0.7089           0.7130    R        2.0
+community_trainfit/c02  0.5891         0.6034     0.6032          0.6007       0.6056            0.5671           0.6009    H        7.0
+community_trainfit/c03  0.7169         0.7141     0.7075          0.7218       0.7160            0.7231           0.7321    R        1.0
+community_trainfit/c04  0.6576         0.6554     0.6495          0.6630       0.6516            0.6756           0.6741    H        2.0
+community_trainfit/c05  0.7498         0.7543     0.7535          0.7562       0.7546            0.7539           0.7423    H        2.0
+community_trainfit/c06  0.6177         0.6101     0.6072          0.6197       0.6101            0.6238           0.6279    R        1.0
+community_trainfit/c07  0.6490         0.6482     0.6476          0.6572       0.6482            0.6604           0.6511    R        4.0
+community_trainfit/c08  0.6096         0.6124     0.6001          0.6120       0.6081            0.6155           0.6183    R        3.0
+community_trainfit/c09  0.6872         0.6885     0.6857          0.6953       0.6903            0.6973           0.6977    R        3.0
+community_trainfit/c10  0.7192         0.7165     0.7171          0.7234       0.7159            0.7296           0.7294    R        3.0
+community_trainfit/c11  0.7039         0.7068     0.7024          0.7108       0.7067            0.7113           0.7143    R        1.0
+community_trainfit/c12  0.7399         0.7381     0.7245          0.7405       0.7381            0.7454           0.7456    R        1.0
+community_trainfit/c13  0.5842         0.5842     0.5848          0.5953       0.5851            0.6092           0.6130    H        1.0
+community_trainfit/c14  0.6383         0.6380     0.6334          0.6489       0.6355            0.6515           0.6517    H        3.0
+community_trainfit/c15  0.7091         0.7116     0.7115          0.7180       0.7180            0.7162           0.7089    F        2.0
+community_trainfit/c16  0.6330         0.6332     0.6282          0.6404       0.6351            0.6530           0.6552    R        2.0
+community_trainfit/c17  0.6183         0.6168     0.6193          0.6246       0.6179            0.6357           0.6384    R        2.0
+community_trainfit/c18  0.6827         0.6717     0.6697          0.6794       0.6717            0.6852           0.6844    R        8.0
+community_trainfit/c19  0.6291         0.6325     0.6304          0.6393       0.6350            0.6477           0.6531    F        2.0
+community_trainfit/c20  0.6738         0.6888     0.6917          0.6874       0.6902            0.6842           0.6661    R        9.0
+community_trainfit/c21  0.7057         0.7106     0.7060          0.7145       0.7106            0.7136           0.7221    R        1.0
+community_trainfit/c22  0.7005         0.6969     0.6873          0.7019       0.6972            0.7121           0.7179    R        3.0
+community_trainfit/c23  0.7289         0.7315     0.7292          0.7343       0.7315            0.7408           0.7315    R        1.0
+community_trainfit/c24  0.7111         0.7108     0.7058          0.7122       0.7095            0.7124           0.7130    R        2.0
+choices: {'residual': 48, 'head': 15, 'finetuned': 12}; fine-tuning kept 0 epochs in 2 of 75 runs
+pooled model AUROC on the group's training rows (in-sample) 0.7441, on held-out 0.6704
+== MIMIC-IV all clustered groups, two-stage bootstrap (25 groups, 1000 draws)
+  full comparator (chosen) minus pooled                                                    +0.0015 [-0.0012, +0.0045]  lower in 12 of 25
+  pooled + full residual (in-sample) minus pooled                                          +0.0012 [-0.0012, +0.0038]  lower in 11 of 25
+  pooled + full head minus pooled                                                          -0.0021 [-0.0053, +0.0018]  lower in 15 of 25
+  pooled + full fine-tuned copy minus pooled                                               +0.0065 [+0.0044, +0.0091]  lower in 1 of 25
+  full comparator minus adapted (cross-fitted) pooled comparator                           -0.0083 [-0.0131, -0.0022]  lower in 21 of 25
+  confined (chosen) minus full comparator                                                  +0.0090 [+0.0035, +0.0146]  lower in 5 of 25
+  confined (chosen) minus pooled                                                           +0.0105 [+0.0059, +0.0155]  lower in 3 of 25
+  confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)       +0.0040 [-0.0005, +0.0084]  lower in 6 of 25
+  adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy             +0.0032 [-0.0015, +0.0068]  lower in 5 of 25
+  events unflagged per 1,000 at matched flag rate, confined minus full comparator          -2.5366 [-3.7404, -1.3425]
+  events unflagged per 1,000 at matched flag rate, full comparator minus pooled            +0.9731 [+0.2025, +1.3814]
+  events unflagged per 1,000 at matched flag rate, confined minus pooled + full fine-tuned copy -1.4535 [-2.5798, -0.5313]
+== MIMIC-IV five most isolated groups, two-stage bootstrap (5 groups, 1000 draws)
+  full comparator (chosen) minus pooled                                                    +0.0090 [+0.0014, +0.0193]  lower in 1 of 5
+  pooled + full residual (in-sample) minus pooled                                          +0.0069 [+0.0007, +0.0158]  lower in 1 of 5
+  pooled + full head minus pooled                                                          +0.0045 [-0.0057, +0.0182]  lower in 1 of 5
+  pooled + full fine-tuned copy minus pooled                                               +0.0082 [+0.0005, +0.0171]  lower in 0 of 5
+  full comparator minus adapted (cross-fitted) pooled comparator                           +0.0080 [-0.0037, +0.0294]  lower in 1 of 5
+  confined (chosen) minus full comparator                                                  -0.0085 [-0.0209, +0.0052]  lower in 4 of 5
+  confined (chosen) minus pooled                                                           +0.0004 [-0.0111, +0.0170]  lower in 3 of 5
+  confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)       -0.0078 [-0.0200, +0.0056]  lower in 3 of 5
+  adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy             -0.0072 [-0.0270, +0.0034]  lower in 4 of 5
+  events unflagged per 1,000 at matched flag rate, confined minus full comparator          -0.2690 [-2.7709, +1.5971]
+  events unflagged per 1,000 at matched flag rate, full comparator minus pooled            +0.0859 [-1.1370, +0.6664]
+  events unflagged per 1,000 at matched flag rate, confined minus pooled + full fine-tuned copy -0.5002 [-2.6801, +1.7046]
+eICU, AUROC on each consortium's held-out stays, seed means
+                   pooled  full_residual  full_head  full_finetuned  full_chosen  pooled_cf_chosen  confined_chosen  confined_strict_chosen type  ft epochs
+bedsize_100_-_249  0.8741         0.8752     0.8736          0.8754       0.8738            0.8735           0.8725                  0.8727    R        1.0
+bedsize_250_-_499  0.8611         0.8624     0.8610          0.8626       0.8621            0.8624           0.8611                  0.8611    R        1.0
+bedsize_<100       0.8822         0.8854     0.8835          0.8836       0.8854            0.8842           0.8854                  0.8859    R        4.0
+bedsize_>=_500     0.8619         0.8576     0.8611          0.8626       0.8576            0.8622           0.8588                  0.8591    R        2.0
+region_Midwest     0.8592         0.8613     0.8583          0.8614       0.8602            0.8600           0.8581                  0.8586    R        1.0
+region_Northeast   0.8791         0.8797     0.8783          0.8822       0.8795            0.8830           0.8832                  0.8819    R        4.0
+region_South       0.8688         0.8659     0.8688          0.8690       0.8659            0.8684           0.8668                  0.8668    R        1.0
+region_West        0.8587         0.8634     0.8610          0.8632       0.8616            0.8631           0.8622                  0.8623    H        1.0
+teaching_f         0.8675         0.8658     0.8671          0.8687       0.8658            0.8683           0.8667                  0.8663    R        1.0
+teaching_t         0.8599         0.8604     0.8602          0.8621       0.8598            0.8610           0.8600                  0.8584    H        3.0
+choices: {'residual': 21, 'head': 9}; fine-tuning kept 0 epochs in 1 of 30 runs
+pooled model AUROC on the consortium's training rows (in-sample) 0.8882, on held-out 0.8672
+== eICU all held-out stays, hospital-cluster bootstrap (10 groups, 1000 draws)
+  full comparator (chosen) minus pooled                                                    -0.0000 [-0.0014, +0.0012]  lower in 5 of 10
+  pooled + full residual (in-sample) minus pooled                                          +0.0005 [-0.0010, +0.0019]  lower in 3 of 10
+  pooled + full head minus pooled                                                          +0.0001 [-0.0009, +0.0009]  lower in 7 of 10
+  pooled + full fine-tuned copy minus pooled                                               +0.0018 [+0.0006, +0.0029]  lower in 0 of 10
+  full comparator minus adapted (cross-fitted) pooled comparator                           -0.0014 [-0.0024, -0.0003]  lower in 7 of 10
+  confined (chosen) minus full comparator                                                  +0.0003 [-0.0010, +0.0013]  lower in 3 of 10
+  confined (chosen) minus pooled                                                           +0.0002 [-0.0012, +0.0012]  lower in 6 of 10
+  confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)       -0.0016 [-0.0025, -0.0008]  lower in 8 of 10
+  adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy             -0.0005 [-0.0013, +0.0002]  lower in 8 of 10
+  confined strict (chosen) minus full comparator                                           +0.0001 [-0.0011, +0.0010]  lower in 4 of 10
+  confined strict (chosen) minus pooled + full fine-tuned copy                             -0.0018 [-0.0026, -0.0010]  lower in 9 of 10
+  events unflagged per 1,000 at matched flag rate, confined minus full comparator          -0.2631 [-0.7269, +0.2744]
+  events unflagged per 1,000 at matched flag rate, full comparator minus pooled            +0.0400 [-0.4493, +0.4901]
+  events unflagged per 1,000 at matched flag rate, confined minus pooled + full fine-tuned copy +0.2585 [-0.1948, +0.6156]
+== eICU stays in the unit at 24 h, hospital-cluster bootstrap (10 groups, 1000 draws)
+  full comparator (chosen) minus pooled                                                    -0.0012 [-0.0024, +0.0002]  lower in 5 of 10
+  pooled + full residual (in-sample) minus pooled                                          -0.0010 [-0.0025, +0.0007]  lower in 3 of 10
+  pooled + full head minus pooled                                                          -0.0007 [-0.0014, +0.0004]  lower in 7 of 10
+  pooled + full fine-tuned copy minus pooled                                               +0.0010 [-0.0001, +0.0021]  lower in 0 of 10
+  full comparator minus adapted (cross-fitted) pooled comparator                           -0.0024 [-0.0035, -0.0009]  lower in 7 of 10
+  confined (chosen) minus full comparator                                                  +0.0011 [-0.0006, +0.0023]  lower in 3 of 10
+  confined (chosen) minus pooled                                                           -0.0001 [-0.0016, +0.0010]  lower in 6 of 10
+  confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)       -0.0011 [-0.0024, -0.0001]  lower in 8 of 10
+  adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy             +0.0002 [-0.0006, +0.0009]  lower in 8 of 10
+  confined strict (chosen) minus full comparator                                           +0.0008 [-0.0008, +0.0018]  lower in 4 of 10
+  confined strict (chosen) minus pooled + full fine-tuned copy                             -0.0015 [-0.0025, -0.0006]  lower in 9 of 10
+  events unflagged per 1,000 at matched flag rate, confined minus full comparator          -0.3821 [-1.0485, +0.1549]
+  events unflagged per 1,000 at matched flag rate, full comparator minus pooled            +0.2101 [-0.3018, +0.7233]
+  events unflagged per 1,000 at matched flag rate, confined minus pooled + full fine-tuned copy -0.0032 [-0.5031, +0.5619]

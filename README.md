@@ -1,8 +1,8 @@
 # The cost of collective data withdrawal in clinical AI
 
-Code for "The Cost of Collective Data Withdrawal in Clinical AI" (Porter, Krieg, Kirkpatrick, Verjans; submitted to NEJM AI, 2026).
+Code for "The Cost of Collective Data Withdrawal from Clinical Prediction Models" (Porter, Krieg, Kirkpatrick, Verjans; submitted to NEJM AI, 2026).
 
-No patient data are included. MIMIC-IV v3.1 and eICU-CRD v2.0 are available to credentialed users through PhysioNet under their data use agreements. The scripts expect the raw PhysioNet csv.gz files under `~/mimic/hosp` and `~/mimic/eicu`, write derived cohorts to `~/mimic/derived` and results to `~/mimic/results`. All analyses were run locally; only aggregate results leave the analysis machine. `aggregate/figure_data_v5.csv` holds every value plotted in Figures 1 and 2, and `aggregate/v27_churn/` the aggregate results behind Table S18.
+No patient data are included. MIMIC-IV v3.1 and eICU-CRD v2.0 are available to credentialed users through PhysioNet under their data use agreements. The scripts expect the raw PhysioNet csv.gz files under `~/mimic/hosp` and `~/mimic/eicu`, write derived cohorts to `~/mimic/derived` and results to `~/mimic/results`. All analyses were run locally; only aggregate results leave the analysis machine. `aggregate/figure_data_v5.csv` holds every value plotted in Figures 1 and 2, and `aggregate/v27_churn/`, `aggregate/v28_multiplicity/` `aggregate/v29_seeds_equivalence*/` `aggregate/v31_fold_manifests/` `aggregate/v32_pooled_full_adapt/` and `aggregate/v33_strict_multigroup/` the aggregate results behind Tables S14 and S18 to S23.
 
 ## Scripts behind the manuscript, in the order they were run
 
@@ -21,7 +21,7 @@ No patient data are included. MIMIC-IV v3.1 and eICU-CRD v2.0 are available to c
 | `exp_v13_intervals.py` (v13.1) | Dependence-aware bootstrap intervals (hospital-cluster on eICU; group then patient on MIMIC-IV); run `MEMBERSHIP_ONLY=1` first | `results/v13_intervals_1` |
 | `exp_v13b_matched_flags.py` | Decision metrics at a matched flag rate | `results/v13_intervals_1` |
 | `exp_v13c_extra_contrasts.py` | Additional eICU contrasts for the permission-state table, from cached predictions (`CHUNK=0..4`, then combine) | `results/v13_intervals_1` |
-| `exp_v14_commonbase.py` (v14.1) | Five groups excluded from one common base; cross-fitted adaptation | `results/v14_commonbase_1` |
+| `exp_v14_commonbase.py` (v14.1) | Five groups excluded from one common base on the standard pipeline (superseded by v33, Note 15; its common bases are the multi-group arms of Table S18); cross-fitted adaptation | `results/v14_commonbase_1` |
 | `exp_v14b_pooled_adapt.py` | The same component fitted to the pooled model and to the base | `results/v14b_pooled_adapt` |
 | `exp_v15_preproc.py` | Preprocessing refitted on retained rows for the five most isolated groups | `results/v15_preproc` |
 | `exp_v16_strict.py` | Contribution confinement with the retained-only shared pipeline on MIMIC-IV (vocabulary, imputation, scaling and base refitted without the group), with a provenance record per run | `results/v16_strict` |
@@ -35,8 +35,14 @@ No patient data are included. MIMIC-IV v3.1 and eICU-CRD v2.0 are available to c
 | `exp_v24_symmetric_mimic.py`, `exp_v25_symmetric_eicu.py` (`run_v24_v25.sh`) | Adapted pooled comparator given the same choice of component, cross-fitted | `results/v24_symmetric_mimic`, `results/v25_symmetric_eicu` |
 | `exp_v26_eicu_table2.py` | eICU cells of Table 2 on the strict pipeline | `results/v26_eicu_table2` |
 | `exp_v27_churn.py` | Other patients' predictions after a withdrawal, from cached checkpoints (no training) | `results/v27_churn` |
+| `exp_v28_multiplicity.py` (v28.1) | Holm and Benjamini-Hochberg adjustment of the 55 main-text contrasts of the v8 manuscript, from the result files (Note 14, Table S19) | `results/v28_multiplicity` |
+| `exp_v29_seeds_equivalence.py` | Per-seed estimates, between-seed SD and seed-inclusive intervals for the main contrasts, and post hoc equivalence tests at ±0.005 AUROC, from cached predictions (Note 14, Tables S20 and S21); `SEEDS` and `TAG` select the seed set | `results/v29_seeds_equivalence`, `results/v29_seeds_equivalence_s10` |
+| `exp_v30_seed_core.py` (`run_seeds_overnight.sh`) | Pooled model, exact retrain and random-set retrain for seeds 3 to 9 with v5's pipeline, then the v16, v17, v19 and v24 scripts for those seeds (`SEEDS`, `SUMMARY=0`) | `results/v30_seed_core`, checkpoints in `results/v5_partitions/ckpt` |
+| `exp_v31_fold_manifests.py` | Provenance of every cross-fitting fold model (v17, v20): both candidate half splits tested against the cached model, the resolved split's excluded patients written to a local manifest, aggregate gaps and checkpoint SHA-256 to `manifest.csv` (Note 5, Table S22) | `results/v31_fold_manifests` |
+| `exp_v32_pooled_full_adapt.py` | Full pooled-adaptation comparator: the pooled model with a component fitted on all of the group's training patients, type chosen on a held-back fifth, against the adapted cross-fitted comparator and the confined system (Note 5, Tables S11, S12 and S23); `PART`, `SEEDS` | `results/v32_pooled_full_adapt` |
+| `exp_v33_strict_multigroup.py` | Several groups withdrawn at once on the retained-only pipeline: one common base without 5, 10 or 15 most isolated or random groups, each group's component chosen by validation (Note 4, Tables S10 and S14); `SEEDS`, `SIZES`, `FAMILIES` | `results/v33_strict_multigroup` |
 | `figures_v5.py` | Figures 1 and 2 and `figure_data_v5.csv` | |
-| `si_tables_v6.py` | Supplementary Tables S1 to S17 (Table S18 is built from `results/v27_churn/churn.json`) | |
+| `si_tables_v6.py` | Supplementary Tables S1 to S17 (Table S18 is built from `results/v27_churn/churn.json`, Table S19 by `exp_v28_multiplicity.py`) | |
 
 The residual component in v11.1, v13.1, v14.1 and v14b leaves the shared model's logit effectively unpenalised and lets a logit-only recalibration compete in cross-validation. Earlier versions (v11.0, v13.0, v14.0) penalised the logit and are superseded. Superseded scripts kept for provenance: `exp_v7_eicu_consortium.py` and `exp_v7_eicu_consortium_v71.py` (fixed-epoch eICU training; v7.0 capped one control), `exp_v2_sameheldout.py`, `exp_v3_verify.py`, `exp_v4_fairunlearn.py` and `figure1.py` (earlier analyses on groups fitted to all patients), and `figures_v4.py`, `si_tables_v4.py` and `aggregate/figure_data_v4.csv` (the 18 October figures and tables).
 

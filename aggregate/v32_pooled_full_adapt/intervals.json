@@ -1,0 +1,527 @@
+{
+ "mimic_all": {
+  "results": {
+   "full comparator (chosen) minus pooled": {
+    "d": 0.0014844992060557161,
+    "ci": [
+     -0.0012401152267840444,
+     0.004487481818883915
+    ],
+    "n_groups": 25,
+    "n_boot": 1000
+   },
+   "pooled + full residual (in-sample) minus pooled": {
+    "d": 0.0011506154996643182,
+    "ci": [
+     -0.0012458540493539242,
+     0.003810643317493198
+    ],
+    "n_groups": 25,
+    "n_boot": 1000
+   },
+   "pooled + full head minus pooled": {
+    "d": -0.0020604640297582576,
+    "ci": [
+     -0.005276313927501066,
+     0.0018105857937612813
+    ],
+    "n_groups": 25,
+    "n_boot": 1000
+   },
+   "pooled + full fine-tuned copy minus pooled": {
+    "d": 0.006536374191902561,
+    "ci": [
+     0.0044277829827663664,
+     0.009136987560429187
+    ],
+    "n_groups": 25,
+    "n_boot": 1000
+   },
+   "full comparator minus adapted (cross-fitted) pooled comparator": {
+    "d": -0.00826578933460898,
+    "ci": [
+     -0.013071073540623326,
+     -0.002243435710491806
+    ],
+    "n_groups": 25,
+    "n_boot": 1000
+   },
+   "confined (chosen) minus full comparator": {
+    "d": 0.009019842724655676,
+    "ci": [
+     0.0034829504209708223,
+     0.014647397854033397
+    ],
+    "n_groups": 25,
+    "n_boot": 1000
+   },
+   "confined (chosen) minus pooled": {
+    "d": 0.010504341930711392,
+    "ci": [
+     0.005898544535247323,
+     0.015460391655186572
+    ],
+    "n_groups": 25,
+    "n_boot": 1000
+   },
+   "confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)": {
+    "d": 0.003967967738808831,
+    "ci": [
+     -0.0005464972169278802,
+     0.008368913022150547
+    ],
+    "n_groups": 25,
+    "n_boot": 1000
+   },
+   "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": {
+    "d": 0.0032139143487621346,
+    "ci": [
+     -0.0014690240694068442,
+     0.006819211108766092
+    ],
+    "n_groups": 25,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, confined minus full comparator": {
+    "d": -2.5365792534375506,
+    "ci": [
+     -3.7404376075469403,
+     -1.3425217803017782
+    ],
+    "n_groups": 25,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, full comparator minus pooled": {
+    "d": 0.9731459683686617,
+    "ci": [
+     0.2025248552739676,
+     1.3814032634464084
+    ],
+    "n_groups": 25,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, confined minus pooled + full fine-tuned copy": {
+    "d": -1.4534787817281747,
+    "ci": [
+     -2.5797569334921966,
+     -0.5312758080955681
+    ],
+    "n_groups": 25,
+    "n_boot": 1000
+   }
+  },
+  "lower_in": {
+   "full comparator (chosen) minus pooled": 12,
+   "pooled + full residual (in-sample) minus pooled": 11,
+   "pooled + full head minus pooled": 15,
+   "pooled + full fine-tuned copy minus pooled": 1,
+   "full comparator minus adapted (cross-fitted) pooled comparator": 21,
+   "confined (chosen) minus full comparator": 5,
+   "confined (chosen) minus pooled": 3,
+   "confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)": 6,
+   "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": 5
+  }
+ },
+ "mimic_most_isolated": {
+  "results": {
+   "full comparator (chosen) minus pooled": {
+    "d": 0.008951764209911173,
+    "ci": [
+     0.001375259620844882,
+     0.019341840343596036
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "pooled + full residual (in-sample) minus pooled": {
+    "d": 0.006889967646799056,
+    "ci": [
+     0.0006570232815750998,
+     0.015810792643741668
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "pooled + full head minus pooled": {
+    "d": 0.0045372530391951885,
+    "ci": [
+     -0.005712179181931461,
+     0.018213104999944225
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "pooled + full fine-tuned copy minus pooled": {
+    "d": 0.00819705885237354,
+    "ci": [
+     0.00046101873934007034,
+     0.01711926259100338
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "full comparator minus adapted (cross-fitted) pooled comparator": {
+    "d": 0.007966884710012945,
+    "ci": [
+     -0.0036745827767810293,
+     0.029402524119807587
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "confined (chosen) minus full comparator": {
+    "d": -0.008536069596489249,
+    "ci": [
+     -0.020861147116519495,
+     0.005157623141706585
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "confined (chosen) minus pooled": {
+    "d": 0.00041569461342192413,
+    "ci": [
+     -0.01113222023337645,
+     0.01700079708876213
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)": {
+    "d": -0.007781364238951616,
+    "ci": [
+     -0.019997223346060793,
+     0.0056375602331686725
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": {
+    "d": -0.007212179352475312,
+    "ci": [
+     -0.027013727556815238,
+     0.003426318663895593
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, confined minus full comparator": {
+    "d": -0.26903780423331086,
+    "ci": [
+     -2.7708741879033463,
+     1.5970581810625648
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, full comparator minus pooled": {
+    "d": 0.08594037252983214,
+    "ci": [
+     -1.1370459727895375,
+     0.6664043586062034
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, confined minus pooled + full fine-tuned copy": {
+    "d": -0.5002216258494017,
+    "ci": [
+     -2.6801396544508913,
+     1.7045535601011546
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   }
+  },
+  "lower_in": {
+   "full comparator (chosen) minus pooled": 1,
+   "pooled + full residual (in-sample) minus pooled": 1,
+   "pooled + full head minus pooled": 1,
+   "pooled + full fine-tuned copy minus pooled": 0,
+   "full comparator minus adapted (cross-fitted) pooled comparator": 1,
+   "confined (chosen) minus full comparator": 4,
+   "confined (chosen) minus pooled": 3,
+   "confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)": 3,
+   "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": 4
+  }
+ },
+ "eicu_all": {
+  "results": {
+   "full comparator (chosen) minus pooled": {
+    "d": -4.773262350487029e-05,
+    "ci": [
+     -0.0013549018913046437,
+     0.0011921377362354554
+    ],
+    "n_boot": 1000
+   },
+   "pooled + full residual (in-sample) minus pooled": {
+    "d": 0.0004918363241047441,
+    "ci": [
+     -0.0010162075776329828,
+     0.0019292985284662036
+    ],
+    "n_boot": 1000
+   },
+   "pooled + full head minus pooled": {
+    "d": 5.8196344317751336e-05,
+    "ci": [
+     -0.0009235088265029678,
+     0.0009326188094530271
+    ],
+    "n_boot": 1000
+   },
+   "pooled + full fine-tuned copy minus pooled": {
+    "d": 0.001843539981618747,
+    "ci": [
+     0.0005510782501997258,
+     0.002867803039146579
+    ],
+    "n_boot": 1000
+   },
+   "full comparator minus adapted (cross-fitted) pooled comparator": {
+    "d": -0.001424345032835106,
+    "ci": [
+     -0.0024000564504876587,
+     -0.00033550230828010826
+    ],
+    "n_boot": 1000
+   },
+   "confined (chosen) minus full comparator": {
+    "d": 0.0002949022176351512,
+    "ci": [
+     -0.0010088535810648669,
+     0.001321647395512721
+    ],
+    "n_boot": 1000
+   },
+   "confined (chosen) minus pooled": {
+    "d": 0.00024716959413028093,
+    "ci": [
+     -0.0011856774477618866,
+     0.0012123063872574473
+    ],
+    "n_boot": 1000
+   },
+   "confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)": {
+    "d": -0.001596370387488466,
+    "ci": [
+     -0.0025301874453705726,
+     -0.0007551490810142915
+    ],
+    "n_boot": 1000
+   },
+   "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": {
+    "d": -0.00046692757228851135,
+    "ci": [
+     -0.0012730448085294364,
+     0.0002458666942160012
+    ],
+    "n_boot": 1000
+   },
+   "confined strict (chosen) minus full comparator": {
+    "d": 0.0001299825649109132,
+    "ci": [
+     -0.001056817307906053,
+     0.0009731488495847756
+    ],
+    "n_boot": 1000
+   },
+   "confined strict (chosen) minus pooled + full fine-tuned copy": {
+    "d": -0.001761290040212704,
+    "ci": [
+     -0.0026341903292457698,
+     -0.0010020033387779796
+    ],
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, confined minus full comparator": {
+    "d": -0.26306832443368294,
+    "ci": [
+     -0.726892356974234,
+     0.2744414810120444
+    ],
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, full comparator minus pooled": {
+    "d": 0.040040224456190286,
+    "ci": [
+     -0.44933714397192065,
+     0.4900718302066538
+    ],
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, confined minus pooled + full fine-tuned copy": {
+    "d": 0.25851464289215187,
+    "ci": [
+     -0.1948443619711253,
+     0.6156327212374698
+    ],
+    "n_boot": 1000
+   }
+  },
+  "lower_in": {
+   "full comparator (chosen) minus pooled": 5,
+   "pooled + full residual (in-sample) minus pooled": 3,
+   "pooled + full head minus pooled": 7,
+   "pooled + full fine-tuned copy minus pooled": 0,
+   "full comparator minus adapted (cross-fitted) pooled comparator": 7,
+   "confined (chosen) minus full comparator": 3,
+   "confined (chosen) minus pooled": 6,
+   "confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)": 8,
+   "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": 8,
+   "confined strict (chosen) minus full comparator": 4,
+   "confined strict (chosen) minus pooled + full fine-tuned copy": 9
+  }
+ },
+ "eicu_landmark": {
+  "results": {
+   "full comparator (chosen) minus pooled": {
+    "d": -0.0011971357762963098,
+    "ci": [
+     -0.0023741175080452164,
+     0.0002363631376972444
+    ],
+    "n_boot": 1000
+   },
+   "pooled + full residual (in-sample) minus pooled": {
+    "d": -0.001039854886274738,
+    "ci": [
+     -0.002466675854695043,
+     0.0006638696385372237
+    ],
+    "n_boot": 1000
+   },
+   "pooled + full head minus pooled": {
+    "d": -0.0006604080971457149,
+    "ci": [
+     -0.0014243034297269298,
+     0.0003724467911055666
+    ],
+    "n_boot": 1000
+   },
+   "pooled + full fine-tuned copy minus pooled": {
+    "d": 0.0010131115599580909,
+    "ci": [
+     -0.00013616707495394222,
+     0.002130982353063491
+    ],
+    "n_boot": 1000
+   },
+   "full comparator minus adapted (cross-fitted) pooled comparator": {
+    "d": -0.002427842523149859,
+    "ci": [
+     -0.003477788144895976,
+     -0.0009198318510181823
+    ],
+    "n_boot": 1000
+   },
+   "confined (chosen) minus full comparator": {
+    "d": 0.0010651306781372827,
+    "ci": [
+     -0.0006232191527502446,
+     0.0022918097641157335
+    ],
+    "n_boot": 1000
+   },
+   "confined (chosen) minus pooled": {
+    "d": -0.00013200509815902706,
+    "ci": [
+     -0.0015812929356864788,
+     0.0010490263849343693
+    ],
+    "n_boot": 1000
+   },
+   "confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)": {
+    "d": -0.001145116658117118,
+    "ci": [
+     -0.00243461612914391,
+     -8.306821438401663e-05
+    ],
+    "n_boot": 1000
+   },
+   "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": {
+    "d": 0.00021759518689545843,
+    "ci": [
+     -0.0006459865847866021,
+     0.0009133383904126229
+    ],
+    "n_boot": 1000
+   },
+   "confined strict (chosen) minus full comparator": {
+    "d": 0.0007559470160339865,
+    "ci": [
+     -0.0008121345266368207,
+     0.0018127063011323644
+    ],
+    "n_boot": 1000
+   },
+   "confined strict (chosen) minus pooled + full fine-tuned copy": {
+    "d": -0.0014543003202204142,
+    "ci": [
+     -0.0025442546795031986,
+     -0.0005572891690627539
+    ],
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, confined minus full comparator": {
+    "d": -0.3821176672813607,
+    "ci": [
+     -1.0484844983338721,
+     0.15487007161825805
+    ],
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, full comparator minus pooled": {
+    "d": 0.2101321352463053,
+    "ci": [
+     -0.3018317853239649,
+     0.7232811018549904
+    ],
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, confined minus pooled + full fine-tuned copy": {
+    "d": -0.003208750716319031,
+    "ci": [
+     -0.5031401816336031,
+     0.5619220305990137
+    ],
+    "n_boot": 1000
+   }
+  },
+  "lower_in": {
+   "full comparator (chosen) minus pooled": 5,
+   "pooled + full residual (in-sample) minus pooled": 3,
+   "pooled + full head minus pooled": 7,
+   "pooled + full fine-tuned copy minus pooled": 0,
+   "full comparator minus adapted (cross-fitted) pooled comparator": 7,
+   "confined (chosen) minus full comparator": 3,
+   "confined (chosen) minus pooled": 6,
+   "confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)": 8,
+   "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": 8,
+   "confined strict (chosen) minus full comparator": 4,
+   "confined strict (chosen) minus pooled + full fine-tuned copy": 9
+  }
+ },
+ "cfg": {
+  "adapter_C_grid": [
+   0.0001,
+   0.001,
+   0.01,
+   0.1,
+   1.0
+  ],
+  "adapter_cv_folds": 3,
+  "adapter_min_patients_cv": 30,
+  "logit_scale": 100.0,
+  "full_lr": 0.0001,
+  "full_batch": 256,
+  "full_max_epochs": 30,
+  "full_patience": 5,
+  "full_val_frac": 0.2,
+  "select_val_frac": 0.2,
+  "n_boot": 1000,
+  "version": "v32.0"
+ },
+ "date": "2026-10-25 12:25:11"
+}

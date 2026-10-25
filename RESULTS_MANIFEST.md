@@ -15,7 +15,7 @@ Each manuscript number is re-derived from the files below. Checksums are the fir
 | All dependence-aware AUROC intervals in the abstract, Results and Table 2; Table S7; Figure 1A | `results/v13_intervals_1/intervals.json` | `exp_v13_intervals.py` | 974bcba21aa54d81 |
 | Events unflagged per 1,000, sensitivity, net benefit at a matched flag rate; Table 2; Table S5; Figure 1B | `results/v13_intervals_1/matched_flags.json` | `exp_v13b_matched_flags.py` | d320683731582ac2 |
 | eICU state-3 contrasts and federation against centralised; Table 2 | `results/v13_intervals_1/extra_contrasts.json` | `exp_v13c_extra_contrasts.py` | 69ca7e9a4115fcc0 |
-| Multi-group and cross-fitted analyses; Table S8 | `results/v14_commonbase_1/paired.json` | `exp_v14_commonbase.py` | 4dd371461c102e47 |
+| Multi-group analysis on the standard pipeline (superseded, Note 15) and cross-fitted analyses; common bases of Table S18 | `results/v14_commonbase_1/paired.json` | `exp_v14_commonbase.py` | 4dd371461c102e47 |
 | Pooled-plus-component comparison; Table S8; Figure 2D | `results/v14b_pooled_adapt/paired.json`, `summary.csv` | `exp_v14b_pooled_adapt.py` | 14aeb57e60a1b676, 95dcf9ca831f92c3 |
 | Preprocessing sensitivity; Table S9 | `results/v15_preproc/summary.csv` | `exp_v15_preproc.py` | cd5748f40b743d52 |
 | Retained-only shared pipeline on MIMIC-IV: strict base, confinement, provenance; Table 2 state 3 (MIMIC-IV); Tables S10, S15 | `results/v16_strict/intervals.json`, `provenance.csv` | `exp_v16_strict.py` | acf4466122adac24, 6bfbc15a9555e809 |
@@ -30,4 +30,10 @@ Each manuscript number is re-derived from the files below. Checksums are the fir
 | Adapted pooled comparator, eICU; Table 2; Table S13 | `results/v25_symmetric_eicu/intervals.json` | `exp_v25_symmetric_eicu.py` | 7be80abbfc40e46a |
 | eICU cells of Table 2 on the strict pipeline | `results/v26_eicu_table2/all.json` | `exp_v26_eicu_table2.py` | f4805975a5583917 |
 | Other patients' predictions after a withdrawal; Table 1, other patients' column; Note 13; Table S18 | `results/v27_churn/churn.json` (aggregates in `aggregate/v27_churn/`) | `exp_v27_churn.py` | 54962cc4329dac6d |
+| Multiplicity adjustment of the 55 main-text contrasts; Note 14; Table S19 | `results/v28_multiplicity/multiplicity.csv` (copy in `aggregate/v28_multiplicity/`) | `exp_v28_multiplicity.py` | a49ab3efdc0a3dd5 |
+| Training randomness, three seeds (Table S20) and equivalence tests (Table S21); Note 14 | `results/v29_seeds_equivalence/seeds.csv`, `equivalence.csv` | `exp_v29_seeds_equivalence.py` | 39fb6fe2b9393c11, dfe9ea9d1c91fb52 |
+| Training randomness, ten seeds on MIMIC-IV (Table S20) and equivalence tests (Table S21); Note 14 | `results/v29_seeds_equivalence_s10/seeds.csv`, `equivalence.csv` | `exp_v30_seed_core.py`, `run_seeds_overnight.sh`, `exp_v29_seeds_equivalence.py` | ff4fd4088b25cf3a, aeb557a1a5308f2f |
+| Fold-model provenance, 500 MIMIC-IV and 60 eICU fold models; Note 5; Table S22 | `results/v31_fold_manifests/manifest.csv` | `exp_v31_fold_manifests.py` | 1cf049c823f73ded |
+| Full pooled-adaptation comparator; Note 5; Tables S11, S12 and S23 | `results/v32_pooled_full_adapt/summary_mimic.csv`, `summary_eicu.csv`, `intervals.json` | `exp_v32_pooled_full_adapt.py` | e40e594fc1494be1, e910392ef84f3e21, 43304490cec78cb7 |
+| Several groups withdrawn at once, retained-only pipeline; Note 4; Tables S10 and S14 | `results/v33_strict_multigroup/summary.csv`, `intervals.json` | `exp_v33_strict_multigroup.py` | 15b6328e13c44333, 9f3374c41fd59718 |
 | Figures 1 and 2; every plotted value | `aggregate/figure_data_v5.csv` | `figures_v5.py` | ecd67d5e44290480 |

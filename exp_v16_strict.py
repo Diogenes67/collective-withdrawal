@@ -15,7 +15,7 @@ fitting and evaluation, with an assertion that no patient of the group is in the
 the base's SHA-256. Predictions on the group's held-out patients are cached locally for the two-stage bootstrap
 (groups, then patients within groups; 1,000 draws), which the summary runs from disk.
 
-Env: ROOT (default ~/mimic), QUICK=1, DEVICE, ONLY_GROUPS (comma list, e.g. community_trainfit/c05), NBOOT.
+Env: SEEDS (comma list of training seeds, default 0,1,2), SUMMARY=0 (stop before the summary and bootstrap stage), ROOT (default ~/mimic), QUICK=1, DEVICE, ONLY_GROUPS (comma list, e.g. community_trainfit/c05), NBOOT.
 Reads derived/cohort_latest.parquet, hosp/diagnoses_icd.csv.gz, results/v5_partitions/{ckpt,runs}.
 Writes results/v16_strict/{runs/*.json, preds/*.npz, ckpt/, summary.csv, intervals.json, provenance.csv}.
 """
@@ -33,7 +33,7 @@ QUICK = os.environ.get("QUICK", "0") == "1"
 ROOT = os.environ.get("ROOT", os.path.expanduser("~/mimic")); V5 = f"{ROOT}/results/v5_partitions"
 OUT = f"{ROOT}/results/v16_strict" + ("_quick" if QUICK else "")
 for d in ["runs", "preds", "ckpt"]: os.makedirs(f"{OUT}/{d}", exist_ok=True)
-CFG = dict(seeds=[0] if QUICK else [0, 1, 2], epochs=2 if QUICK else 12, lr=1e-3, batch=2048, n_top=100, min_patients=300,
+CFG = dict(seeds=[int(x) for x in os.environ["SEEDS"].split(",")] if os.environ.get("SEEDS") else ([0] if QUICK else [0, 1, 2]), epochs=2 if QUICK else 12, lr=1e-3, batch=2048, n_top=100, min_patients=300,
            adapter_C_grid=[1e-4, 1e-3, 1e-2, 1e-1, 1.0], adapter_cv_folds=3, adapter_min_patients_cv=30, logit_scale=100.0,
            n_boot=int(os.environ.get("NBOOT", 50 if QUICK else 1000)), version="v16.0")
 DEVICE = os.environ.get("DEVICE") or ("cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu"))
@@ -202,6 +202,7 @@ for gi, g in enumerate(groups):
         a = rec["arms"]; log(f"  s{s}: pooled {a['pooled']['auroc']:.4f} strict base {a['strict_base']['auroc']:.4f} +resid {a['strict_resid']['auroc']:.4f} "
                              f"+head {a['strict_head']['auroc']:.4f} +control {a['strict_control']['auroc']:.4f} ({time.time()-ts:.0f}s)")
 
+if os.environ.get("SUMMARY", "1") == "0": log("SUMMARY=0; stopping before the summary stage"); raise SystemExit(0)
 # ---------------------------------------------------------------- summary from disk
 recs = [json.load(open(f)) for f in sorted(glob.glob(f"{OUT}/runs/*.json"))]
 rows = [dict(group=r["group"], seed=r["seed"], arm=a, **m) for r in recs for a, m in r["arms"].items()]

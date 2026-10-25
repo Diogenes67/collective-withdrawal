@@ -1,0 +1,121 @@
+v33 strict multi-group withdrawal (2026-10-25 13:54); seeds [0, 1, 2]
+== most_isolated_5: c02, c05, c12, c15, c20; retained 70.2% of training rows; vocabulary overlap 94/100; base unchanged True; others' AUROC (74371 rows) pooled 0.6810 common base 0.6820
+     pooled  single_strict_base  single_confined  adapted_pooled  common_base  common_confined type
+c02  0.5891              0.5913           0.6009          0.5671       0.5633           0.5708  RRR
+c05  0.7498              0.7168           0.7423          0.7539       0.7088           0.7372  FFF
+c12  0.7399              0.7176           0.7456          0.7454       0.7123           0.7371  HRH
+c15  0.7091              0.6838           0.7089          0.7162       0.6708           0.7091  FHF
+c20  0.6738              0.6443           0.6661          0.6842       0.5739           0.6535  RFR
+  common base + chosen component minus pooled                                                          -0.0108 [-0.0322, +0.0070]  lower in 5 of 5
+  common base + chosen component minus single-exclusion confined system                                -0.0112 [-0.0276, -0.0002]  lower in 4 of 5
+  common base + chosen component minus adapted pooled comparator                                       -0.0118 [-0.0273, +0.0044]  lower in 4 of 5
+  common base minus single-exclusion strict base                                                       -0.0250 [-0.0533, -0.0043]  lower in 5 of 5
+  common base minus pooled                                                                             -0.0465 [-0.0778, -0.0191]  lower in 5 of 5
+  deletion of the component: common base + component minus common base                                 +0.0357 [+0.0059, +0.0628]  lower in 0 of 5
+  events unflagged per 1,000 at matched flag rate, common base + component minus pooled                +0.5241 [-2.8895, +1.9390]
+  events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined +0.7072 [-1.6055, +2.3440]
+== random_5: c01, c10, c13, c23, c24; retained 78.5% of training rows; vocabulary overlap 88/100; base unchanged True; others' AUROC (82690 rows) pooled 0.7070 common base 0.7110
+     pooled  single_strict_base  single_confined  adapted_pooled  common_base  common_confined type
+c01  0.6977              0.6998           0.7130          0.7089       0.6938           0.7094  RRR
+c10  0.7192              0.7174           0.7294          0.7296       0.7070           0.7279  RRF
+c13  0.5842              0.5742           0.6130          0.6092       0.5805           0.6133  RRR
+c23  0.7289              0.7109           0.7315          0.7408       0.7163           0.7366  RHR
+c24  0.7111              0.7019           0.7130          0.7124       0.7069           0.7192  HRR
+  common base + chosen component minus pooled                                                          +0.0131 [+0.0058, +0.0226]  lower in 0 of 5
+  common base + chosen component minus single-exclusion confined system                                +0.0013 [-0.0031, +0.0060]  lower in 2 of 5
+  common base + chosen component minus adapted pooled comparator                                       +0.0011 [-0.0039, +0.0061]  lower in 2 of 5
+  common base minus single-exclusion strict base                                                       +0.0001 [-0.0078, +0.0075]  lower in 2 of 5
+  common base minus pooled                                                                             -0.0073 [-0.0136, -0.0011]  lower in 5 of 5
+  deletion of the component: common base + component minus common base                                 +0.0204 [+0.0139, +0.0289]  lower in 0 of 5
+  events unflagged per 1,000 at matched flag rate, common base + component minus pooled                -1.9413 [-4.4284, +0.3758]
+  events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined -0.2668 [-1.6932, +1.2136]
+== most_isolated_10: c00, c02, c03, c05, c12, c15, c20, c22, c23, c24; retained 58.8% of training rows; vocabulary overlap 89/100; base unchanged True; others' AUROC (62421 rows) pooled 0.6731 common base 0.6736
+     pooled  single_strict_base  single_confined  adapted_pooled  common_base  common_confined type
+c00  0.6082              0.5879           0.6214          0.6313       0.5958           0.6360  FRR
+c02  0.5891              0.5913           0.6009          0.5671       0.5887           0.5685  RHR
+c03  0.7169              0.7226           0.7321          0.7231       0.7136           0.7260  RFR
+c05  0.7498              0.7168           0.7423          0.7539       0.7046           0.7344  FFF
+c12  0.7399              0.7176           0.7456          0.7454       0.7289           0.7412  HHR
+c15  0.7091              0.6838           0.7089          0.7162       0.6749           0.7041  HFH
+c20  0.6738              0.6443           0.6661          0.6842       0.5908           0.6490  FFH
+c22  0.7005              0.7089           0.7179          0.7121       0.7021           0.7158  RRR
+c23  0.7289              0.7109           0.7315          0.7408       0.7046           0.7307  HHR
+c24  0.7111              0.7019           0.7130          0.7124       0.6900           0.7009  HRF
+  common base + chosen component minus pooled                                                          -0.0021 [-0.0169, +0.0100]  lower in 5 of 10
+  common base + chosen component minus single-exclusion confined system                                -0.0073 [-0.0176, +0.0012]  lower in 9 of 10
+  common base + chosen component minus adapted pooled comparator                                       -0.0080 [-0.0185, +0.0012]  lower in 6 of 10
+  common base minus single-exclusion strict base                                                       -0.0092 [-0.0241, +0.0032]  lower in 8 of 10
+  common base minus pooled                                                                             -0.0233 [-0.0434, -0.0067]  lower in 9 of 10
+  deletion of the component: common base + component minus common base                                 +0.0213 [+0.0029, +0.0366]  lower in 1 of 10
+  events unflagged per 1,000 at matched flag rate, common base + component minus pooled                -0.9860 [-3.0410, +0.3557]
+  events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined +0.0785 [-1.4043, +1.2437]
+== random_10: c01, c03, c04, c07, c10, c12, c13, c19, c23, c24; retained 67.1% of training rows; vocabulary overlap 81/100; base unchanged True; others' AUROC (70795 rows) pooled 0.7119 common base 0.7202
+     pooled  single_strict_base  single_confined  adapted_pooled  common_base  common_confined type
+c01  0.6977              0.6998           0.7130          0.7089       0.6937           0.7116  RRR
+c03  0.7169              0.7226           0.7321          0.7231       0.7060           0.7261  HFR
+c04  0.6576              0.6486           0.6741          0.6756       0.6430           0.6666  RRR
+c07  0.6490              0.6457           0.6511          0.6604       0.6413           0.6573  RRH
+c10  0.7192              0.7174           0.7294          0.7296       0.7016           0.7298  RRR
+c12  0.7399              0.7176           0.7456          0.7454       0.7240           0.7514  HRR
+c13  0.5842              0.5742           0.6130          0.6092       0.5869           0.6162  RRR
+c19  0.6291              0.6275           0.6531          0.6477       0.6172           0.6381  RFR
+c23  0.7289              0.7109           0.7315          0.7408       0.7210           0.7397  RFR
+c24  0.7111              0.7019           0.7130          0.7124       0.7037           0.7190  RRF
+  common base + chosen component minus pooled                                                          +0.0122 [+0.0068, +0.0193]  lower in 0 of 10
+  common base + chosen component minus single-exclusion confined system                                -0.0000 [-0.0056, +0.0058]  lower in 4 of 10
+  common base + chosen component minus adapted pooled comparator                                       +0.0003 [-0.0048, +0.0058]  lower in 4 of 10
+  common base minus single-exclusion strict base                                                       -0.0028 [-0.0098, +0.0050]  lower in 6 of 10
+  common base minus pooled                                                                             -0.0095 [-0.0153, -0.0036]  lower in 9 of 10
+  deletion of the component: common base + component minus common base                                 +0.0217 [+0.0172, +0.0275]  lower in 0 of 10
+  events unflagged per 1,000 at matched flag rate, common base + component minus pooled                -1.8305 [-4.6237, -0.1056]
+  events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined -0.2737 [-2.7395, +1.1248]
+== most_isolated_15: c00, c02, c03, c04, c05, c07, c12, c13, c15, c18, c20, c21, c22, c23, c24; retained 46.1% of training rows; vocabulary overlap 84/100; base unchanged True; others' AUROC (48816 rows) pooled 0.6778 common base 0.6717
+     pooled  single_strict_base  single_confined  adapted_pooled  common_base  common_confined type
+c00  0.6082              0.5879           0.6214          0.6313       0.5785           0.6334  RRR
+c02  0.5891              0.5913           0.6009          0.5671       0.5764           0.5567  HHR
+c03  0.7169              0.7226           0.7321          0.7231       0.7115           0.7281  RRR
+c04  0.6576              0.6486           0.6741          0.6756       0.6387           0.6735  RRR
+c05  0.7498              0.7168           0.7423          0.7539       0.6986           0.7330  FFF
+c07  0.6490              0.6457           0.6511          0.6604       0.6458           0.6575  RRR
+c12  0.7399              0.7176           0.7456          0.7454       0.7175           0.7482  RRH
+c13  0.5842              0.5742           0.6130          0.6092       0.5820           0.6172  RRR
+c15  0.7091              0.6838           0.7089          0.7162       0.6710           0.7049  HFF
+c18  0.6827              0.6852           0.6844          0.6852       0.6820           0.6898  RRF
+c20  0.6738              0.6443           0.6661          0.6842       0.6034           0.6319  HFH
+c21  0.7057              0.7058           0.7221          0.7136       0.6809           0.7101  FFH
+c22  0.7005              0.7089           0.7179          0.7121       0.6960           0.7138  RRR
+c23  0.7289              0.7109           0.7315          0.7408       0.7088           0.7377  FRR
+c24  0.7111              0.7019           0.7130          0.7124       0.6767           0.6989  RRR
+  common base + chosen component minus pooled                                                          +0.0019 [-0.0105, +0.0129]  lower in 5 of 15
+  common base + chosen component minus single-exclusion confined system                                -0.0060 [-0.0159, +0.0023]  lower in 9 of 15
+  common base + chosen component minus adapted pooled comparator                                       -0.0064 [-0.0150, +0.0009]  lower in 9 of 15
+  common base minus single-exclusion strict base                                                       -0.0119 [-0.0204, -0.0028]  lower in 13 of 15
+  common base minus pooled                                                                             -0.0226 [-0.0343, -0.0110]  lower in 15 of 15
+  deletion of the component: common base + component minus common base                                 +0.0245 [+0.0128, +0.0334]  lower in 1 of 15
+  events unflagged per 1,000 at matched flag rate, common base + component minus pooled                -1.8256 [-3.5668, -0.5496]
+  events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined -0.0097 [-1.3590, +0.8669]
+== random_15: c01, c02, c03, c04, c05, c07, c08, c10, c12, c13, c17, c19, c20, c23, c24; retained 38.0% of training rows; vocabulary overlap 81/100; base unchanged True; others' AUROC (39993 rows) pooled 0.6859 common base 0.6801
+     pooled  single_strict_base  single_confined  adapted_pooled  common_base  common_confined type
+c01  0.6977              0.6998           0.7130          0.7089       0.6813           0.7065  RFR
+c02  0.5891              0.5913           0.6009          0.5671       0.5742           0.5550  HRR
+c03  0.7169              0.7226           0.7321          0.7231       0.7018           0.7263  HFR
+c04  0.6576              0.6486           0.6741          0.6756       0.6329           0.6685  RRR
+c05  0.7498              0.7168           0.7423          0.7539       0.7019           0.7355  FFF
+c07  0.6490              0.6457           0.6511          0.6604       0.6371           0.6521  RHR
+c08  0.6096              0.6130           0.6183          0.6155       0.5965           0.6126  RHH
+c10  0.7192              0.7174           0.7294          0.7296       0.6977           0.7274  FRR
+c12  0.7399              0.7176           0.7456          0.7454       0.7078           0.7311  HHR
+c13  0.5842              0.5742           0.6130          0.6092       0.5804           0.6152  RRR
+c17  0.6183              0.6275           0.6384          0.6357       0.6091           0.6379  HRR
+c19  0.6291              0.6275           0.6531          0.6477       0.5968           0.6372  RFR
+c20  0.6738              0.6443           0.6661          0.6842       0.5523           0.6474  RRR
+c23  0.7289              0.7109           0.7315          0.7408       0.6862           0.7296  RFR
+c24  0.7111              0.7019           0.7130          0.7124       0.6642           0.6926  HRR
+  common base + chosen component minus pooled                                                          +0.0000 [-0.0111, +0.0095]  lower in 5 of 15
+  common base + chosen component minus single-exclusion confined system                                -0.0098 [-0.0181, -0.0035]  lower in 13 of 15
+  common base + chosen component minus adapted pooled comparator                                       -0.0090 [-0.0164, -0.0031]  lower in 12 of 15
+  common base minus single-exclusion strict base                                                       -0.0226 [-0.0373, -0.0114]  lower in 14 of 15
+  common base minus pooled                                                                             -0.0303 [-0.0483, -0.0161]  lower in 15 of 15
+  deletion of the component: common base + component minus common base                                 +0.0303 [+0.0161, +0.0449]  lower in 1 of 15
+  events unflagged per 1,000 at matched flag rate, common base + component minus pooled                -0.6699 [-2.3194, +0.6721]
+  events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined +0.5795 [-0.4789, +1.8174]

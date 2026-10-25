@@ -1,0 +1,722 @@
+{
+ "most_isolated_5": {
+  "members": [
+   "c02",
+   "c05",
+   "c12",
+   "c15",
+   "c20"
+  ],
+  "results": {
+   "common base + chosen component minus pooled": {
+    "d": -0.01080053275240438,
+    "ci": [
+     -0.032188193538350375,
+     0.007035260616539757
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "common base + chosen component minus single-exclusion confined system": {
+    "d": -0.011216227365826304,
+    "ci": [
+     -0.027633565650952416,
+     -0.00023810818435033811
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "common base + chosen component minus adapted pooled comparator": {
+    "d": -0.011785412252302608,
+    "ci": [
+     -0.027327421737846674,
+     0.004447267560020689
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "common base minus single-exclusion strict base": {
+    "d": -0.02496563245565806,
+    "ci": [
+     -0.053311825663400106,
+     -0.004309638897725169
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "common base minus pooled": {
+    "d": -0.046544780026071784,
+    "ci": [
+     -0.07776174837314004,
+     -0.01913945736469524
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "deletion of the component: common base + component minus common base": {
+    "d": 0.03574424727366741,
+    "ci": [
+     0.005935362519609422,
+     0.06276759588118858
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, common base + component minus pooled": {
+    "d": 0.5241043348390519,
+    "ci": [
+     -2.8895070775518565,
+     1.9390174813833696
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined": {
+    "d": 0.7072017665425306,
+    "ci": [
+     -1.6055059874202329,
+     2.3439982446184704
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   }
+  },
+  "lower_in": {
+   "common base + chosen component minus pooled": 5,
+   "common base + chosen component minus single-exclusion confined system": 4,
+   "common base + chosen component minus adapted pooled comparator": 4,
+   "common base minus single-exclusion strict base": 5,
+   "common base minus pooled": 5,
+   "deletion of the component: common base + component minus common base": 0
+  },
+  "others": {
+   "pooled": 0.6810453362005223,
+   "common_base": 0.6819884749697288,
+   "n_rows": 74371
+  },
+  "choices": {
+   "c02": "RRR",
+   "c05": "FFF",
+   "c12": "HRH",
+   "c15": "FHF",
+   "c20": "RFR"
+  },
+  "share_of_training": 0.7019167501072808
+ },
+ "random_5": {
+  "members": [
+   "c01",
+   "c10",
+   "c13",
+   "c23",
+   "c24"
+  ],
+  "results": {
+   "common base + chosen component minus pooled": {
+    "d": 0.013059484862225057,
+    "ci": [
+     0.005771032180223914,
+     0.022582233551165554
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "common base + chosen component minus single-exclusion confined system": {
+    "d": 0.0013299160583887027,
+    "ci": [
+     -0.0030829265753872007,
+     0.00603222507536654
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "common base + chosen component minus adapted pooled comparator": {
+    "d": 0.0011134962014615502,
+    "ci": [
+     -0.00385540251864135,
+     0.006134420850245379
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "common base minus single-exclusion strict base": {
+    "d": 6.39730880914069e-05,
+    "ci": [
+     -0.00781763149443242,
+     0.007458417616072712
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "common base minus pooled": {
+    "d": -0.007319419990459042,
+    "ci": [
+     -0.013603835491776468,
+     -0.0011363580097326267
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "deletion of the component: common base + component minus common base": {
+    "d": 0.0203789048526841,
+    "ci": [
+     0.013860466482772085,
+     0.028948021601188596
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, common base + component minus pooled": {
+    "d": -1.9413450516415025,
+    "ci": [
+     -4.428442028465759,
+     0.3758227942980634
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined": {
+    "d": -0.2668351649152669,
+    "ci": [
+     -1.6931569489085918,
+     1.2136367258534022
+    ],
+    "n_groups": 5,
+    "n_boot": 1000
+   }
+  },
+  "lower_in": {
+   "common base + chosen component minus pooled": 0,
+   "common base + chosen component minus single-exclusion confined system": 2,
+   "common base + chosen component minus adapted pooled comparator": 2,
+   "common base minus single-exclusion strict base": 2,
+   "common base minus pooled": 5,
+   "deletion of the component: common base + component minus common base": 0
+  },
+  "others": {
+   "pooled": 0.7069862121609556,
+   "common_base": 0.7110054219273582,
+   "n_rows": 82690
+  },
+  "choices": {
+   "c01": "RRR",
+   "c10": "RRF",
+   "c13": "RRR",
+   "c23": "RHR",
+   "c24": "HRR"
+  },
+  "share_of_training": 0.7845611023697134
+ },
+ "most_isolated_10": {
+  "members": [
+   "c00",
+   "c02",
+   "c03",
+   "c05",
+   "c12",
+   "c15",
+   "c20",
+   "c22",
+   "c23",
+   "c24"
+  ],
+  "results": {
+   "common base + chosen component minus pooled": {
+    "d": -0.002075271123065292,
+    "ci": [
+     -0.016915492144800523,
+     0.010039110689386482
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   },
+   "common base + chosen component minus single-exclusion confined system": {
+    "d": -0.007304233513243152,
+    "ci": [
+     -0.01761397209612041,
+     0.0012213892384670035
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   },
+   "common base + chosen component minus adapted pooled comparator": {
+    "d": -0.007965030984026133,
+    "ci": [
+     -0.018506813296178964,
+     0.0011781325054201215
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   },
+   "common base minus single-exclusion strict base": {
+    "d": -0.00921155212159005,
+    "ci": [
+     -0.024122602770445648,
+     0.0032452326344560244
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   },
+   "common base minus pooled": {
+    "d": -0.02334022637398414,
+    "ci": [
+     -0.043384129409383736,
+     -0.006667018095230677
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   },
+   "deletion of the component: common base + component minus common base": {
+    "d": 0.02126495525091885,
+    "ci": [
+     0.0029369350937699283,
+     0.03655625068524098
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, common base + component minus pooled": {
+    "d": -0.986023888823906,
+    "ci": [
+     -3.040984574300345,
+     0.3557393123426354
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined": {
+    "d": 0.07852178807111798,
+    "ci": [
+     -1.404317803868077,
+     1.2437463673410256
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   }
+  },
+  "lower_in": {
+   "common base + chosen component minus pooled": 5,
+   "common base + chosen component minus single-exclusion confined system": 9,
+   "common base + chosen component minus adapted pooled comparator": 6,
+   "common base minus single-exclusion strict base": 8,
+   "common base minus pooled": 9,
+   "deletion of the component: common base + component minus common base": 1
+  },
+  "others": {
+   "pooled": 0.6731264744728621,
+   "common_base": 0.6736187160080188,
+   "n_rows": 62421
+  },
+  "choices": {
+   "c00": "FRR",
+   "c02": "RHR",
+   "c03": "RFR",
+   "c05": "FFF",
+   "c12": "HHR",
+   "c15": "HFH",
+   "c20": "FFH",
+   "c22": "RRR",
+   "c23": "HHR",
+   "c24": "HRF"
+  },
+  "share_of_training": 0.5880083917417632
+ },
+ "random_10": {
+  "members": [
+   "c01",
+   "c03",
+   "c04",
+   "c07",
+   "c10",
+   "c12",
+   "c13",
+   "c19",
+   "c23",
+   "c24"
+  ],
+  "results": {
+   "common base + chosen component minus pooled": {
+    "d": 0.012213011719854183,
+    "ci": [
+     0.006787936575040417,
+     0.019256060505622338
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   },
+   "common base + chosen component minus single-exclusion confined system": {
+    "d": -5.832591694299172e-06,
+    "ci": [
+     -0.005583616671091823,
+     0.0057688254125720165
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   },
+   "common base + chosen component minus adapted pooled comparator": {
+    "d": 0.00026645179733120194,
+    "ci": [
+     -0.0048344131611461295,
+     0.005770410120430102
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   },
+   "common base minus single-exclusion strict base": {
+    "d": -0.002786455797101006,
+    "ci": [
+     -0.009763348433723002,
+     0.005008571428691771
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   },
+   "common base minus pooled": {
+    "d": -0.009533633359416593,
+    "ci": [
+     -0.015272902023462187,
+     -0.003567441038743949
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   },
+   "deletion of the component: common base + component minus common base": {
+    "d": 0.021746645079270776,
+    "ci": [
+     0.017156192987718297,
+     0.027498610837353325
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, common base + component minus pooled": {
+    "d": -1.8304837487643824,
+    "ci": [
+     -4.623690195622028,
+     -0.10563736237207366
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined": {
+    "d": -0.27372717260753066,
+    "ci": [
+     -2.7394757453024265,
+     1.1247933206608696
+    ],
+    "n_groups": 10,
+    "n_boot": 1000
+   }
+  },
+  "lower_in": {
+   "common base + chosen component minus pooled": 0,
+   "common base + chosen component minus single-exclusion confined system": 4,
+   "common base + chosen component minus adapted pooled comparator": 4,
+   "common base minus single-exclusion strict base": 6,
+   "common base minus pooled": 9,
+   "deletion of the component: common base + component minus common base": 0
+  },
+  "others": {
+   "pooled": 0.7119202754001591,
+   "common_base": 0.720219715802306,
+   "n_rows": 70795
+  },
+  "choices": {
+   "c01": "RRR",
+   "c03": "HFR",
+   "c04": "RRR",
+   "c07": "RRH",
+   "c10": "RRR",
+   "c12": "HRR",
+   "c13": "RRR",
+   "c19": "RFR",
+   "c23": "RFR",
+   "c24": "RRF"
+  },
+  "share_of_training": 0.671351261145282
+ },
+ "most_isolated_15": {
+  "members": [
+   "c00",
+   "c02",
+   "c03",
+   "c04",
+   "c05",
+   "c07",
+   "c12",
+   "c13",
+   "c15",
+   "c18",
+   "c20",
+   "c21",
+   "c22",
+   "c23",
+   "c24"
+  ],
+  "results": {
+   "common base + chosen component minus pooled": {
+    "d": 0.0018710946216907054,
+    "ci": [
+     -0.010498366109546782,
+     0.01287996193960238
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   },
+   "common base + chosen component minus single-exclusion confined system": {
+    "d": -0.005981728852830355,
+    "ci": [
+     -0.015871639345820948,
+     0.0022636489335661207
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   },
+   "common base + chosen component minus adapted pooled comparator": {
+    "d": -0.006374634879219091,
+    "ci": [
+     -0.015039555811437576,
+     0.0008929798195220193
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   },
+   "common base minus single-exclusion strict base": {
+    "d": -0.011856950822193882,
+    "ci": [
+     -0.020375420034451606,
+     -0.0027882011739627597
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   },
+   "common base minus pooled": {
+    "d": -0.02259319176317238,
+    "ci": [
+     -0.03426317716147855,
+     -0.011035231898213283
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   },
+   "deletion of the component: common base + component minus common base": {
+    "d": 0.024464286384863088,
+    "ci": [
+     0.012793587100873288,
+     0.033427944331348186
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, common base + component minus pooled": {
+    "d": -1.825558974673174,
+    "ci": [
+     -3.566839229385473,
+     -0.5496368000727825
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined": {
+    "d": -0.009727890956024509,
+    "ci": [
+     -1.3589921185155285,
+     0.866867746652211
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   }
+  },
+  "lower_in": {
+   "common base + chosen component minus pooled": 5,
+   "common base + chosen component minus single-exclusion confined system": 9,
+   "common base + chosen component minus adapted pooled comparator": 9,
+   "common base minus single-exclusion strict base": 13,
+   "common base minus pooled": 15,
+   "deletion of the component: common base + component minus common base": 1
+  },
+  "others": {
+   "pooled": 0.6778465103811845,
+   "common_base": 0.6717353991916378,
+   "n_rows": 48816
+  },
+  "choices": {
+   "c00": "RRR",
+   "c02": "HHR",
+   "c03": "RRR",
+   "c04": "RRR",
+   "c05": "FFF",
+   "c07": "RRR",
+   "c12": "RRH",
+   "c13": "RRR",
+   "c15": "HFF",
+   "c18": "RRF",
+   "c20": "HFH",
+   "c21": "FFH",
+   "c22": "RRR",
+   "c23": "FRR",
+   "c24": "RRR"
+  },
+  "share_of_training": 0.46103084918705
+ },
+ "random_15": {
+  "members": [
+   "c01",
+   "c02",
+   "c03",
+   "c04",
+   "c05",
+   "c07",
+   "c08",
+   "c10",
+   "c12",
+   "c13",
+   "c17",
+   "c19",
+   "c20",
+   "c23",
+   "c24"
+  ],
+  "results": {
+   "common base + chosen component minus pooled": {
+    "d": 3.121889457868103e-05,
+    "ci": [
+     -0.011055243364018443,
+     0.009453351032021131
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   },
+   "common base + chosen component minus single-exclusion confined system": {
+    "d": -0.009804652952214983,
+    "ci": [
+     -0.018125631563674482,
+     -0.0035486909931541173
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   },
+   "common base + chosen component minus adapted pooled comparator": {
+    "d": -0.008972372675592692,
+    "ci": [
+     -0.016352109120107292,
+     -0.003067878748219776
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   },
+   "common base minus single-exclusion strict base": {
+    "d": -0.0226087894158666,
+    "ci": [
+     -0.03734961466864998,
+     -0.01138779120990731
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   },
+   "common base minus pooled": {
+    "d": -0.030288330166942122,
+    "ci": [
+     -0.04829834971887888,
+     -0.01612642780198645
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   },
+   "deletion of the component: common base + component minus common base": {
+    "d": 0.030319549061520804,
+    "ci": [
+     0.016061128092393722,
+     0.04492409227695871
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, common base + component minus pooled": {
+    "d": -0.6699174954776586,
+    "ci": [
+     -2.3194483706035807,
+     0.672083738987141
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   },
+   "events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined": {
+    "d": 0.5795183251404467,
+    "ci": [
+     -0.47893923755743406,
+     1.8173608372619408
+    ],
+    "n_groups": 15,
+    "n_boot": 1000
+   }
+  },
+  "lower_in": {
+   "common base + chosen component minus pooled": 5,
+   "common base + chosen component minus single-exclusion confined system": 13,
+   "common base + chosen component minus adapted pooled comparator": 12,
+   "common base minus single-exclusion strict base": 14,
+   "common base minus pooled": 15,
+   "deletion of the component: common base + component minus common base": 1
+  },
+  "others": {
+   "pooled": 0.6858817526893789,
+   "common_base": 0.6801253020356418,
+   "n_rows": 39993
+  },
+  "choices": {
+   "c01": "RFR",
+   "c02": "HRR",
+   "c03": "HFR",
+   "c04": "RRR",
+   "c05": "FFF",
+   "c07": "RHR",
+   "c08": "RHH",
+   "c10": "FRR",
+   "c12": "HHR",
+   "c13": "RRR",
+   "c17": "HRR",
+   "c19": "RFR",
+   "c20": "RRR",
+   "c23": "RFR",
+   "c24": "HRR"
+  },
+  "share_of_training": 0.3803771515758356
+ },
+ "cfg": {
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "sizes": [
+   5,
+   10,
+   15
+  ],
+  "epochs": 12,
+  "lr": 0.001,
+  "batch": 2048,
+  "n_top": 100,
+  "min_patients": 300,
+  "adapter_C_grid": [
+   0.0001,
+   0.001,
+   0.01,
+   0.1,
+   1.0
+  ],
+  "adapter_cv_folds": 3,
+  "adapter_min_patients_cv": 30,
+  "logit_scale": 100.0,
+  "full_lr": 0.0001,
+  "full_batch": 256,
+  "full_max_epochs": 30,
+  "full_patience": 5,
+  "full_val_frac": 0.2,
+  "select_val_frac": 0.2,
+  "n_boot": 1000,
+  "version": "v33.0"
+ },
+ "date": "2026-10-25 14:03:54"
+}

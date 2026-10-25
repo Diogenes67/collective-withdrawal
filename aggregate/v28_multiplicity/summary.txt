@@ -1,0 +1,16 @@
+v28 multiplicity: 55 contrasts; 35 intervals exclude zero; after Holm 26 remain below 0.05, after Benjamini-Hochberg 32 remain below 0.05.
+Lost under Holm:
+  Withdrawal cost, MIMIC-IV | Group withdrawal minus random removal, readmissions unflagged at a matched flag rate: +1.06 (+0.12 to +2.21), p 0.047, Holm 1.000, BH q 0.078
+  Withdrawal cost, MIMIC-IV | Logistic regression, withdrawal minus random removal (bootstrap over groups): -0.0024 (-0.0040 to -0.0008), p 0.004, Holm 0.118, BH q 0.008
+  Confinement, MIMIC-IV | Base alone (retained-only pipeline) minus pooled model: -0.0068 (-0.0123 to -0.0019), p 0.011, Holm 0.256, BH q 0.018
+  Confinement, MIMIC-IV | Five most isolated groups, base minus pooled model: -0.0216 (-0.0358 to -0.0051), p 0.006, Holm 0.152, BH q 0.011
+  Confinement, MIMIC-IV | Five most isolated groups, full pooled comparator minus pooled model: +0.0090 (+0.0014 to +0.0193), p 0.051, Holm 1.000, BH q 0.082
+  Confinement, MIMIC-IV | Readmissions unflagged at a matched flag rate, confined minus pooled model: -1.56 (-2.75 to -0.70), p 0.003, Holm 0.084, BH q 0.006
+  Several groups withdrawn at once, MIMIC-IV | Five most isolated groups, confined on the common base minus single-exclusion confined system: -0.0112 (-0.0276 to -0.0002), p 0.109, Holm 1.000, BH q 0.166
+  Several groups withdrawn at once, MIMIC-IV | Fifteen random groups, confined on the common base minus single-exclusion confined system: -0.0098 (-0.0181 to -0.0035), p 0.008, Holm 0.209, BH q 0.015
+  Sharded training | Confined system minus group-aligned ensemble: +0.0144 (+0.0058 to +0.0261), p 0.005, Holm 0.146, BH q 0.010
+Lost under Benjamini-Hochberg:
+  Withdrawal cost, MIMIC-IV | Group withdrawal minus random removal, readmissions unflagged at a matched flag rate: Holm 1.000, BH q 0.078
+  Confinement, MIMIC-IV | Five most isolated groups, full pooled comparator minus pooled model: Holm 1.000, BH q 0.082
+  Several groups withdrawn at once, MIMIC-IV | Five most isolated groups, confined on the common base minus single-exclusion confined system: Holm 1.000, BH q 0.166
+Smallest Holm-adjusted p among the intervals that include zero: 1.000

@@ -1,0 +1,3 @@
+v31 fold manifests (2026-10-24 22:15): 560 fold models
+  mimic: 500 fold models (480 with two candidate splits); resolved gap -0.0049 to +0.1828; alternative gap -0.0832 to +0.0634; decisive 500/500; agree with the recorded index 500/500; index 0 used in 0 of the two-candidate models
+  eicu: 60 fold models (54 with two candidate splits); resolved gap +0.0052 to +0.0504; alternative gap -0.0179 to +0.0184; decisive 60/60; agree with the recorded index 60/60; index 0 used in 38 of the two-candidate models

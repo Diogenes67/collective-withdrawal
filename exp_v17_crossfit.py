@@ -14,7 +14,7 @@ penultimate representations of separately trained models are not aligned.
 Arms on each group's held-out patients: pooled; pooled + in-sample component (v14b); pooled + cross-fitted component; base;
 base + component. Two-stage bootstrap (groups, then patients; 1,000 draws) from cached predictions.
 
-Env: ROOT (default ~/mimic), QUICK=1, DEVICE, ONLY_GROUPS, NBOOT. Reads derived/cohort_latest.parquet, results/v5_partitions/{ckpt,runs}.
+Env: SEEDS (comma list of training seeds, default 0,1,2), SUMMARY=0 (stop before the summary and bootstrap stage), ROOT (default ~/mimic), QUICK=1, DEVICE, ONLY_GROUPS, NBOOT. Reads derived/cohort_latest.parquet, results/v5_partitions/{ckpt,runs}.
 Writes results/v17_crossfit/{runs/*.json, preds/*.npz, ckpt/, summary.csv, intervals.json}.
 """
 import os, json, time, glob, hashlib
@@ -31,7 +31,7 @@ QUICK = os.environ.get("QUICK", "0") == "1"
 ROOT = os.environ.get("ROOT", os.path.expanduser("~/mimic")); V5 = f"{ROOT}/results/v5_partitions"
 OUT = f"{ROOT}/results/v17_crossfit" + ("_quick" if QUICK else "")
 for d in ["runs", "preds", "ckpt"]: os.makedirs(f"{OUT}/{d}", exist_ok=True)
-CFG = dict(seeds=[0] if QUICK else [0, 1, 2], epochs=2 if QUICK else 12, lr=1e-3, batch=2048, n_top=100, min_patients=300,
+CFG = dict(seeds=[int(x) for x in os.environ["SEEDS"].split(",")] if os.environ.get("SEEDS") else ([0] if QUICK else [0, 1, 2]), epochs=2 if QUICK else 12, lr=1e-3, batch=2048, n_top=100, min_patients=300,
            adapter_C_grid=[1e-4, 1e-3, 1e-2, 1e-1, 1.0], adapter_cv_folds=3, adapter_min_patients_cv=30, logit_scale=100.0,
            n_boot=int(os.environ.get("NBOOT", 50 if QUICK else 1000)), n_folds=2, version="v17.0")
 DEVICE = os.environ.get("DEVICE") or ("cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu"))
@@ -171,6 +171,7 @@ for gi, g in enumerate(groups):
         a = rec["arms"]; log(f"{g['key']} s{s}: pooled {a['pooled']['auroc']:.4f} +in-sample {a['pooled_resid_insample']['auroc']:.4f} +cross-fitted {a['pooled_resid_crossfit']['auroc']:.4f} | "
                              f"base {a['base']['auroc']:.4f} +component {a['base_resid']['auroc']:.4f} | train AUROC in-sample {rec['logit_gap']['auroc_insample_on_train']:.3f} oof {rec['logit_gap']['auroc_oof_on_train']:.3f} ({time.time()-ts:.0f}s)")
 
+if os.environ.get("SUMMARY", "1") == "0": log("SUMMARY=0; stopping before the summary stage"); raise SystemExit(0)
 # ---------------------------------------------------------------- summary from disk
 recs = [json.load(open(f)) for f in sorted(glob.glob(f"{OUT}/runs/*.json"))]
 rows = [dict(group=r["group"], seed=r["seed"], arm=a, **m) for r in recs for a, m in r["arms"].items()]

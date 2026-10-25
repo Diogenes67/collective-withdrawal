@@ -10,7 +10,7 @@ training patients, and scored on the group's held-out patients. Nothing in the c
 best pooled system from v17, the pooled model plus a cross-fitted residual component (same held-out patients; predictions
 read from v17's cache). Two-stage bootstrap (groups, then patients; 1,000 draws).
 
-Env: ROOT, QUICK=1, DEVICE, ONLY_GROUPS, NBOOT. Reads derived/cohort_latest.parquet, hosp/diagnoses_icd.csv.gz,
+Env: SEEDS (comma list of training seeds, default 0,1,2), SUMMARY=0 (stop before the summary and bootstrap stage), ROOT, QUICK=1, DEVICE, ONLY_GROUPS, NBOOT. Reads derived/cohort_latest.parquet, hosp/diagnoses_icd.csv.gz,
 results/v5_partitions, results/v16_strict/ckpt, results/v17_crossfit/preds. Writes results/v19_protocol/{runs, preds, summary.csv, intervals.json}.
 """
 import os, json, time, glob, hashlib, copy
@@ -28,7 +28,7 @@ ROOT = os.environ.get("ROOT", os.path.expanduser("~/mimic")); V5 = f"{ROOT}/resu
 OUT = f"{ROOT}/results/v19_protocol" + ("_quick" if QUICK else "")
 V16 = f"{ROOT}/results/v16_strict" + ("_quick" if QUICK else ""); V17 = f"{ROOT}/results/v17_crossfit" + ("_quick" if QUICK else "")
 for d in ["runs", "preds"]: os.makedirs(f"{OUT}/{d}", exist_ok=True)
-CFG = dict(seeds=[0] if QUICK else [0, 1, 2], epochs=2 if QUICK else 12, lr=1e-3, batch=2048, n_top=100, min_patients=300,
+CFG = dict(seeds=[int(x) for x in os.environ["SEEDS"].split(",")] if os.environ.get("SEEDS") else ([0] if QUICK else [0, 1, 2]), epochs=2 if QUICK else 12, lr=1e-3, batch=2048, n_top=100, min_patients=300,
            adapter_C_grid=[1e-4, 1e-3, 1e-2, 1e-1, 1.0], adapter_cv_folds=3, adapter_min_patients_cv=30, logit_scale=100.0,
            n_boot=int(os.environ.get("NBOOT", 50 if QUICK else 1000)), full_lr=1e-4, full_batch=256, full_max_epochs=30, full_patience=5, full_val_frac=0.2, select_val_frac=0.2, version="v19.0")
 DEVICE = os.environ.get("DEVICE") or ("cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu"))
@@ -214,6 +214,7 @@ for gi, g in enumerate(groups):
         log(f"  s{s}: chose {chosen} (val logloss " + ", ".join(f"{k} {v:.4f}" for k, v in val_ll.items()) + f"; base {base_ll:.4f}) | held-out AUROC pooled {a['pooled']['auroc']:.4f} pooled+cf {a['pooled_cf']['auroc']:.4f} "
             f"base {a['strict_base']['auroc']:.4f} chosen {a['chosen']['auroc']:.4f} [res {a['residual']['auroc']:.4f} head {a['head']['auroc']:.4f} ft {a['finetuned']['auroc']:.4f}] ({time.time()-ts:.0f}s)")
 
+if os.environ.get("SUMMARY", "1") == "0": log("SUMMARY=0; stopping before the summary stage"); raise SystemExit(0)
 # ---------------------------------------------------------------- summary from disk
 recs = [json.load(open(f)) for f in sorted(glob.glob(f"{OUT}/runs/*.json"))]
 rows = [dict(group=r["group"], seed=r["seed"], arm=a, **m) for r in recs for a, m in r["arms"].items()]
