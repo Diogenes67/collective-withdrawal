@@ -1,0 +1,1210 @@
+{
+ "results": {
+  "MIMIC-IV | all | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0020453950946602065,
+   "min": -0.0006021501433330542,
+   "max": 0.004475023281997337,
+   "n_groups": 25,
+   "unit": "group, then patient",
+   "ci": [
+    0.001443650026283338,
+    0.0025523652110554665
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "MIMIC-IV | all | c00 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0020210503328300655,
+   "unit": "patient",
+   "ci": [
+    0.001037174363897501,
+    0.0029844244651535353
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c01 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.003366359055495168,
+   "unit": "patient",
+   "ci": [
+    0.0021421680882383167,
+    0.004510412784200136
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c02 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.004475023281997337,
+   "unit": "patient",
+   "ci": [
+    0.0032724888278725744,
+    0.005525529942155362
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c03 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.00116390858119871,
+   "unit": "patient",
+   "ci": [
+    0.00017981564681300306,
+    0.002025684213919334
+   ],
+   "n_boot": 250,
+   "p_exact": 0.024
+  },
+  "MIMIC-IV | all | c04 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0005945658310978486,
+   "unit": "patient",
+   "ci": [
+    -0.0005317837601001638,
+    0.0015421108533114393
+   ],
+   "n_boot": 250,
+   "p_exact": 0.248
+  },
+  "MIMIC-IV | all | c05 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.0006021501433330542,
+   "unit": "patient",
+   "ci": [
+    -0.0018501718064509547,
+    0.0008089342519735875
+   ],
+   "n_boot": 250,
+   "p_exact": 0.432
+  },
+  "MIMIC-IV | all | c06 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0020831336636419153,
+   "unit": "patient",
+   "ci": [
+    0.0009538891014591285,
+    0.003053849412003812
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c07 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0005321974604622914,
+   "unit": "patient",
+   "ci": [
+    -0.00045564264870597004,
+    0.0015217868469647622
+   ],
+   "n_boot": 250,
+   "p_exact": 0.376
+  },
+  "MIMIC-IV | all | c08 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0029015002702970083,
+   "unit": "patient",
+   "ci": [
+    0.0019271356896473867,
+    0.0038553840819037072
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c09 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.0004541504165190095,
+   "unit": "patient",
+   "ci": [
+    -0.0016197066529864506,
+    0.0008513052153014513
+   ],
+   "n_boot": 250,
+   "p_exact": 0.472
+  },
+  "MIMIC-IV | all | c10 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.003101630838394579,
+   "unit": "patient",
+   "ci": [
+    0.0020002866633885676,
+    0.0041769783848057416
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c11 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0017192331469540283,
+   "unit": "patient",
+   "ci": [
+    0.0006609359268573959,
+    0.0027728942406449364
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c12 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0031938057048151633,
+   "unit": "patient",
+   "ci": [
+    0.0022078880961146066,
+    0.00446320755195896
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c13 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0035522566689196364,
+   "unit": "patient",
+   "ci": [
+    0.0025120463386009363,
+    0.004594596532601668
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c14 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.002590756065827778,
+   "unit": "patient",
+   "ci": [
+    0.0014777296774443106,
+    0.003656529264689366
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c15 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0027573943680709867,
+   "unit": "patient",
+   "ci": [
+    0.0016803675826361692,
+    0.003745151390218988
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c16 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.002228134043662585,
+   "unit": "patient",
+   "ci": [
+    0.001271598211477587,
+    0.0032187575585646594
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c17 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0021499821062115343,
+   "unit": "patient",
+   "ci": [
+    0.0011578489281524496,
+    0.0030927314874325765
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c18 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0014750926528618313,
+   "unit": "patient",
+   "ci": [
+    0.0004941961741658887,
+    0.0025711812457697753
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c19 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.003289887457802491,
+   "unit": "patient",
+   "ci": [
+    0.002156057739487289,
+    0.004328372942417148
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c20 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.002824141350997474,
+   "unit": "patient",
+   "ci": [
+    0.0018427738735993756,
+    0.0037943922538133477
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c21 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0004312113901891272,
+   "unit": "patient",
+   "ci": [
+    -0.000627549455212159,
+    0.0014091523272702485
+   ],
+   "n_boot": 250,
+   "p_exact": 0.432
+  },
+  "MIMIC-IV | all | c22 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.003451626363893475,
+   "unit": "patient",
+   "ci": [
+    0.0026141641433328373,
+    0.004581191724160069
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c23 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0006607014325489269,
+   "unit": "patient",
+   "ci": [
+    -0.00043748947199159126,
+    0.0017524937404461492
+   ],
+   "n_boot": 250,
+   "p_exact": 0.192
+  },
+  "MIMIC-IV | all | c24 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.0016275858581872675,
+   "unit": "patient",
+   "ci": [
+    0.0006665457911563431,
+    0.0026663616569909732
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | other patients' AUROC, strict base minus pooled": {
+   "d": 0.002171693114472387,
+   "min": -0.0002605045742513079,
+   "max": 0.0041445984830326505,
+   "n_groups": 25,
+   "unit": "group, then patient",
+   "ci": [
+    0.0015899184304460439,
+    0.002706596477422676
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "MIMIC-IV | all | c00 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.002054394354268463,
+   "unit": "patient",
+   "ci": [
+    0.0009128431819289833,
+    0.0031837264943596053
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c01 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.0041445984830326505,
+   "unit": "patient",
+   "ci": [
+    0.002610634954645293,
+    0.005545039811292277
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c02 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.0034751072809807715,
+   "unit": "patient",
+   "ci": [
+    0.0022169394299040293,
+    0.0046455336559842655
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c03 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.0014687835146852308,
+   "unit": "patient",
+   "ci": [
+    0.00033738152989841913,
+    0.0027204366916628643
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c04 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.0015557036576526,
+   "unit": "patient",
+   "ci": [
+    0.00022452770846153694,
+    0.002648861056422525
+   ],
+   "n_boot": 250,
+   "p_exact": 0.032
+  },
+  "MIMIC-IV | all | c05 | other patients' AUROC, strict base minus pooled": {
+   "d": -0.0002605045742513079,
+   "unit": "patient",
+   "ci": [
+    -0.001833320972061103,
+    0.001501717089704478
+   ],
+   "n_boot": 250,
+   "p_exact": 0.8
+  },
+  "MIMIC-IV | all | c06 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.002310333429025757,
+   "unit": "patient",
+   "ci": [
+    0.0010164890048304472,
+    0.003532297963927549
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c07 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.0002401296072800374,
+   "unit": "patient",
+   "ci": [
+    -0.0010290610320461144,
+    0.0015278036683789753
+   ],
+   "n_boot": 250,
+   "p_exact": 0.672
+  },
+  "MIMIC-IV | all | c08 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.0023767565960406043,
+   "unit": "patient",
+   "ci": [
+    0.0013063603631254324,
+    0.0036324268440003243
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c09 | other patients' AUROC, strict base minus pooled": {
+   "d": 7.626106846510734e-05,
+   "unit": "patient",
+   "ci": [
+    -0.0012687903907886672,
+    0.0016386571814837423
+   ],
+   "n_boot": 250,
+   "p_exact": 0.832
+  },
+  "MIMIC-IV | all | c10 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.0037157929122964006,
+   "unit": "patient",
+   "ci": [
+    0.002371201434169109,
+    0.0049395631461559356
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c11 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.002287163822356867,
+   "unit": "patient",
+   "ci": [
+    0.0011584070587141412,
+    0.0035031106777886163
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c12 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.0033155239236383935,
+   "unit": "patient",
+   "ci": [
+    0.0021858552775709354,
+    0.004482054388834391
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c13 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.002928239941038191,
+   "unit": "patient",
+   "ci": [
+    0.0015569333615781528,
+    0.004270558167165602
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c14 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.0026853955441030384,
+   "unit": "patient",
+   "ci": [
+    0.00124380266952967,
+    0.00414154429125559
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c15 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.00324287789551266,
+   "unit": "patient",
+   "ci": [
+    0.0020918013121504512,
+    0.00434173610084191
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c16 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.0025644051778841805,
+   "unit": "patient",
+   "ci": [
+    0.0013674987565614556,
+    0.0037475155036493534
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c17 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.0029869643238702817,
+   "unit": "patient",
+   "ci": [
+    0.0018912945296921677,
+    0.00409364980038431
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c18 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.000688589077337487,
+   "unit": "patient",
+   "ci": [
+    -0.0006205044486190479,
+    0.0017825464076147825
+   ],
+   "n_boot": 250,
+   "p_exact": 0.32
+  },
+  "MIMIC-IV | all | c19 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.003019855981035787,
+   "unit": "patient",
+   "ci": [
+    0.0017201778622868713,
+    0.00423425922224728
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c20 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.0025930938784494892,
+   "unit": "patient",
+   "ci": [
+    0.0015160752988958776,
+    0.0038597554069023025
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c21 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.000647413221780894,
+   "unit": "patient",
+   "ci": [
+    -0.00028076805178842796,
+    0.0017235810049668872
+   ],
+   "n_boot": 250,
+   "p_exact": 0.256
+  },
+  "MIMIC-IV | all | c22 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.0036804094765371387,
+   "unit": "patient",
+   "ci": [
+    0.0024885499614818933,
+    0.004934207567221911
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c23 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.001608562067838067,
+   "unit": "patient",
+   "ci": [
+    0.0005691703782937911,
+    0.0028639454397353077
+   ],
+   "n_boot": 250,
+   "p_exact": 0.008
+  },
+  "MIMIC-IV | all | c24 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.0008864772009508822,
+   "unit": "patient",
+   "ci": [
+    -0.0003774344472587926,
+    0.0022179466766758292
+   ],
+   "n_boot": 250,
+   "p_exact": 0.144
+  },
+  "eICU | all | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.002235371570971689,
+   "min": -0.007901303181815736,
+   "max": 0.00021167605209445237,
+   "n_groups": 10,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0030717595302530115,
+    -0.0014900175823468322
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | all | bedsize_100_-_249 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.002160480979944849,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0030217027924839637,
+    -0.0013887251529735765
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | all | bedsize_250_-_499 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.0025078216699896405,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.004151430285137906,
+    -0.0010535482463325172
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | all | bedsize_<100 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 0.00021167605209445237,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.000835364748885641,
+    0.0011995604650543398
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.73
+  },
+  "eICU | all | bedsize_>=_500 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.002161691998713744,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.004436552060177953,
+    1.4091225781138302e-05
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.052
+  },
+  "eICU | all | region_Midwest | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.00048175461455387164,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0029938337823334224,
+    0.0019224795568008371
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.708
+  },
+  "eICU | all | region_Northeast | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.0019335121549055219,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.002931428789131501,
+    -0.0011319152159029206
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | all | region_South | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.002232779640998032,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.003808465744217611,
+    -0.0007949766798699383
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.004
+  },
+  "eICU | all | region_West | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.0016220895032131866,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.003619682897649076,
+    0.0001914958457435195
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.078
+  },
+  "eICU | all | teaching_f | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.007901303181815736,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.01179881582514591,
+    -0.003437218027614442
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.004
+  },
+  "eICU | all | teaching_t | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.0015639580176767625,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.003041597367190766,
+    -0.00014367767663180583
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.034
+  },
+  "eICU | all | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": -0.0018734234809614156,
+   "min": -0.01456713457487809,
+   "max": 0.0021602355824823873,
+   "n_groups": 10,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.002799987971965655,
+    -0.0009177075131319496
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | all | bedsize_100_-_249 | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": 0.00045228323233148515,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0007943869688757524,
+    0.0017243744967160946
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.452
+  },
+  "eICU | all | bedsize_250_-_499 | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": 0.00018734034916356723,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.000742123362798879,
+    0.0011528186105891891
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.626
+  },
+  "eICU | all | bedsize_<100 | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": -0.0005498202128306762,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0018584426109382343,
+    0.0007697149204708195
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.44
+  },
+  "eICU | all | bedsize_>=_500 | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": -0.01456713457487809,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.017737988988142297,
+    -0.011416152228808724
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | all | region_Midwest | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": 0.0020920985516098187,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0011961968767608357,
+    0.005157017327870537
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.212
+  },
+  "eICU | all | region_Northeast | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": -0.0023104227644897835,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.003219175531703198,
+    -0.0014126638740330363
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | all | region_South | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": -8.974192921044437e-05,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.002935665176824198,
+    0.002612241159687559
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.942
+  },
+  "eICU | all | region_West | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": -0.0011565098424787628,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.004225240387698814,
+    0.002071831313504039
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.464
+  },
+  "eICU | all | teaching_f | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": 0.0021602355824823873,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0055033463597968365,
+    0.0098449841301989
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.554
+  },
+  "eICU | all | teaching_t | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": -0.004952563201313653,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.007121792658490267,
+    -0.0029703530406112563
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | all | other patients' AUROC, strict base minus pooled": {
+   "d": -0.0022272860758181393,
+   "min": -0.007774303350108314,
+   "max": 0.00015186782035991886,
+   "n_groups": 10,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.003061257677649016,
+    -0.001556764670112571
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | all | bedsize_100_-_249 | other patients' AUROC, strict base minus pooled": {
+   "d": -0.0020117741256911272,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.002980396989839567,
+    -0.0011785950416416413
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | all | bedsize_250_-_499 | other patients' AUROC, strict base minus pooled": {
+   "d": -0.002544625650796828,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0041515187753484355,
+    -0.0011013800577682623
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | all | bedsize_<100 | other patients' AUROC, strict base minus pooled": {
+   "d": 0.00015186782035991886,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0008800160155925875,
+    0.001094309780065955
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.806
+  },
+  "eICU | all | bedsize_>=_500 | other patients' AUROC, strict base minus pooled": {
+   "d": -0.0022328920940605603,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.004460886587313715,
+    -6.851146827193686e-05
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.042
+  },
+  "eICU | all | region_Midwest | other patients' AUROC, strict base minus pooled": {
+   "d": -0.00022502972118965126,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0027057665374112076,
+    0.0021490007895445637
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.896
+  },
+  "eICU | all | region_Northeast | other patients' AUROC, strict base minus pooled": {
+   "d": -0.0021607335871002276,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0032224305600681773,
+    -0.001282762854856573
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | all | region_South | other patients' AUROC, strict base minus pooled": {
+   "d": -0.0024545390571149386,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0041087868684651415,
+    -0.0009664604833085817
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | all | region_West | other patients' AUROC, strict base minus pooled": {
+   "d": -0.0017060325939153298,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0036590724943975778,
+    0.00019255710208067396
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.074
+  },
+  "eICU | all | teaching_f | other patients' AUROC, strict base minus pooled": {
+   "d": -0.007774303350108314,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.01139523939310509,
+    -0.0036572177633138778
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | all | teaching_t | other patients' AUROC, strict base minus pooled": {
+   "d": -0.0013147983985643357,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.003028104943063725,
+    0.00017351156574949825
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.1
+  },
+  "eICU | landmark | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.002414990834222023,
+   "min": -0.008712349810720332,
+   "max": 6.225822883306383e-05,
+   "n_groups": 10,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0033939917970199776,
+    -0.0015514162025071533
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | bedsize_100_-_249 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.0018026448290077157,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.003181836642927452,
+    -0.0005797393732392132
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | bedsize_250_-_499 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.0027910871457604847,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.004369158350004626,
+    -0.0013964544052500272
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | bedsize_<100 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": 6.225822883306383e-05,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.001072086616445662,
+    0.0010804233024120033
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.972
+  },
+  "eICU | landmark | bedsize_>=_500 | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.0024958052343505197,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.004953773485919634,
+    5.158878818838454e-05
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.058
+  },
+  "eICU | landmark | region_Midwest | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.0004931431131340499,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.002435913752653747,
+    0.0017640831780644894
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.678
+  },
+  "eICU | landmark | region_Northeast | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.0018615930610641485,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0030767058684325888,
+    -0.0007992285276266521
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | region_South | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.002568817028080095,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.004487889344502274,
+    -0.0008076299119037398
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.004
+  },
+  "eICU | landmark | region_West | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.002109114061781381,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.003480452068176167,
+    -0.0008929521989831842
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.004
+  },
+  "eICU | landmark | teaching_f | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.008712349810720332,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.01401455941874235,
+    -0.00413491759768036
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | teaching_t | other patients' AUROC, exact retrain, standard pipeline, minus pooled": {
+   "d": -0.0013776122871545689,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0031765043207788233,
+    0.00035293905433335816
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.128
+  },
+  "eICU | landmark | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": -0.0024265955318663454,
+   "min": -0.01611005530299962,
+   "max": 0.0012050235303356915,
+   "n_groups": 10,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0032674385251175568,
+    -0.0015424294542050868
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | bedsize_100_-_249 | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": 0.0012050235303356915,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.00039145081239975825,
+    0.002624050536950228
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.108
+  },
+  "eICU | landmark | bedsize_250_-_499 | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": 0.00027328499586409816,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0007878966208737125,
+    0.0013040170808231645
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.55
+  },
+  "eICU | landmark | bedsize_<100 | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": -5.0378379495804225e-05,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0016847725274495896,
+    0.001473706395907014
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.97
+  },
+  "eICU | landmark | bedsize_>=_500 | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": -0.01611005530299962,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.019730871450906295,
+    -0.01226999102492518
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | region_Midwest | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": 0.0009317387021020215,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0012350735534288199,
+    0.003055656003875964
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.408
+  },
+  "eICU | landmark | region_Northeast | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": -0.0026201676415992248,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.003573253324899194,
+    -0.0017340301330939832
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | region_South | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": -0.001371283369355732,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0031610462406458104,
+    0.00023819762403711058
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.12
+  },
+  "eICU | landmark | region_West | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": -0.001524280586876925,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.003306972319521197,
+    0.00019482246370209879
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.084
+  },
+  "eICU | landmark | teaching_f | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": 0.0010439218797697603,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.005063943204214527,
+    0.006773491350281708
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.716
+  },
+  "eICU | landmark | teaching_t | other patients' AUROC, federation without the consortium minus full federation": {
+   "d": -0.006043759146407719,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.008602322907008313,
+    -0.0036304248923507546
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | other patients' AUROC, strict base minus pooled": {
+   "d": -0.002438080145437334,
+   "min": -0.008459695605139187,
+   "max": -5.267417860110868e-06,
+   "n_groups": 10,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.003397607487678315,
+    -0.0016114048120321005
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | bedsize_100_-_249 | other patients' AUROC, strict base minus pooled": {
+   "d": -0.0015880306623619056,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0030463308307683338,
+    -0.00039016411955009083
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.008
+  },
+  "eICU | landmark | bedsize_250_-_499 | other patients' AUROC, strict base minus pooled": {
+   "d": -0.0028516292613018543,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.004448746998838503,
+    -0.0014773826813947845
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | bedsize_<100 | other patients' AUROC, strict base minus pooled": {
+   "d": -5.267417860110868e-06,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0011871317218878602,
+    0.0010864065646027366
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.968
+  },
+  "eICU | landmark | bedsize_>=_500 | other patients' AUROC, strict base minus pooled": {
+   "d": -0.0026087892915540958,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.005117212658364252,
+    -0.00011531789059624123
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.042
+  },
+  "eICU | landmark | region_Midwest | other patients' AUROC, strict base minus pooled": {
+   "d": -0.00015372603963896095,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.002162782678491123,
+    0.002058558966542971
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.92
+  },
+  "eICU | landmark | region_Northeast | other patients' AUROC, strict base minus pooled": {
+   "d": -0.0023662224626423236,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0036762467724090384,
+    -0.001301130579326393
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | region_South | other patients' AUROC, strict base minus pooled": {
+   "d": -0.0029189058940357984,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.004978895619823988,
+    -0.0010451003055179447
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | region_West | other patients' AUROC, strict base minus pooled": {
+   "d": -0.002138226419370448,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0035324767343737746,
+    -0.000943755502553447
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | teaching_f | other patients' AUROC, strict base minus pooled": {
+   "d": -0.008459695605139187,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.013380663026470408,
+    -0.004527417365417516
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002
+  },
+  "eICU | landmark | teaching_t | other patients' AUROC, strict base minus pooled": {
+   "d": -0.0012903084004686576,
+   "unit": "hospital cluster",
+   "ci": [
+    -0.0030781286687886775,
+    0.0004126822642037267
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.142
+  }
+ },
+ "n_boot": 1000,
+ "date": "2026-10-31 00:43:41"
+}

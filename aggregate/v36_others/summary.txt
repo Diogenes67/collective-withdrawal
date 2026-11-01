@@ -1,0 +1,18 @@
+v36 other patients' AUROC (2026-10-31 00:43; 1000 draws)
+  MIMIC-IV | all | other patients' AUROC, exact retrain, standard pipeline, minus pooled          +0.0020 [+0.0014, +0.0026] p 0.0020  per-group range -0.0006 to +0.0045 (n=25)
+  MIMIC-IV | all | other patients' AUROC, strict base minus pooled                                +0.0022 [+0.0016, +0.0027] p 0.0020  per-group range -0.0003 to +0.0041 (n=25)
+  eICU | all | other patients' AUROC, exact retrain, standard pipeline, minus pooled              -0.0022 [-0.0031, -0.0015] p 0.0020  per-group range -0.0079 to +0.0002 (n=10)
+  eICU | all | other patients' AUROC, federation without the consortium minus full federation     -0.0019 [-0.0028, -0.0009] p 0.0020  per-group range -0.0146 to +0.0022 (n=10)
+  eICU | all | other patients' AUROC, strict base minus pooled                                    -0.0022 [-0.0031, -0.0016] p 0.0020  per-group range -0.0078 to +0.0002 (n=10)
+  eICU | landmark | other patients' AUROC, exact retrain, standard pipeline, minus pooled         -0.0024 [-0.0034, -0.0016] p 0.0020  per-group range -0.0087 to +0.0001 (n=10)
+  eICU | landmark | other patients' AUROC, federation without the consortium minus full federation -0.0024 [-0.0033, -0.0015] p 0.0020  per-group range -0.0161 to +0.0012 (n=10)
+  eICU | landmark | other patients' AUROC, strict base minus pooled                               -0.0024 [-0.0034, -0.0016] p 0.0020  per-group range -0.0085 to -0.0000 (n=10)
+largest per-group changes:
+  MIMIC-IV all      exact retrain, standard pipeline, minus pooled               most negative c05 -0.0006
+  MIMIC-IV all      strict base minus pooled                                     most negative c05 -0.0003
+  eICU all      exact retrain, standard pipeline, minus pooled               most negative teaching_f -0.0079
+  eICU all      federation without the consortium minus full federation      most negative bedsize_>=_500 -0.0146
+  eICU all      strict base minus pooled                                     most negative teaching_f -0.0078
+  eICU landmark exact retrain, standard pipeline, minus pooled               most negative teaching_f -0.0087
+  eICU landmark federation without the consortium minus full federation      most negative bedsize_>=_500 -0.0161
+  eICU landmark strict base minus pooled                                     most negative teaching_f -0.0085

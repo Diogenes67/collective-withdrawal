@@ -1,0 +1,13 @@
+v42 complete-pipeline penalty (2026-11-01 14:58:05); 1000 draws
+MIMIC-IV, 25 clustered groups, seeds [0, 1, 2] (reference-retraining penalty, v5: -0.0106 [-0.0157, -0.0061])
+  complete-pipeline penalty: strict group minus strict random    -0.0096 [-0.0163, -0.0040] p 0.0020  lower in 19 of 25
+  strict random minus pooled                                     +0.0028 [-0.0001, +0.0059] p 0.0640  lower in 7 of 25
+  strict group minus pooled                                      -0.0068 [-0.0123, -0.0019] p 0.0060  lower in 16 of 25
+eICU, 10 consortia, stays in the unit at 24 hours, seeds [0, 1, 2] (reference-retraining penalty: -0.0049 [-0.0064, -0.0032])
+  complete-pipeline penalty: strict group minus strict random    -0.0066 [-0.0086, -0.0039] p 0.0020  lower in 9 of 10
+  strict random minus pooled                                     -0.0026 [-0.0039, -0.0013] p 0.0020  lower in 8 of 10
+  strict group minus pooled                                      -0.0092 [-0.0113, -0.0065] p 0.0020  lower in 10 of 10
+eICU, 10 consortia, all held-out stays, seeds [0, 1, 2] (reference-retraining penalty: -0.0066 [-0.0083, -0.0045])
+  complete-pipeline penalty: strict group minus strict random    -0.0082 [-0.0105, -0.0051] p 0.0020  lower in 9 of 10
+  strict random minus pooled                                     -0.0030 [-0.0039, -0.0022] p 0.0020  lower in 9 of 10
+  strict group minus pooled                                      -0.0112 [-0.0133, -0.0081] p 0.0020  lower in 10 of 10

@@ -1,0 +1,352 @@
+figure,panel,label,value,lo,hi,source
+1,A,"Clustered groups, MIMIC-IV (n=25) mean",-0.010641476068338172,-0.015734362275066464,-0.006127923590054331,two-stage bootstrap (v13)
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.017792055093642456,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.0009684526354842848,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.006739761815427792,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.009473988182504778,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.011266375508859006,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.02334298680017699,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.004105152531258538,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.003749306609769465,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",0.005999254998548587,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.0017250846381946516,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.01711119608794287,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.0033185929206018816,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.01871818579495721,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.012513401475611197,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.002099674286353048,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.02545889353939157,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.007890639302674085,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.008282988108937572,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.008017341985044113,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.010646479546500998,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.04516017916882753,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.009654418255071184,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.007050480049166863,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.016064664502164483,,,
+1,A,"Clustered groups, MIMIC-IV (n=25) point",-0.0008858843590048293,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=13) mean",3.031263840192776e-07,-0.002427017398199239,0.002706490382861119,bootstrap over groups; white group excluded
+1,A,"Census, insurance and era groups, MIMIC-IV (n=13) point",-0.008179773275863722,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=13) point",0.00019770063701263219,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=13) point",-0.0009384960518251662,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=13) point",-0.004931439890812683,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=13) point",-0.0033970012558734997,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=13) point",0.00039585496575234025,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=13) point",0.0054296962853086495,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=13) point",-0.0014127031666403278,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=13) point",-0.0026154701838292382,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=13) point",0.0006651044130361328,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=13) point",0.0040616246498599295,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=13) point",-0.0003108801446183307,,,
+1,A,"Census, insurance and era groups, MIMIC-IV (n=13) point",0.011039723661485534,,,
+1,A,"eICU hospital consortia, in the unit at 24 h (n=10) mean",-0.004899504649858522,-0.006386375165035621,-0.0032480255583932026,hospital-cluster bootstrap (v35)
+1,A,"eICU hospital consortia, in the unit at 24 h (n=10) point",0.0006225887743414,,,
+1,A,"eICU hospital consortia, in the unit at 24 h (n=10) point",-0.0061114888195207,,,
+1,A,"eICU hospital consortia, in the unit at 24 h (n=10) point",-0.0048321989451663,,,
+1,A,"eICU hospital consortia, in the unit at 24 h (n=10) point",-0.0020899351285064,,,
+1,A,"eICU hospital consortia, in the unit at 24 h (n=10) point",-0.004368750848301,,,
+1,A,"eICU hospital consortia, in the unit at 24 h (n=10) point",-0.0070688699160922,,,
+1,A,"eICU hospital consortia, in the unit at 24 h (n=10) point",-0.0015027773230468,,,
+1,A,"eICU hospital consortia, in the unit at 24 h (n=10) point",-0.0086844963568776,,,
+1,A,"eICU hospital consortia, in the unit at 24 h (n=10) point",-0.0075639180839691,,,
+1,A,"eICU hospital consortia, in the unit at 24 h (n=10) point",-0.0073951998514462,,,
+1,A,white group (excluded),-0.021314350261105175,,,v5
+1,B,"MIMIC-IV, retrained, minus random",1.0592018886678993,0.12264796056740526,2.209747873783719,v13b
+1,B,"MIMIC-IV, retrained, minus pooled",0.7837211597398545,-0.14341378247655015,1.9133733773585555,v13b
+1,B,"eICU, centralised, minus random",0.6888514527611811,0.17873893139803856,1.2333987001944193,v35 landmark
+1,B,"eICU, centralised, minus pooled",1.2551207902294081,0.6284888059482201,1.7932332584234179,v35 landmark
+1,B,"eICU, federation, minus random",0.3213010430487969,-0.1345414213837782,0.6980238627387346,v35 landmark
+1,B,"eICU, federation, minus pooled",0.6156255862848198,0.16270799016765355,1.0034365366685523,v35 landmark
+1,C,Region West centralised,-0.0086844963568776,,,v35
+1,C,Region West federated,-0.0041726551004345,,,v35
+1,C,Non-teaching centralised,-0.0075639180839691,,,v35
+1,C,Non-teaching federated,0.0111033927148854,,,v35
+1,C,Teaching centralised,-0.0073951998514462,,,v35
+1,C,Teaching federated,-0.0065211794843659,,,v35
+1,C,Region Northeast centralised,-0.0070688699160922,,,v35
+1,C,Region Northeast federated,-0.0080475722836833,,,v35
+1,C,Beds 250 to 499 centralised,-0.0061114888195207,,,v35
+1,C,Beds 250 to 499 federated,0.0019989655287949,,,v35
+1,C,Beds <100 centralised,-0.0048321989451663,,,v35
+1,C,Beds <100 federated,0.0018348427258531,,,v35
+1,C,Region Midwest centralised,-0.004368750848301,,,v35
+1,C,Region Midwest federated,0.0025300224339948,,,v35
+1,C,Beds ≥500 centralised,-0.0020899351285064,,,v35
+1,C,Beds ≥500 federated,-0.0111392250973845,,,v35
+1,C,Region South centralised,-0.0015027773230468,,,v35
+1,C,Region South federated,0.0012430935039309,,,v35
+1,C,Beds 100 to 249 centralised,0.0006225887743414,,,v35
+1,C,Beds 100 to 249 federated,0.0034817869415808,,,v35
+1,D,census or era asian,-0.0014127031666402,,,v34; ratio_equal 1.065
+1,D,census or era black,-0.0026154701838292,,,v34; ratio_equal 1.038
+1,D,census or era hispanic,0.0006651044130361,,,v34; ratio_equal 1.056
+1,D,census or era native,0.0040616246498599,,,v34; ratio_equal 1.030
+1,D,census or era other,-0.0003108801446183,,,v34; ratio_equal 1.017
+1,D,census or era unknown,0.0110397236614853,,,v34; ratio_equal 1.010
+1,D,census or era white,-0.021314350261105,,,v34; ratio_equal 1.018
+1,D,census or era non_english,0.0054296962853086,,,v34; ratio_equal 1.225
+1,D,census or era medicaid,0.0003958549657522,,,v34; ratio_equal 1.039
+1,D,census or era 2008_2010,-0.0081797732758636,,,v34; ratio_equal 1.070
+1,D,census or era 2011_2013,0.0001977006370124,,,v34; ratio_equal 1.034
+1,D,census or era 2014_2016,-0.0009384960518251,,,v34; ratio_equal 1.008
+1,D,census or era 2017_2019,-0.0049314398908126,,,v34; ratio_equal 1.105
+1,D,census or era 2020_2022,-0.0033970012558734,,,v34; ratio_equal 1.097
+1,D,clustered c00,-0.0177920550936423,,,v34; ratio_equal 1.373
+1,D,clustered c01,-0.0009684526354844,,,v34; ratio_equal 1.250
+1,D,clustered c02,-0.0067397618154277,,,v34; ratio_equal 1.763
+1,D,clustered c03,-0.0094739881825047,,,v34; ratio_equal 1.361
+1,D,clustered c04,-0.0112663755088589,,,v34; ratio_equal 1.270
+1,D,clustered c05,-0.0233429868001769,,,v34; ratio_equal 2.229
+1,D,clustered c06,-0.0041051525312585,,,v34; ratio_equal 1.263
+1,D,clustered c07,-0.0037493066097695,,,v34; ratio_equal 1.296
+1,D,clustered c08,0.0059992549985485,,,v34; ratio_equal 1.278
+1,D,clustered c09,-0.0017250846381945,,,v34; ratio_equal 1.212
+1,D,clustered c10,-0.0171111960879429,,,v34; ratio_equal 1.200
+1,D,clustered c11,-0.0033185929206017,,,v34; ratio_equal 1.311
+1,D,clustered c12,-0.0187181857949573,,,v34; ratio_equal 1.900
+1,D,clustered c13,-0.0125134014756111,,,v34; ratio_equal 1.326
+1,D,clustered c14,-0.0020996742863529,,,v34; ratio_equal 1.133
+1,D,clustered c15,-0.0254588935393913,,,v34; ratio_equal 1.797
+1,D,clustered c16,-0.007890639302674,,,v34; ratio_equal 1.282
+1,D,clustered c17,-0.0082829881089374,,,v34; ratio_equal 1.245
+1,D,clustered c18,-0.008017341985044,,,v34; ratio_equal 1.299
+1,D,clustered c19,-0.0106464795465009,,,v34; ratio_equal 1.275
+1,D,clustered c20,-0.0451601791688274,,,v34; ratio_equal 3.341
+1,D,clustered c21,-0.0096544182550709,,,v34; ratio_equal 1.365
+1,D,clustered c22,-0.0070504800491668,,,v34; ratio_equal 1.422
+1,D,clustered c23,-0.0160646645021644,,,v34; ratio_equal 1.476
+1,D,clustered c24,-0.0008858843590048,,,v34; ratio_equal 1.434
+1,D,consortium Midwest,-0.004368750848301,,,v34; ratio_equal 1.041
+1,D,consortium Northeast,-0.0070688699160922,,,v34; ratio_equal 1.104
+1,D,consortium South,-0.0015027773230468,,,v34; ratio_equal 1.023
+1,D,consortium West,-0.0086844963568776,,,v34; ratio_equal 1.050
+1,D,consortium f,-0.0075639180839691,,,v34; ratio_equal 1.030
+1,D,consortium t,-0.0073951998514462,,,v34; ratio_equal 1.042
+1,D,consortium 100_-_249,0.0006225887743414,,,v34; ratio_equal 1.031
+1,D,consortium 250_-_499,-0.0061114888195207,,,v34; ratio_equal 1.022
+1,D,consortium <100,-0.0048321989451663,,,v34; ratio_equal 1.067
+1,D,consortium >=_500,-0.0020899351285064,,,v34; ratio_equal 1.019
+1,D,"OLS slope, 48 groups",-0.0187501034457254,,,"np.polyfit; interval band 5,000 draws over groups"
+S1,S1,census or era asian,-0.0014127031666402,,,v34; ratio_v5 0.795
+S1,S1,census or era black,-0.0026154701838292,,,v34; ratio_v5 0.792
+S1,S1,census or era hispanic,0.0006651044130361,,,v34; ratio_v5 0.793
+S1,S1,census or era native,0.0040616246498599,,,v34; ratio_v5 0.722
+S1,S1,census or era other,-0.0003108801446183,,,v34; ratio_v5 0.774
+S1,S1,census or era unknown,0.0110397236614853,,,v34; ratio_v5 0.810
+S1,S1,census or era white,-0.021314350261105,,,v34; ratio_v5 0.808
+S1,S1,census or era non_english,0.0054296962853086,,,v34; ratio_v5 1.052
+S1,S1,census or era medicaid,0.0003958549657522,,,v34; ratio_v5 0.795
+S1,S1,census or era 2008_2010,-0.0081797732758636,,,v34; ratio_v5 0.852
+S1,S1,census or era 2011_2013,0.0001977006370124,,,v34; ratio_v5 0.812
+S1,S1,census or era 2014_2016,-0.0009384960518251,,,v34; ratio_v5 0.794
+S1,S1,census or era 2017_2019,-0.0049314398908126,,,v34; ratio_v5 0.856
+S1,S1,census or era 2020_2022,-0.0033970012558734,,,v34; ratio_v5 0.875
+S1,S1,clustered c00,-0.0177920550936423,,,v34; ratio_v5 1.206
+S1,S1,clustered c01,-0.0009684526354844,,,v34; ratio_v5 1.041
+S1,S1,clustered c02,-0.0067397618154277,,,v34; ratio_v5 1.529
+S1,S1,clustered c03,-0.0094739881825047,,,v34; ratio_v5 1.193
+S1,S1,clustered c04,-0.0112663755088589,,,v34; ratio_v5 1.130
+S1,S1,clustered c05,-0.0233429868001769,,,v34; ratio_v5 1.727
+S1,S1,clustered c06,-0.0041051525312585,,,v34; ratio_v5 1.124
+S1,S1,clustered c07,-0.0037493066097695,,,v34; ratio_v5 1.142
+S1,S1,clustered c08,0.0059992549985485,,,v34; ratio_v5 1.123
+S1,S1,clustered c09,-0.0017250846381945,,,v34; ratio_v5 1.025
+S1,S1,clustered c10,-0.0171111960879429,,,v34; ratio_v5 1.041
+S1,S1,clustered c11,-0.0033185929206017,,,v34; ratio_v5 1.119
+S1,S1,clustered c12,-0.0187181857949573,,,v34; ratio_v5 1.482
+S1,S1,clustered c13,-0.0125134014756111,,,v34; ratio_v5 1.150
+S1,S1,clustered c14,-0.0020996742863529,,,v34; ratio_v5 0.985
+S1,S1,clustered c15,-0.0254588935393913,,,v34; ratio_v5 1.509
+S1,S1,clustered c16,-0.007890639302674,,,v34; ratio_v5 1.120
+S1,S1,clustered c17,-0.0082829881089374,,,v34; ratio_v5 1.099
+S1,S1,clustered c18,-0.008017341985044,,,v34; ratio_v5 1.145
+S1,S1,clustered c19,-0.0106464795465009,,,v34; ratio_v5 1.099
+S1,S1,clustered c20,-0.0451601791688274,,,v34; ratio_v5 2.883
+S1,S1,clustered c21,-0.0096544182550709,,,v34; ratio_v5 1.174
+S1,S1,clustered c22,-0.0070504800491668,,,v34; ratio_v5 1.258
+S1,S1,clustered c23,-0.0160646645021644,,,v34; ratio_v5 1.264
+S1,S1,clustered c24,-0.0008858843590048,,,v34; ratio_v5 1.219
+S1,S1,consortium Midwest,-0.004368750848301,,,v34; ratio_v5 0.813
+S1,S1,consortium Northeast,-0.0070688699160922,,,v34; ratio_v5 0.929
+S1,S1,consortium South,-0.0015027773230468,,,v34; ratio_v5 0.828
+S1,S1,consortium West,-0.0086844963568776,,,v34; ratio_v5 0.821
+S1,S1,consortium f,-0.0075639180839691,,,v34; ratio_v5 0.830
+S1,S1,consortium t,-0.0073951998514462,,,v34; ratio_v5 0.842
+S1,S1,consortium 100_-_249,0.0006225887743414,,,v34; ratio_v5 0.815
+S1,S1,consortium 250_-_499,-0.0061114888195207,,,v34; ratio_v5 0.821
+S1,S1,consortium <100,-0.0048321989451663,,,v34; ratio_v5 0.840
+S1,S1,consortium >=_500,-0.0020899351285064,,,v34; ratio_v5 0.831
+S1,S1,"OLS slope, 48 groups",-0.02090254368009104,,,"np.polyfit; interval band 5,000 draws over groups"
+2,A,Base alone (state 3) mean,-0.006822359086812378,-0.012341968465803519,-0.0018658873901471356,v19
+2,A,Base alone (state 3) point community_trainfit/c00,-0.020325578791187238,,,
+2,A,Base alone (state 3) point community_trainfit/c01,0.002078003507672621,,,
+2,A,Base alone (state 3) point community_trainfit/c02,0.002248440127291196,,,
+2,A,Base alone (state 3) point community_trainfit/c03,0.0057097161135546415,,,
+2,A,Base alone (state 3) point community_trainfit/c04,-0.008982730877255873,,,
+2,A,Base alone (state 3) point community_trainfit/c05,-0.033060249928210994,,,
+2,A,Base alone (state 3) point community_trainfit/c06,-0.008545355956634637,,,
+2,A,Base alone (state 3) point community_trainfit/c07,-0.003302950234144175,,,
+2,A,Base alone (state 3) point community_trainfit/c08,0.00337555423498459,,,
+2,A,Base alone (state 3) point community_trainfit/c09,-0.0031923753974094637,,,
+2,A,Base alone (state 3) point community_trainfit/c10,-0.0017831622461448315,,,
+2,A,Base alone (state 3) point community_trainfit/c11,-0.0027754277119760307,,,
+2,A,Base alone (state 3) point community_trainfit/c12,-0.02231716774039605,,,
+2,A,Base alone (state 3) point community_trainfit/c13,-0.010034505781348235,,,
+2,A,Base alone (state 3) point community_trainfit/c14,0.00015847960895709612,,,
+2,A,Base alone (state 3) point community_trainfit/c15,-0.02527685637239485,,,
+2,A,Base alone (state 3) point community_trainfit/c16,-0.0063744391016660185,,,
+2,A,Base alone (state 3) point community_trainfit/c17,0.00920482386131638,,,
+2,A,Base alone (state 3) point community_trainfit/c18,0.0024656508088926055,,,
+2,A,Base alone (state 3) point community_trainfit/c19,-0.0016615688103078785,,,
+2,A,Base alone (state 3) point community_trainfit/c20,-0.029489897603286352,,,
+2,A,Base alone (state 3) point community_trainfit/c21,9.777317497361437e-05,,,
+2,A,Base alone (state 3) point community_trainfit/c22,0.008402151570553573,,,
+2,A,Base alone (state 3) point community_trainfit/c23,-0.018018684746625824,,,
+2,A,Base alone (state 3) point community_trainfit/c24,-0.009158608818167324,,,
+2,A,Base + control component mean,-0.005605270764036221,-0.011421826530022192,-0.0007646073462207943,v16 two-stage bootstrap
+2,A,Base + control component point community_trainfit/c00,-0.01506116850032202,,,
+2,A,Base + control component point community_trainfit/c01,0.005423450227306281,,,
+2,A,Base + control component point community_trainfit/c02,-0.003676991703839505,,,
+2,A,Base + control component point community_trainfit/c03,0.008925763028122202,,,
+2,A,Base + control component point community_trainfit/c04,-0.006142311532077227,,,
+2,A,Base + control component point community_trainfit/c05,-0.029430019401537444,,,
+2,A,Base + control component point community_trainfit/c06,-0.00656838570061713,,,
+2,A,Base + control component point community_trainfit/c07,-0.0009911785112498572,,,
+2,A,Base + control component point community_trainfit/c08,0.000625402556177157,,,
+2,A,Base + control component point community_trainfit/c09,-0.0006722232033476994,,,
+2,A,Base + control component point community_trainfit/c10,-0.0029929560812407274,,,
+2,A,Base + control component point community_trainfit/c11,-0.0026139731912494524,,,
+2,A,Base + control component point community_trainfit/c12,-0.025965859381213652,,,
+2,A,Base + control component point community_trainfit/c13,-0.006614563902702764,,,
+2,A,Base + control component point community_trainfit/c14,0.001393765113333223,,,
+2,A,Base + control component point community_trainfit/c15,-0.0230075905852285,,,
+2,A,Base + control component point community_trainfit/c16,-0.003283660438406666,,,
+2,A,Base + control component point community_trainfit/c17,0.011397663857851681,,,
+2,A,Base + control component point community_trainfit/c18,0.005281747001571024,,,
+2,A,Base + control component point community_trainfit/c19,-0.0013529114478401105,,,
+2,A,Base + control component point community_trainfit/c20,-0.028814963952696004,,,
+2,A,Base + control component point community_trainfit/c21,-0.002467816785086896,,,
+2,A,Base + control component point community_trainfit/c22,0.00567330833669033,,,
+2,A,Base + control component point community_trainfit/c23,-0.01243660342925057,,,
+2,A,Base + control component point community_trainfit/c24,-0.006759750107216966,,,
+2,A,Base + chosen component (state 2) mean,0.010504341930711392,0.005898544535247323,0.015460391655186572,v19
+2,A,Base + chosen component (state 2) point community_trainfit/c00,0.013188320595728054,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c01,0.015268200218214956,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c02,0.011817512263587293,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c03,0.015213914434226372,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c04,0.01651793221199027,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c05,-0.007532708651332931,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c06,0.01012173830598706,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c07,0.0021642904466041557,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c08,0.008688984318840798,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c09,0.010464167557199366,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c10,0.010185959635404473,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c11,0.010455792762197325,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c12,0.005654477849359796,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c13,0.028762011525269138,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c14,0.013389443891552721,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c15,-0.00017087371669410878,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c16,0.022186074402860467,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c17,0.020065781333135413,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c18,0.001727642717315847,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c19,0.023989984154122346,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c20,-0.007689922007666938,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c21,0.01633085131485812,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c22,0.017377250472560335,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c23,0.002521804176215947,,,
+2,A,Base + chosen component (state 2) point community_trainfit/c24,0.001909861155938386,,,
+2,A,Adapted pooled comparator mean,0.009750288540664696,0.004813297230499074,0.013697928560059466,v24
+2,A,Adapted pooled comparator point community_trainfit/c00,0.02302847064751834,,,
+2,A,Adapted pooled comparator point community_trainfit/c01,0.011168495104540765,,,
+2,A,Adapted pooled comparator point community_trainfit/c02,-0.022017481691471774,,,
+2,A,Adapted pooled comparator point community_trainfit/c03,0.006204629259407346,,,
+2,A,Adapted pooled comparator point community_trainfit/c04,0.018011206653002376,,,
+2,A,Adapted pooled comparator point community_trainfit/c05,0.004041188744628221,,,
+2,A,Adapted pooled comparator point community_trainfit/c06,0.006017789804858231,,,
+2,A,Adapted pooled comparator point community_trainfit/c07,0.011453328533942653,,,
+2,A,Adapted pooled comparator point community_trainfit/c08,0.005869066617830487,,,
+2,A,Adapted pooled comparator point community_trainfit/c09,0.010062400661035142,,,
+2,A,Adapted pooled comparator point community_trainfit/c10,0.010378733932284945,,,
+2,A,Adapted pooled comparator point community_trainfit/c11,0.007473309252659099,,,
+2,A,Adapted pooled comparator point community_trainfit/c12,0.0054854648850712895,,,
+2,A,Adapted pooled comparator point community_trainfit/c13,0.024999034127883957,,,
+2,A,Adapted pooled comparator point community_trainfit/c14,0.013234463832320298,,,
+2,A,Adapted pooled comparator point community_trainfit/c15,0.0070370127280163786,,,
+2,A,Adapted pooled comparator point community_trainfit/c16,0.01996863452779929,,,
+2,A,Adapted pooled comparator point community_trainfit/c17,0.017317287823106486,,,
+2,A,Adapted pooled comparator point community_trainfit/c18,0.0024564919886835845,,,
+2,A,Adapted pooled comparator point community_trainfit/c19,0.018581026589988614,,,
+2,A,Adapted pooled comparator point community_trainfit/c20,0.010378217056628336,,,
+2,A,Adapted pooled comparator point community_trainfit/c21,0.007868282600526189,,,
+2,A,Adapted pooled comparator point community_trainfit/c22,0.011556428372222705,,,
+2,A,Adapted pooled comparator point community_trainfit/c23,0.011891764281470096,,,
+2,A,Adapted pooled comparator point community_trainfit/c24,0.001291908549498899,,,
+2,B,Base alone (state 3) mean,-0.009178656337047952,-0.011196993089605308,-0.006574990759451101,v35 landmark
+2,B,Base alone (state 3) point bedsize_100_-_249,-0.0018371592210767451,,,
+2,B,Base alone (state 3) point bedsize_250_-_499,-0.008739257414408286,,,
+2,B,Base alone (state 3) point bedsize_<100,-0.005252739540726914,,,
+2,B,Base alone (state 3) point bedsize_>=_500,-0.006318787485315003,,,
+2,B,Base alone (state 3) point region_Midwest,-0.00710345092329423,,,
+2,B,Base alone (state 3) point region_Northeast,-0.02098782133504351,,,
+2,B,Base alone (state 3) point region_South,-0.005056255624588002,,,
+2,B,Base alone (state 3) point region_West,-0.01001312069007032,,,
+2,B,Base alone (state 3) point teaching_f,-0.01748652002018447,,,
+2,B,Base alone (state 3) point teaching_t,-0.008991451115772042,,,
+2,B,Base + control component mean,-0.009069778784652293,,,v35 landmark
+2,B,Base + control component point bedsize_100_-_249,-0.0014792210767469172,,,
+2,B,Base + control component point bedsize_250_-_499,-0.008124880172588611,,,
+2,B,Base + control component point bedsize_<100,-0.0047545194721010375,,,
+2,B,Base + control component point bedsize_>=_500,-0.007787445382221314,,,
+2,B,Base + control component point region_Midwest,-0.007668185268510985,,,
+2,B,Base + control component point region_Northeast,-0.020274671316337867,,,
+2,B,Base + control component point region_South,-0.0044616408509443595,,,
+2,B,Base + control component point region_West,-0.007965884304727,,,
+2,B,Base + control component point teaching_f,-0.018137631950187805,,,
+2,B,Base + control component point teaching_t,-0.010043708052157041,,,
+2,B,Base + chosen component (state 2) mean,-0.0004411910591671342,-0.0018223005423260953,0.0008044563863148038,v35 landmark
+2,B,Base + chosen component (state 2) point bedsize_100_-_249,-0.0008734936998855414,,,
+2,B,Base + chosen component (state 2) point bedsize_250_-_499,-0.00032620976823749537,,,
+2,B,Base + chosen component (state 2) point bedsize_<100,0.005193810285297862,,,
+2,B,Base + chosen component (state 2) point bedsize_>=_500,-0.003650518997712293,,,
+2,B,Base + chosen component (state 2) point region_Midwest,-0.00239323744617137,,,
+2,B,Base + chosen component (state 2) point region_Northeast,0.0010847562930897947,,,
+2,B,Base + chosen component (state 2) point region_South,-0.002137532924681773,,,
+2,B,Base + chosen component (state 2) point region_West,0.0022648319879952084,,,
+2,B,Base + chosen component (state 2) point teaching_f,-0.0010747840692686417,,,
+2,B,Base + chosen component (state 2) point teaching_t,-0.002499532252097092,,,
+2,B,Adapted pooled comparator mean,0.0012307034389384408,0.00014323494157046228,0.0023076746195304716,v35 landmark
+2,B,Adapted pooled comparator point bedsize_100_-_249,-0.001208705612829375,,,
+2,B,Adapted pooled comparator point bedsize_250_-_499,0.001574741591605866,,,
+2,B,Adapted pooled comparator point bedsize_<100,0.004237549185838851,,,
+2,B,Adapted pooled comparator point bedsize_>=_500,-0.00013483764092425687,,,
+2,B,Adapted pooled comparator point region_Midwest,-0.00043283351544665116,,,
+2,B,Adapted pooled comparator point region_Northeast,0.0037661669606114945,,,
+2,B,Adapted pooled comparator point region_South,-0.0004518346875652668,,,
+2,B,Adapted pooled comparator point region_West,0.0029896225829224576,,,
+2,B,Adapted pooled comparator point teaching_f,0.0010526304525191321,,,
+2,B,Adapted pooled comparator point teaching_t,0.0009145350726521562,,,
+2,D,community_trainfit/c00,-0.009840150051790286,,,v24 summary; equal-pool ratio 1.373; chosen mixed
+2,D,community_trainfit/c01,0.00409970511367419,,,v24 summary; equal-pool ratio 1.250; chosen residual
+2,D,community_trainfit/c02,0.03383499395505907,,,v24 summary; equal-pool ratio 1.763; chosen residual
+2,D,community_trainfit/c03,0.009009285174819026,,,v24 summary; equal-pool ratio 1.361; chosen mixed
+2,D,community_trainfit/c04,-0.0014932744410121046,,,v24 summary; equal-pool ratio 1.270; chosen residual
+2,D,community_trainfit/c05,-0.011573897395961152,,,v24 summary; equal-pool ratio 2.229; chosen finetuned
+2,D,community_trainfit/c06,0.004103948501128829,,,v24 summary; equal-pool ratio 1.263; chosen residual
+2,D,community_trainfit/c07,-0.009289038087338497,,,v24 summary; equal-pool ratio 1.296; chosen residual
+2,D,community_trainfit/c08,0.0028199177010103105,,,v24 summary; equal-pool ratio 1.278; chosen head
+2,D,community_trainfit/c09,0.000401766896164224,,,v24 summary; equal-pool ratio 1.212; chosen finetuned
+2,D,community_trainfit/c10,-0.00019277429688047132,,,v24 summary; equal-pool ratio 1.200; chosen residual
+2,D,community_trainfit/c11,0.002982483509538225,,,v24 summary; equal-pool ratio 1.311; chosen residual
+2,D,community_trainfit/c12,0.00016901296428850632,,,v24 summary; equal-pool ratio 1.900; chosen head
+2,D,community_trainfit/c13,0.003762977397385181,,,v24 summary; equal-pool ratio 1.326; chosen residual
+2,D,community_trainfit/c14,0.00015498005923242353,,,v24 summary; equal-pool ratio 1.133; chosen residual
+2,D,community_trainfit/c15,-0.007207886444710487,,,v24 summary; equal-pool ratio 1.797; chosen head
+2,D,community_trainfit/c16,0.002217439875061178,,,v24 summary; equal-pool ratio 1.282; chosen residual
+2,D,community_trainfit/c17,0.0027484935100289265,,,v24 summary; equal-pool ratio 1.245; chosen residual
+2,D,community_trainfit/c18,-0.0007288492713677375,,,v24 summary; equal-pool ratio 1.299; chosen residual
+2,D,community_trainfit/c19,0.005408957564133732,,,v24 summary; equal-pool ratio 1.275; chosen residual
+2,D,community_trainfit/c20,-0.018068139064295274,,,v24 summary; equal-pool ratio 3.341; chosen head
+2,D,community_trainfit/c21,0.00846256871433193,,,v24 summary; equal-pool ratio 1.365; chosen finetuned
+2,D,community_trainfit/c22,0.00582082210033763,,,v24 summary; equal-pool ratio 1.422; chosen head
+2,D,community_trainfit/c23,-0.00936996010525415,,,v24 summary; equal-pool ratio 1.476; chosen finetuned
+2,D,community_trainfit/c24,0.0006179526064394869,,,v24 summary; equal-pool ratio 1.434; chosen residual

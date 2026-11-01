@@ -1,0 +1,27 @@
+{
+ "source": "v19",
+ "contrast": "events unflagged per 1,000 at matched flag rate, chosen minus pooled",
+ "d": -1.56343412399292,
+ "ci": [
+  -2.731362557411194,
+  -0.7009442865848545
+ ],
+ "n_boot": 10000,
+ "n_groups": 25,
+ "p_exact": 0.0006,
+ "draws_crossing_zero": 3,
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "date": "2026-11-01 03:03:59",
+ "published": {
+  "d": -1.563433285068889,
+  "ci": [
+   -2.7524928785711618,
+   -0.6960196821764906
+  ],
+  "n_boot": 1000
+ }
+}

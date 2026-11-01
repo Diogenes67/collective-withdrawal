@@ -1,0 +1,729 @@
+{
+ "population_eicu": "landmark",
+ "n_boot": 5000,
+ "bootstrap": "over groups, RandomState(0), draws in draws.npz",
+ "results": [
+  {
+   "label": "all 49 groups",
+   "ratio": "ratio_equal",
+   "n_groups": 49,
+   "slope": -0.018083434255820856,
+   "ci": [
+    -0.022641090410458583,
+    -0.012377753701571697
+   ],
+   "p_exact": 0.0004,
+   "spearman": -0.5427551020408163,
+   "intercept": 0.016143530506692826,
+   "penalty_at_ratio_1": -0.0019399037491280302,
+   "penalty_at_ratio_2": -0.020023338004948887
+  },
+  {
+   "label": "48 groups, white group excluded (capped control)",
+   "ratio": "ratio_equal",
+   "n_groups": 48,
+   "slope": -0.018750103445725384,
+   "ci": [
+    -0.023764779262757846,
+    -0.014235215256224789
+   ],
+   "p_exact": 0.0004,
+   "spearman": -0.6133304385584021,
+   "intercept": 0.017392026421960492,
+   "penalty_at_ratio_1": -0.001358077023764892,
+   "penalty_at_ratio_2": -0.020108180469490276
+  },
+  {
+   "label": "all groups, family intercepts",
+   "ratio": "ratio_equal",
+   "n_groups": 49,
+   "slope": -0.01825127613033045,
+   "ci": [
+    -0.025190433411366,
+    -0.009909303229280363
+   ],
+   "p_exact": 0.0072,
+   "spearman": -0.5427551020408163,
+   "intercept": null,
+   "penalty_at_ratio_1": null,
+   "penalty_at_ratio_2": null
+  },
+  {
+   "label": "MIMIC-IV partitions only",
+   "ratio": "ratio_equal",
+   "n_groups": 39,
+   "slope": -0.018979196294708324,
+   "ci": [
+    -0.025645928267123683,
+    -0.01367430743158718
+   ],
+   "p_exact": 0.0004,
+   "spearman": -0.6147773279352227,
+   "intercept": 0.017895335112385436,
+   "penalty_at_ratio_1": -0.0010838611823228879,
+   "penalty_at_ratio_2": -0.020063057477031212
+  },
+  {
+   "label": "clustered groups only",
+   "ratio": "ratio_equal",
+   "n_groups": 25,
+   "slope": -0.018508475509795123,
+   "ci": [
+    -0.025784857492641453,
+    -0.011226691753829579
+   ],
+   "p_exact": 0.0024,
+   "spearman": -0.5146153846153847,
+   "intercept": 0.01682519873727203,
+   "penalty_at_ratio_1": -0.0016832767725230915,
+   "penalty_at_ratio_2": -0.020191752282318214
+  },
+  {
+   "label": "eICU consortia only",
+   "ratio": "ratio_equal",
+   "n_groups": 10,
+   "slope": -0.049499237315104874,
+   "ci": [
+    -0.2037710957668638,
+    -0.0002430420990534456
+   ],
+   "p_exact": 0.0488,
+   "spearman": -0.41818181818181815,
+   "intercept": 0.046728575256391035,
+   "penalty_at_ratio_1": -0.0027706620587138395,
+   "penalty_at_ratio_2": -0.052269899373818714
+  },
+  {
+   "label": "all 49 groups",
+   "ratio": "ratio_v5",
+   "n_groups": 49,
+   "slope": -0.020072352519824744,
+   "ci": [
+    -0.02448016099265508,
+    -0.012526916166255855
+   ],
+   "p_exact": 0.0004,
+   "spearman": -0.5940816326530612,
+   "intercept": 0.01430811399206018,
+   "penalty_at_ratio_1": -0.005764238527764564,
+   "penalty_at_ratio_2": -0.025836591047589307
+  },
+  {
+   "label": "48 groups, white group excluded (capped control)",
+   "ratio": "ratio_v5",
+   "n_groups": 48,
+   "slope": -0.020902543680091056,
+   "ci": [
+    -0.025652748819201564,
+    -0.01446457811703286
+   ],
+   "p_exact": 0.0004,
+   "spearman": -0.6529526704298741,
+   "intercept": 0.015592216636797026,
+   "penalty_at_ratio_1": -0.00531032704329403,
+   "penalty_at_ratio_2": -0.026212870723385087
+  },
+  {
+   "label": "all groups, family intercepts",
+   "ratio": "ratio_v5",
+   "n_groups": 49,
+   "slope": -0.02178583143704643,
+   "ci": [
+    -0.034581547857039756,
+    -0.010286925076199915
+   ],
+   "p_exact": 0.008,
+   "spearman": -0.5940816326530612,
+   "intercept": null,
+   "penalty_at_ratio_1": null,
+   "penalty_at_ratio_2": null
+  },
+  {
+   "label": "MIMIC-IV partitions only",
+   "ratio": "ratio_v5",
+   "n_groups": 39,
+   "slope": -0.021289879191771534,
+   "ci": [
+    -0.027681932811726796,
+    -0.013872075746246462
+   ],
+   "p_exact": 0.0004,
+   "spearman": -0.6354251012145749,
+   "intercept": 0.01627761327459729,
+   "penalty_at_ratio_1": -0.005012265917174245,
+   "penalty_at_ratio_2": -0.02630214510894578
+  },
+  {
+   "label": "clustered groups only",
+   "ratio": "ratio_v5",
+   "n_groups": 25,
+   "slope": -0.022395615635362784,
+   "ci": [
+    -0.03696434997904619,
+    -0.013884963752230101
+   ],
+   "p_exact": 0.0016,
+   "spearman": -0.5423076923076924,
+   "intercept": 0.017833716469168516,
+   "penalty_at_ratio_1": -0.004561899166194268,
+   "penalty_at_ratio_2": -0.026957514801557052
+  },
+  {
+   "label": "eICU consortia only",
+   "ratio": "ratio_v5",
+   "n_groups": 10,
+   "slope": -0.028868771416683748,
+   "ci": [
+    -0.20972222696661164,
+    0.061102730781304494
+   ],
+   "p_exact": 0.144,
+   "spearman": -0.34545454545454546,
+   "intercept": 0.019263293307625603,
+   "penalty_at_ratio_1": -0.009605478109058145,
+   "penalty_at_ratio_2": -0.038474249525741896
+  }
+ ],
+ "groups": [
+  {
+   "dataset": "MIMIC-IV",
+   "family": "race",
+   "group": "asian",
+   "family_group": "census or era",
+   "n_members": 7649,
+   "ratio_v5": 0.7945751631050139,
+   "ratio_equal": 1.064649897567641,
+   "penalty": -0.0014127031666402996,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "race",
+   "group": "black",
+   "family_group": "census or era",
+   "n_members": 22903,
+   "ratio_v5": 0.7918761714015654,
+   "ratio_equal": 1.0379079526917787,
+   "penalty": -0.002615470183829267,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "race",
+   "group": "hispanic",
+   "family_group": "census or era",
+   "n_members": 9632,
+   "ratio_v5": 0.7934069949024597,
+   "ratio_equal": 1.055665856785291,
+   "penalty": 0.0006651044130361116,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "race",
+   "group": "native",
+   "family_group": "census or era",
+   "n_members": 576,
+   "ratio_v5": 0.721903754546825,
+   "ratio_equal": 1.0298926517488507,
+   "penalty": 0.004061624649859966,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "race",
+   "group": "other",
+   "family_group": "census or era",
+   "n_members": 8304,
+   "ratio_v5": 0.7742306155617168,
+   "ratio_equal": 1.0169373812719753,
+   "penalty": -0.00031088014461833416,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "race",
+   "group": "unknown",
+   "family_group": "census or era",
+   "n_members": 9565,
+   "ratio_v5": 0.8096620197275579,
+   "ratio_equal": 1.0100673967109024,
+   "penalty": 0.011039723661485366,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "race",
+   "group": "white",
+   "family_group": "census or era",
+   "n_members": 113831,
+   "ratio_v5": 0.8082262840824989,
+   "ratio_equal": 1.0182465499192854,
+   "penalty": -0.021314350261105067,
+   "control_capped": true
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "language",
+   "group": "non_english",
+   "family_group": "census or era",
+   "n_members": 15940,
+   "ratio_v5": 1.051507710466371,
+   "ratio_equal": 1.225463295638246,
+   "penalty": 0.0054296962853086,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "insurance",
+   "group": "medicaid",
+   "family_group": "census or era",
+   "n_members": 31240,
+   "ratio_v5": 0.7954259929244692,
+   "ratio_equal": 1.0393056705317048,
+   "penalty": 0.00039585496575220017,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "anchor_year",
+   "group": "2008_2010",
+   "family_group": "census or era",
+   "n_members": 52066,
+   "ratio_v5": 0.8517710992113696,
+   "ratio_equal": 1.0702215361781298,
+   "penalty": -0.008179773275863667,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "anchor_year",
+   "group": "2011_2013",
+   "family_group": "census or era",
+   "n_members": 36566,
+   "ratio_v5": 0.8115550389858885,
+   "ratio_equal": 1.033976567350598,
+   "penalty": 0.0001977006370124999,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "anchor_year",
+   "group": "2014_2016",
+   "family_group": "census or era",
+   "n_members": 33033,
+   "ratio_v5": 0.7935749047311891,
+   "ratio_equal": 1.007779978039968,
+   "penalty": -0.0009384960518251995,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "anchor_year",
+   "group": "2017_2019",
+   "family_group": "census or era",
+   "n_members": 29062,
+   "ratio_v5": 0.8556047223969397,
+   "ratio_equal": 1.1052787933066657,
+   "penalty": -0.004931439890812633,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "anchor_year",
+   "group": "2020_2022",
+   "family_group": "census or era",
+   "n_members": 21733,
+   "ratio_v5": 0.8752553372744213,
+   "ratio_equal": 1.097388986374379,
+   "penalty": -0.003397001255873433,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c00",
+   "family_group": "clustered",
+   "n_members": 2624,
+   "ratio_v5": 1.2061272088254396,
+   "ratio_equal": 1.3728677464619137,
+   "penalty": -0.01779205509364233,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c01",
+   "family_group": "clustered",
+   "n_members": 17153,
+   "ratio_v5": 1.0409377430969835,
+   "ratio_equal": 1.2496335021350211,
+   "penalty": -0.0009684526354844334,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c02",
+   "family_group": "clustered",
+   "n_members": 4713,
+   "ratio_v5": 1.5293334452365028,
+   "ratio_equal": 1.7628600634331728,
+   "penalty": -0.006739761815427701,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c03",
+   "family_group": "clustered",
+   "n_members": 3132,
+   "ratio_v5": 1.192904314586023,
+   "ratio_equal": 1.3607950289795232,
+   "penalty": -0.009473988182504734,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c04",
+   "family_group": "clustered",
+   "n_members": 4459,
+   "ratio_v5": 1.1295120187430745,
+   "ratio_equal": 1.269830142180168,
+   "penalty": -0.011266375508858966,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c05",
+   "family_group": "clustered",
+   "n_members": 49915,
+   "ratio_v5": 1.7270775055347491,
+   "ratio_equal": 2.2288036807810325,
+   "penalty": -0.0233429868001769,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c06",
+   "family_group": "clustered",
+   "n_members": 5376,
+   "ratio_v5": 1.1236471558881382,
+   "ratio_equal": 1.2634613565606314,
+   "penalty": -0.004105152531258567,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c07",
+   "family_group": "clustered",
+   "n_members": 3456,
+   "ratio_v5": 1.142110218969541,
+   "ratio_equal": 1.2962237336516111,
+   "penalty": -0.0037493066097695335,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c08",
+   "family_group": "clustered",
+   "n_members": 2694,
+   "ratio_v5": 1.1234350431578806,
+   "ratio_equal": 1.2776117870157369,
+   "penalty": 0.005999254998548521,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c09",
+   "family_group": "clustered",
+   "n_members": 17988,
+   "ratio_v5": 1.024882925536047,
+   "ratio_equal": 1.2119487549162988,
+   "penalty": -0.0017250846381945085,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c10",
+   "family_group": "clustered",
+   "n_members": 3727,
+   "ratio_v5": 1.0407956346493883,
+   "ratio_equal": 1.2000829322662223,
+   "penalty": -0.0171111960879429,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c11",
+   "family_group": "clustered",
+   "n_members": 5686,
+   "ratio_v5": 1.1186599583563048,
+   "ratio_equal": 1.310608714140144,
+   "penalty": -0.0033185929206017337,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c12",
+   "family_group": "clustered",
+   "n_members": 701,
+   "ratio_v5": 1.4815006372547324,
+   "ratio_equal": 1.9004328537466384,
+   "penalty": -0.01871818579495733,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c13",
+   "family_group": "clustered",
+   "n_members": 3106,
+   "ratio_v5": 1.1504262356341584,
+   "ratio_equal": 1.3264842589213943,
+   "penalty": -0.0125134014756111,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c14",
+   "family_group": "clustered",
+   "n_members": 6344,
+   "ratio_v5": 0.9853539164397032,
+   "ratio_equal": 1.1327493627258187,
+   "penalty": -0.0020996742863529667,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c15",
+   "family_group": "clustered",
+   "n_members": 7201,
+   "ratio_v5": 1.5089818943905795,
+   "ratio_equal": 1.796774636896,
+   "penalty": -0.025458893539391396,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c16",
+   "family_group": "clustered",
+   "n_members": 3522,
+   "ratio_v5": 1.1203439341183283,
+   "ratio_equal": 1.2817172868662643,
+   "penalty": -0.007890639302674033,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c17",
+   "family_group": "clustered",
+   "n_members": 3141,
+   "ratio_v5": 1.0987765533746392,
+   "ratio_equal": 1.245379099053513,
+   "penalty": -0.008282988108937466,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c18",
+   "family_group": "clustered",
+   "n_members": 2471,
+   "ratio_v5": 1.144571814998235,
+   "ratio_equal": 1.2992863693969383,
+   "penalty": -0.008017341985044033,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c19",
+   "family_group": "clustered",
+   "n_members": 5195,
+   "ratio_v5": 1.0988512292600698,
+   "ratio_equal": 1.274663381022385,
+   "penalty": -0.0106464795465009,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c20",
+   "family_group": "clustered",
+   "n_members": 3554,
+   "ratio_v5": 2.883435828782315,
+   "ratio_equal": 3.341346819623977,
+   "penalty": -0.0451601791688274,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c21",
+   "family_group": "clustered",
+   "n_members": 4428,
+   "ratio_v5": 1.173616816847035,
+   "ratio_equal": 1.3645136838315035,
+   "penalty": -0.0096544182550709,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c22",
+   "family_group": "clustered",
+   "n_members": 2359,
+   "ratio_v5": 1.2581673125241162,
+   "ratio_equal": 1.4218855154275067,
+   "penalty": -0.007050480049166874,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c23",
+   "family_group": "clustered",
+   "n_members": 4530,
+   "ratio_v5": 1.2640607255673242,
+   "ratio_equal": 1.4762720002226366,
+   "penalty": -0.0160646645021644,
+   "control_capped": false
+  },
+  {
+   "dataset": "MIMIC-IV",
+   "family": "community_trainfit",
+   "group": "c24",
+   "family_group": "clustered",
+   "n_members": 4985,
+   "ratio_v5": 1.2190615286167992,
+   "ratio_equal": 1.433899943425658,
+   "penalty": -0.0008858843590048662,
+   "control_capped": false
+  },
+  {
+   "dataset": "eICU",
+   "family": "region",
+   "group": "Midwest",
+   "family_group": "consortium",
+   "n_members": 33807,
+   "ratio_v5": 0.8129537165159808,
+   "ratio_equal": 1.041491304552281,
+   "penalty": -0.004368750848301,
+   "control_capped": false
+  },
+  {
+   "dataset": "eICU",
+   "family": "region",
+   "group": "Northeast",
+   "family_group": "consortium",
+   "n_members": 7356,
+   "ratio_v5": 0.9285131896404168,
+   "ratio_equal": 1.1035002911108274,
+   "penalty": -0.0070688699160922,
+   "control_capped": false
+  },
+  {
+   "dataset": "eICU",
+   "family": "region",
+   "group": "South",
+   "family_group": "consortium",
+   "n_members": 31944,
+   "ratio_v5": 0.8282204902644293,
+   "ratio_equal": 1.0231208526308777,
+   "penalty": -0.0015027773230468,
+   "control_capped": false
+  },
+  {
+   "dataset": "eICU",
+   "family": "region",
+   "group": "West",
+   "family_group": "consortium",
+   "n_members": 20146,
+   "ratio_v5": 0.821264171545288,
+   "ratio_equal": 1.0503318986891403,
+   "penalty": -0.0086844963568776,
+   "control_capped": false
+  },
+  {
+   "dataset": "eICU",
+   "family": "teaching",
+   "group": "f",
+   "family_group": "consortium",
+   "n_members": 74219,
+   "ratio_v5": 0.829760644627753,
+   "ratio_equal": 1.03035012136224,
+   "penalty": -0.0075639180839691,
+   "control_capped": false
+  },
+  {
+   "dataset": "eICU",
+   "family": "teaching",
+   "group": "t",
+   "family_group": "consortium",
+   "n_members": 26400,
+   "ratio_v5": 0.8417668433744045,
+   "ratio_equal": 1.0420201446365207,
+   "penalty": -0.0073951998514462,
+   "control_capped": false
+  },
+  {
+   "dataset": "eICU",
+   "family": "bedsize",
+   "group": "100_-_249",
+   "family_group": "consortium",
+   "n_members": 21462,
+   "ratio_v5": 0.8152854663711482,
+   "ratio_equal": 1.031414953822732,
+   "penalty": 0.0006225887743414,
+   "control_capped": false
+  },
+  {
+   "dataset": "eICU",
+   "family": "bedsize",
+   "group": "250_-_499",
+   "family_group": "consortium",
+   "n_members": 23240,
+   "ratio_v5": 0.8211491151005677,
+   "ratio_equal": 1.022128631132751,
+   "penalty": -0.0061114888195207,
+   "control_capped": false
+  },
+  {
+   "dataset": "eICU",
+   "family": "bedsize",
+   "group": "<100",
+   "family_group": "consortium",
+   "n_members": 6546,
+   "ratio_v5": 0.8402522792398589,
+   "ratio_equal": 1.0665332463951616,
+   "penalty": -0.0048321989451663,
+   "control_capped": false
+  },
+  {
+   "dataset": "eICU",
+   "family": "bedsize",
+   "group": ">=_500",
+   "family_group": "consortium",
+   "n_members": 38369,
+   "ratio_v5": 0.830708093102227,
+   "ratio_equal": 1.0191843925117343,
+   "penalty": -0.0020899351285064,
+   "control_capped": false
+  }
+ ],
+ "date": "2026-10-31 00:44:07"
+}

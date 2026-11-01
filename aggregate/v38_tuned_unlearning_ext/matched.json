@@ -1,0 +1,56 @@
+{
+ "results": {
+  "AUROC | neggrad removal-matched (forget gap closest to zero) minus exact group": {
+   "d": -0.006520404907825124,
+   "ci": [
+    -0.011438448024680765,
+    -0.0014107832950689073
+   ],
+   "lower_in": 16,
+   "n_groups": 25,
+   "n_boot": 5000,
+   "p_exact": 0.0096,
+   "n_boot_valid": 5000,
+   "draws_file": "matched_draws.npz"
+  },
+  "AUROC | neggrad best with forget gap <= 0 minus exact group": {
+   "d": -0.02147068721091026,
+   "ci": [
+    -0.032412565748489115,
+    -0.011623100545844499
+   ],
+   "lower_in": 20,
+   "n_groups": 25,
+   "n_boot": 5000,
+   "p_exact": 0.0004,
+   "n_boot_valid": 5000,
+   "draws_file": "matched_draws.npz"
+  },
+  "AUROC | fu_community removal-matched (forget gap closest to zero) minus exact group": {
+   "d": -0.004740506772108479,
+   "ci": [
+    -0.010444364239594483,
+    0.0009700411252005592
+   ],
+   "lower_in": 16,
+   "n_groups": 25,
+   "n_boot": 5000,
+   "p_exact": 0.1024,
+   "n_boot_valid": 5000,
+   "draws_file": "matched_draws.npz"
+  },
+  "AUROC | fu_community best with forget gap <= 0 minus exact group": {
+   "d": -0.01721509968968574,
+   "ci": [
+    -0.0259238866138876,
+    -0.009917532117425673
+   ],
+   "lower_in": 22,
+   "n_groups": 25,
+   "n_boot": 5000,
+   "p_exact": 0.0004,
+   "n_boot_valid": 5000,
+   "draws_file": "matched_draws.npz"
+  }
+ }
+}

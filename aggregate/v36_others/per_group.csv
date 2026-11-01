@@ -1,0 +1,111 @@
+dataset,group,population,contrast,n_other_patients,value,n_other_stays
+MIMIC-IV,c00,all,"exact retrain, standard pipeline, minus pooled",42466.0,0.0020210503328300655,
+MIMIC-IV,c01,all,"exact retrain, standard pipeline, minus pooled",38775.0,0.003366359055495168,
+MIMIC-IV,c02,all,"exact retrain, standard pipeline, minus pooled",41937.0,0.004475023281997337,
+MIMIC-IV,c03,all,"exact retrain, standard pipeline, minus pooled",42315.0,0.00116390858119871,
+MIMIC-IV,c04,all,"exact retrain, standard pipeline, minus pooled",42057.0,0.0005945658310978486,
+MIMIC-IV,c05,all,"exact retrain, standard pipeline, minus pooled",30589.0,-0.0006021501433330542,
+MIMIC-IV,c06,all,"exact retrain, standard pipeline, minus pooled",41814.0,0.0020831336636419153,
+MIMIC-IV,c07,all,"exact retrain, standard pipeline, minus pooled",42248.0,0.0005321974604622914,
+MIMIC-IV,c08,all,"exact retrain, standard pipeline, minus pooled",42447.0,0.0029015002702970083,
+MIMIC-IV,c09,all,"exact retrain, standard pipeline, minus pooled",38630.0,-0.0004541504165190095,
+MIMIC-IV,c10,all,"exact retrain, standard pipeline, minus pooled",42172.0,0.003101630838394579,
+MIMIC-IV,c11,all,"exact retrain, standard pipeline, minus pooled",41702.0,0.0017192331469540283,
+MIMIC-IV,c12,all,"exact retrain, standard pipeline, minus pooled",42938.0,0.0031938057048151633,
+MIMIC-IV,c13,all,"exact retrain, standard pipeline, minus pooled",42295.0,0.0035522566689196364,
+MIMIC-IV,c14,all,"exact retrain, standard pipeline, minus pooled",41555.0,0.002590756065827778,
+MIMIC-IV,c15,all,"exact retrain, standard pipeline, minus pooled",41307.0,0.0027573943680709867,
+MIMIC-IV,c16,all,"exact retrain, standard pipeline, minus pooled",42261.0,0.002228134043662585,
+MIMIC-IV,c17,all,"exact retrain, standard pipeline, minus pooled",42345.0,0.0021499821062115343,
+MIMIC-IV,c18,all,"exact retrain, standard pipeline, minus pooled",42462.0,0.0014750926528618313,
+MIMIC-IV,c19,all,"exact retrain, standard pipeline, minus pooled",41741.0,0.003289887457802491,
+MIMIC-IV,c20,all,"exact retrain, standard pipeline, minus pooled",42239.0,0.002824141350997474,
+MIMIC-IV,c21,all,"exact retrain, standard pipeline, minus pooled",42051.0,0.0004312113901891272,
+MIMIC-IV,c22,all,"exact retrain, standard pipeline, minus pooled",42519.0,0.003451626363893475,
+MIMIC-IV,c23,all,"exact retrain, standard pipeline, minus pooled",42048.0,0.0006607014325489269,
+MIMIC-IV,c24,all,"exact retrain, standard pipeline, minus pooled",41847.0,0.0016275858581872675,
+MIMIC-IV,c00,all,strict base minus pooled,42466.0,0.002054394354268463,
+MIMIC-IV,c01,all,strict base minus pooled,38775.0,0.0041445984830326505,
+MIMIC-IV,c02,all,strict base minus pooled,41937.0,0.0034751072809807715,
+MIMIC-IV,c03,all,strict base minus pooled,42315.0,0.0014687835146852308,
+MIMIC-IV,c04,all,strict base minus pooled,42057.0,0.0015557036576526,
+MIMIC-IV,c05,all,strict base minus pooled,30589.0,-0.0002605045742513079,
+MIMIC-IV,c06,all,strict base minus pooled,41814.0,0.002310333429025757,
+MIMIC-IV,c07,all,strict base minus pooled,42248.0,0.0002401296072800374,
+MIMIC-IV,c08,all,strict base minus pooled,42447.0,0.0023767565960406043,
+MIMIC-IV,c09,all,strict base minus pooled,38630.0,7.626106846510734e-05,
+MIMIC-IV,c10,all,strict base minus pooled,42172.0,0.0037157929122964006,
+MIMIC-IV,c11,all,strict base minus pooled,41702.0,0.002287163822356867,
+MIMIC-IV,c12,all,strict base minus pooled,42938.0,0.0033155239236383935,
+MIMIC-IV,c13,all,strict base minus pooled,42295.0,0.002928239941038191,
+MIMIC-IV,c14,all,strict base minus pooled,41555.0,0.0026853955441030384,
+MIMIC-IV,c15,all,strict base minus pooled,41307.0,0.00324287789551266,
+MIMIC-IV,c16,all,strict base minus pooled,42261.0,0.0025644051778841805,
+MIMIC-IV,c17,all,strict base minus pooled,42345.0,0.0029869643238702817,
+MIMIC-IV,c18,all,strict base minus pooled,42462.0,0.000688589077337487,
+MIMIC-IV,c19,all,strict base minus pooled,41741.0,0.003019855981035787,
+MIMIC-IV,c20,all,strict base minus pooled,42239.0,0.0025930938784494892,
+MIMIC-IV,c21,all,strict base minus pooled,42051.0,0.000647413221780894,
+MIMIC-IV,c22,all,strict base minus pooled,42519.0,0.0036804094765371387,
+MIMIC-IV,c23,all,strict base minus pooled,42048.0,0.001608562067838067,
+MIMIC-IV,c24,all,strict base minus pooled,41847.0,0.0008864772009508822,
+eICU,bedsize_100_-_249,all,"exact retrain, standard pipeline, minus pooled",,-0.002160480979944849,31697.0
+eICU,bedsize_250_-_499,all,"exact retrain, standard pipeline, minus pooled",,-0.0025078216699896405,30894.0
+eICU,bedsize_<100,all,"exact retrain, standard pipeline, minus pooled",,0.00021167605209445237,37399.0
+eICU,bedsize_>=_500,all,"exact retrain, standard pipeline, minus pooled",,-0.002161691998713744,24797.0
+eICU,region_Midwest,all,"exact retrain, standard pipeline, minus pooled",,-0.00048175461455387164,26894.0
+eICU,region_Northeast,all,"exact retrain, standard pipeline, minus pooled",,-0.0019335121549055219,36923.0
+eICU,region_South,all,"exact retrain, standard pipeline, minus pooled",,-0.002232779640998032,28019.0
+eICU,region_West,all,"exact retrain, standard pipeline, minus pooled",,-0.0016220895032131866,30665.0
+eICU,teaching_f,all,"exact retrain, standard pipeline, minus pooled",,-0.007901303181815736,10367.0
+eICU,teaching_t,all,"exact retrain, standard pipeline, minus pooled",,-0.0015639580176767625,29544.0
+eICU,bedsize_100_-_249,all,federation without the consortium minus full federation,,0.00045228323233148515,31697.0
+eICU,bedsize_250_-_499,all,federation without the consortium minus full federation,,0.00018734034916356723,30894.0
+eICU,bedsize_<100,all,federation without the consortium minus full federation,,-0.0005498202128306762,37399.0
+eICU,bedsize_>=_500,all,federation without the consortium minus full federation,,-0.01456713457487809,24797.0
+eICU,region_Midwest,all,federation without the consortium minus full federation,,0.0020920985516098187,26894.0
+eICU,region_Northeast,all,federation without the consortium minus full federation,,-0.0023104227644897835,36923.0
+eICU,region_South,all,federation without the consortium minus full federation,,-8.974192921044437e-05,28019.0
+eICU,region_West,all,federation without the consortium minus full federation,,-0.0011565098424787628,30665.0
+eICU,teaching_f,all,federation without the consortium minus full federation,,0.0021602355824823873,10367.0
+eICU,teaching_t,all,federation without the consortium minus full federation,,-0.004952563201313653,29544.0
+eICU,bedsize_100_-_249,all,strict base minus pooled,,-0.0020117741256911272,31697.0
+eICU,bedsize_250_-_499,all,strict base minus pooled,,-0.002544625650796828,30894.0
+eICU,bedsize_<100,all,strict base minus pooled,,0.00015186782035991886,37399.0
+eICU,bedsize_>=_500,all,strict base minus pooled,,-0.0022328920940605603,24797.0
+eICU,region_Midwest,all,strict base minus pooled,,-0.00022502972118965126,26894.0
+eICU,region_Northeast,all,strict base minus pooled,,-0.0021607335871002276,36923.0
+eICU,region_South,all,strict base minus pooled,,-0.0024545390571149386,28019.0
+eICU,region_West,all,strict base minus pooled,,-0.0017060325939153298,30665.0
+eICU,teaching_f,all,strict base minus pooled,,-0.007774303350108314,10367.0
+eICU,teaching_t,all,strict base minus pooled,,-0.0013147983985643357,29544.0
+eICU,bedsize_100_-_249,landmark,"exact retrain, standard pipeline, minus pooled",,-0.0018026448290077157,21124.0
+eICU,bedsize_250_-_499,landmark,"exact retrain, standard pipeline, minus pooled",,-0.0027910871457604847,20357.0
+eICU,bedsize_<100,landmark,"exact retrain, standard pipeline, minus pooled",,6.225822883306383e-05,24993.0
+eICU,bedsize_>=_500,landmark,"exact retrain, standard pipeline, minus pooled",,-0.0024958052343505197,15685.0
+eICU,region_Midwest,landmark,"exact retrain, standard pipeline, minus pooled",,-0.0004931431131340499,17452.0
+eICU,region_Northeast,landmark,"exact retrain, standard pipeline, minus pooled",,-0.0018615930610641485,24285.0
+eICU,region_South,landmark,"exact retrain, standard pipeline, minus pooled",,-0.002568817028080095,17738.0
+eICU,region_West,landmark,"exact retrain, standard pipeline, minus pooled",,-0.002109114061781381,21306.0
+eICU,teaching_f,landmark,"exact retrain, standard pipeline, minus pooled",,-0.008712349810720332,7343.0
+eICU,teaching_t,landmark,"exact retrain, standard pipeline, minus pooled",,-0.0013776122871545689,19006.0
+eICU,bedsize_100_-_249,landmark,federation without the consortium minus full federation,,0.0012050235303356915,21124.0
+eICU,bedsize_250_-_499,landmark,federation without the consortium minus full federation,,0.00027328499586409816,20357.0
+eICU,bedsize_<100,landmark,federation without the consortium minus full federation,,-5.0378379495804225e-05,24993.0
+eICU,bedsize_>=_500,landmark,federation without the consortium minus full federation,,-0.01611005530299962,15685.0
+eICU,region_Midwest,landmark,federation without the consortium minus full federation,,0.0009317387021020215,17452.0
+eICU,region_Northeast,landmark,federation without the consortium minus full federation,,-0.0026201676415992248,24285.0
+eICU,region_South,landmark,federation without the consortium minus full federation,,-0.001371283369355732,17738.0
+eICU,region_West,landmark,federation without the consortium minus full federation,,-0.001524280586876925,21306.0
+eICU,teaching_f,landmark,federation without the consortium minus full federation,,0.0010439218797697603,7343.0
+eICU,teaching_t,landmark,federation without the consortium minus full federation,,-0.006043759146407719,19006.0
+eICU,bedsize_100_-_249,landmark,strict base minus pooled,,-0.0015880306623619056,21124.0
+eICU,bedsize_250_-_499,landmark,strict base minus pooled,,-0.0028516292613018543,20357.0
+eICU,bedsize_<100,landmark,strict base minus pooled,,-5.267417860110868e-06,24993.0
+eICU,bedsize_>=_500,landmark,strict base minus pooled,,-0.0026087892915540958,15685.0
+eICU,region_Midwest,landmark,strict base minus pooled,,-0.00015372603963896095,17452.0
+eICU,region_Northeast,landmark,strict base minus pooled,,-0.0023662224626423236,24285.0
+eICU,region_South,landmark,strict base minus pooled,,-0.0029189058940357984,17738.0
+eICU,region_West,landmark,strict base minus pooled,,-0.002138226419370448,21306.0
+eICU,teaching_f,landmark,strict base minus pooled,,-0.008459695605139187,7343.0
+eICU,teaching_t,landmark,strict base minus pooled,,-0.0012903084004686576,19006.0

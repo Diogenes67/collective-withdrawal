@@ -1,0 +1,27 @@
+{
+ "source": "v33",
+ "contrast": "common base + chosen component minus single-exclusion confined system",
+ "d": -0.009804652952214983,
+ "ci": [
+  -0.018423017213166085,
+  -0.003337518376490177
+ ],
+ "n_boot": 10000,
+ "n_groups": 15,
+ "p_exact": 0.001,
+ "draws_crossing_zero": 5,
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "date": "2026-11-01 03:01:42",
+ "published": {
+  "d": -0.009804652952214983,
+  "ci": [
+   -0.018125631563674482,
+   -0.0035486909931541173
+  ],
+  "n_boot": 1000
+ }
+}

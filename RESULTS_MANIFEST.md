@@ -1,6 +1,6 @@
 # Results manifest
 
-Each manuscript number is re-derived from the files below. Checksums are the first 16 hexadecimal characters of SHA-256 of the result file on the analysis machine, computed on 18 October 2026 for the rows up to v15 and on 23 October 2026 for the rows from v16. Result files are not in this repository; they are aggregate files produced by the scripts named.
+Each manuscript number is re-derived from the files below. Checksums are the first 16 hexadecimal characters of SHA-256 of the result file on the analysis machine, computed on 18 October 2026 for the rows up to v15 on 23 October 2026 for the rows from v16, and on 1 November 2026 for the rows from v34. Rows marked pending were produced in Google Colab and are checksummed once copied to the analysis machine. Result files are not in this repository; they are aggregate files produced by the scripts named.
 
 | Manuscript item | Result file | Script | SHA-256 (16) |
 |---|---|---|---|
@@ -20,7 +20,7 @@ Each manuscript number is re-derived from the files below. Checksums are the fir
 | Preprocessing sensitivity; Table S9 | `results/v15_preproc/summary.csv` | `exp_v15_preproc.py` | cd5748f40b743d52 |
 | Retained-only shared pipeline on MIMIC-IV: strict base, confinement, provenance; Table 2 state 3 (MIMIC-IV); Tables S10, S15 | `results/v16_strict/intervals.json`, `provenance.csv` | `exp_v16_strict.py` | acf4466122adac24, 6bfbc15a9555e809 |
 | Cross-fitted residual component for the pooled model (residual-only comparator); Table S13 | `results/v17_crossfit/intervals.json` | `exp_v17_crossfit.py` | 616c409748800e65 |
-| The 24-hour landmark; Note 8; Table S6; Table 1 row 5 | `results/v18_landmark/all_contrasts.json`, `landmark_contrasts.json` | `exp_v18_landmark.py` | e4b70ace6d1faa99, d775a7c2858d7daf |
+| The 24-hour landmark, v8 values (superseded in the main text by v35); Note 8; Table S6 | `results/v18_landmark/all_contrasts.json`, `landmark_contrasts.json` | `exp_v18_landmark.py` | e4b70ace6d1faa99, d775a7c2858d7daf |
 | Validation-chosen components on MIMIC-IV, state 2; Table 2; Table 3 row A2; Table S11; Figure 2 | `results/v19_protocol/intervals.json`, `summary.csv` | `exp_v19_protocol.py` | 41512fc6fa27347d, ed4044fdbb9e09de |
 | The protocol on the centralised eICU model, original pipeline (Table 2 uses the strict pipeline, v23 and v26) | `results/v20_eicu_protocol/intervals.json` | `exp_v20_eicu_protocol.py` | e3ec6a481dbec009 |
 | Group-aligned sharded training; Table 1 row 6; Note 6; Table S17 | `results/v21_sisa/intervals.json` | `exp_v21_sisa.py` | 3262fb74977921cb |
@@ -36,4 +36,16 @@ Each manuscript number is re-derived from the files below. Checksums are the fir
 | Fold-model provenance, 500 MIMIC-IV and 60 eICU fold models; Note 5; Table S22 | `results/v31_fold_manifests/manifest.csv` | `exp_v31_fold_manifests.py` | 1cf049c823f73ded |
 | Full pooled-adaptation comparator; Note 5; Tables S11, S12 and S23 | `results/v32_pooled_full_adapt/summary_mimic.csv`, `summary_eicu.csv`, `intervals.json` | `exp_v32_pooled_full_adapt.py` | e40e594fc1494be1, e910392ef84f3e21, 43304490cec78cb7 |
 | Several groups withdrawn at once, retained-only pipeline; Note 4; Tables S10 and S14 | `results/v33_strict_multigroup/summary.csv`, `intervals.json` | `exp_v33_strict_multigroup.py` | 15b6328e13c44333, 9f3374c41fd59718 |
-| Figures 1 and 2; every plotted value | `aggregate/figure_data_v5.csv` | `figures_v5.py` | ecd67d5e44290480 |
+| Isolation regression over 49 groups (slope, Spearman, family intercepts, equal-pool ratios); Figure 1D | `results/v34_isolation/regression.json`, `isolation.csv`, `figure_data.csv` | `exp_v34_isolation.py` | c5f275c5ecc05a1b, 60e004a318e5f8de, a63dffc0f8a914ed |
+| eICU 24-hour landmark, primary eICU cohort: penalty, confinement contrasts, lower in N of 10, deaths unflagged; Table 1 and Table 2 eICU rows; Figure 1C | `results/v35_landmark/contrasts_landmark.json`, `per_consortium.csv`, `table2_eicu_landmark.md` | `exp_v35_landmark.py` | 5bc24aeead48f232, 6eed6884b860f5e9, bb5bef8a1dfbe33c |
+| eICU all held-out stays, sensitivity cohort | `results/v35_landmark/contrasts_all.json` | `exp_v35_landmark.py` | 2e20116fa82939ea |
+| Other patients' AUROC under each single-group base; Table 3 row A1 | `results/v36_others/intervals.json`, `per_group.csv` | `exp_v36_others.py`, `boot_draws.py` | 19b152c7f93071f4, b57fd975043f33b5 |
+| Exact bootstrap p-values, Holm and Benjamini-Hochberg over 71 contrasts; Note 14; Table S19 | `results/v37_exact_p/multiplicity.csv`, `table_S19.md` | `exp_v37_exact_p.py` (FAMILY=v9; p from v40 where no draw of 1,000 crossed zero and the Holm decision depended on it) | 27c88e29e8c2509d, 15d85994bb81eb45 |
+| 10,000-draw bootstrap for the three contrasts whose Holm decision depended on resolution (v19 readmissions unflagged, confined minus pooled; v21 confined minus sharded ensemble; v33 fifteen random groups); reproduces the 1,000-draw intervals; Note 14 | `results/v40_boot10k/v19.json`, `v21.json`, `v33.json` | `exp_v40_boot10k.py` | 0d1714554753b200, e9190c7764d5440a, 06f4e5d531f36293 |
+| Withdrawal penalty under complete-pipeline retraining of both arms; Note 1; Table S28; Table 1 row 2; Results | `results/v42_strict_penalty/intervals.json` | `exp_v42_strict_penalty.py` | bc5f11594e763a70 |
+| Adjusted isolation regressions (48 matched groups; family, dataset, size and withdrawn-fraction terms); Note 16; Table S26 | `results/v43_isolation_adjusted/regressions.json` | `exp_v43_isolation_adjusted.py` | 1c34ef22759c6366 |
+| Tuned NegGrad+ and Fair Unlearning, first grid (superseded by the extended grid, Note 15) | `results/v38_tuned_unlearning/summary.csv`, `intervals.json` | `exp_v38_tuned_unlearning.py` (cluster membership from `export_cluster_assign.py`, run with OMP_NUM_THREADS=4 MKL_NUM_THREADS=4) | pending |
+| Tuned unlearning on the extended grid (forget weight down to 0, learning rate down to 1e-5, 1 epoch); main text Results; Table 1 row 3; Note 3; Tables S7 and S27 | `results/v38_tuned_unlearning_ext/intervals.json`, `frontier.csv`, `summary.csv` | `exp_v38_tuned_unlearning.py` (GRID=ext) | 3fe0aaa3502844aa, 023d6ff2f14f9f5d, dd5bec1801a510dd |
+| Removal-matched comparison with exact retraining (post hoc); Results; Note 3 | `results/v38_tuned_unlearning_ext/matched.json` | `exp_v38m_matched.py` | 5125508214b4061d |
+| Training randomness, ten seeds on eICU; Table S20 | `results/v29_seeds_equivalence_eicu_s10/seeds.csv`, `equivalence.csv` | `exp_v39_eicu_seed_preds.py`, `exp_v29_seeds_equivalence.py` | pending |
+| Figures 1A to 1C and 2 (Figure 1D is from v34); every plotted value | `aggregate/figure_data_v5.csv` | `figures_v5.py` | ecd67d5e44290480 |

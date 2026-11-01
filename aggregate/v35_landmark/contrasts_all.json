@@ -1,0 +1,315 @@
+{
+ "population": {
+  "population": "all",
+  "held_out_stays": 39911,
+  "of_total": 39911,
+  "mortality": 0.08739445265716218,
+  "hospitals": 206,
+  "n_boot": 1000,
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "chunk_rng": "RandomState((2000 if landmark else 1000) + chunk)"
+ },
+ "results": {
+  "AUROC | centralised penalty: retrained without the consortium minus random removal": {
+   "d": -0.006648107091467292,
+   "ci": [
+    -0.008341087845685095,
+    -0.0045364170024954015
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10,
+   "lower_in": 9
+  },
+  "AUROC | retrained without the consortium minus pooled model": {
+   "d": -0.009593993572014126,
+   "ci": [
+    -0.01143631356320281,
+    -0.007519001219818495
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10,
+   "lower_in": 10
+  },
+  "AUROC | random removal minus pooled model": {
+   "d": -0.0029458864805468332,
+   "ci": [
+    -0.0038753903083108324,
+    -0.0021273408143887675
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10,
+   "lower_in": 9
+  },
+  "AUROC | federated penalty: federation without the consortium minus federation after random removal": {
+   "d": -0.0031910633912126895,
+   "ci": [
+    -0.004900241462765164,
+    -0.0011633062576530784
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10,
+   "lower_in": 5
+  },
+  "AUROC | federation without the consortium minus full federation": {
+   "d": -0.0076045249083890095,
+   "ci": [
+    -0.009193379184922204,
+    -0.005570563278168984
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10,
+   "lower_in": 10
+  },
+  "AUROC | full federation minus pooled model": {
+   "d": -0.030919627219125632,
+   "ci": [
+    -0.03690702896173028,
+    -0.025380543581909873
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10,
+   "lower_in": 10
+  },
+  "AUROC | consortium component in the federation minus full federation": {
+   "d": 0.021980686415323226,
+   "ci": [
+    0.017863054081865636,
+    0.026014639165342895
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10,
+   "lower_in": 0
+  },
+  "AUROC | consortium component minus federation without the consortium (recovered)": {
+   "d": 0.029585211323712234,
+   "ci": [
+    0.024525859242114298,
+    0.034530793746167986
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10,
+   "lower_in": 0
+  },
+  "AUROC | control component minus federation without the consortium": {
+   "d": 0.017079079077706217,
+   "ci": [
+    0.013318368335243887,
+    0.021157261342504136
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10,
+   "lower_in": 0
+  },
+  "AUROC | consortium-specific gain in the federation (component minus control)": {
+   "d": 0.012506132246006019,
+   "ci": [
+    0.008373314993642121,
+    0.015890829847623925
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10,
+   "lower_in": 0
+  },
+  "AUROC | strict base minus pooled model (centralised)": {
+   "d": -0.011191303454842105,
+   "ci": [
+    -0.013347842672998537,
+    -0.008132012762429527
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10,
+   "lower_in": 10
+  },
+  "AUROC | confined (strict) minus pooled model": {
+   "d": 8.22495840332449e-05,
+   "ci": [
+    -0.0013354679205049467,
+    0.0011562392145357822
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.958,
+   "n_consortia": 10,
+   "lower_in": 6,
+   "tost": {
+    "margin": 0.005,
+    "ci90": [
+     -0.0010838971770555615,
+     0.0010143450746614518
+    ],
+    "smallest_margin": 0.0010838971770555615,
+    "equivalent": true,
+    "p_tost": 0.0
+   }
+  },
+  "AUROC | confined (strict) minus adapted pooled comparator": {
+   "d": -0.0012943596582094651,
+   "ci": [
+    -0.0020647031605109975,
+    -0.0005565917243790384
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10,
+   "lower_in": 9,
+   "tost": {
+    "margin": 0.005,
+    "ci90": [
+     -0.001959533201447616,
+     -0.0006774905148731576
+    ],
+    "smallest_margin": 0.001959533201447616,
+    "equivalent": true,
+    "p_tost": 0.0
+   }
+  },
+  "AUROC | adapted pooled comparator minus pooled model": {
+   "d": 0.00137660924224271,
+   "ci": [
+    0.0001450209125161875,
+    0.0023070600675661477
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.018,
+   "n_consortia": 10,
+   "lower_in": 2
+  },
+  "AUROC | control component minus strict base": {
+   "d": 0.00042421789162594425,
+   "ci": [
+    -1.0389102859933433e-05,
+    0.000929163845963031
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.056,
+   "n_consortia": 10,
+   "lower_in": 4
+  },
+  "AUROC | deletion: confined minus strict base": {
+   "d": 0.01127355303887535,
+   "ci": [
+    0.007664759587592599,
+    0.01372033598026293
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10,
+   "lower_in": 0
+  },
+  "deaths unflagged per 1,000 | retrained without the consortium minus pooled model": {
+   "d": 1.7608558559109695,
+   "ci": [
+    1.1400239336127593,
+    2.218376689996375
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10
+  },
+  "deaths unflagged per 1,000 | random removal minus pooled model": {
+   "d": 0.6866772921862747,
+   "ci": [
+    0.34330890155132215,
+    1.068085528027561
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10
+  },
+  "deaths unflagged per 1,000 | retrained without the consortium minus random removal": {
+   "d": 1.0741785637246948,
+   "ci": [
+    0.5269071492409609,
+    1.437417480242382
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10
+  },
+  "deaths unflagged per 1,000 | federation without the consortium minus full federation": {
+   "d": 0.7763239041244795,
+   "ci": [
+    0.40872101651093906,
+    1.1842911774408775
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10
+  },
+  "deaths unflagged per 1,000 | federation without the consortium minus federation after random removal": {
+   "d": 0.24679969025421328,
+   "ci": [
+    -0.08368711313826735,
+    0.6332290603139259
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.116,
+   "n_consortia": 10
+  },
+  "deaths unflagged per 1,000 | consortium component minus full federation": {
+   "d": -2.6933269950531065,
+   "ci": [
+    -3.597135825976734,
+    -1.925585201962139
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10
+  },
+  "deaths unflagged per 1,000 | consortium component minus control component": {
+   "d": -1.6057616367809715,
+   "ci": [
+    -2.325768462014476,
+    -0.9792407646938166
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10
+  },
+  "deaths unflagged per 1,000 | confined (strict) minus pooled model": {
+   "d": -0.18448528668481642,
+   "ci": [
+    -0.4173521139471489,
+    0.4658984691801471
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.85,
+   "n_consortia": 10
+  },
+  "deaths unflagged per 1,000 | confined (strict) minus adapted pooled comparator": {
+   "d": 0.055612864447265056,
+   "ci": [
+    -0.09378719278252481,
+    0.4844491512828306
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.224,
+   "n_consortia": 10
+  },
+  "deaths unflagged per 1,000 | strict base minus pooled model": {
+   "d": 2.283633313951875,
+   "ci": [
+    1.1980820453159713,
+    3.080367104176976
+   ],
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_consortia": 10
+  }
+ },
+ "date": "2026-10-30 23:29:45"
+}

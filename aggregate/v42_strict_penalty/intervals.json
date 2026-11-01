@@ -1,0 +1,173 @@
+{
+ "results": {
+  "mimic": {
+   "complete-pipeline penalty: strict group minus strict random": {
+    "d": -0.009629320924236535,
+    "ci": [
+     -0.016325668665480072,
+     -0.003975023740254901
+    ],
+    "n_groups": 25,
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "n_boot": 1000,
+    "lower_in": 19,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_mimic.npz"
+   },
+   "strict random minus pooled": {
+    "d": 0.002806961837424158,
+    "ci": [
+     -0.0001308586120746254,
+     0.005908877996155734
+    ],
+    "n_groups": 25,
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "n_boot": 1000,
+    "lower_in": 7,
+    "p_exact": 0.064,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_mimic.npz"
+   },
+   "strict group minus pooled": {
+    "d": -0.006822359086812378,
+    "ci": [
+     -0.012341968465803519,
+     -0.0018658873901471356
+    ],
+    "n_groups": 25,
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "n_boot": 1000,
+    "lower_in": 16,
+    "p_exact": 0.006,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_mimic.npz"
+   }
+  },
+  "eicu_landmark": {
+   "complete-pipeline penalty: strict group minus strict random": {
+    "d": -0.006627823508200947,
+    "ci": [
+     -0.008609218630278631,
+     -0.0038649451803784356
+    ],
+    "n_groups": 10,
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "n_boot": 1000,
+    "lower_in": 9,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_eicu_landmark.npz"
+   },
+   "strict random minus pooled": {
+    "d": -0.002550836840956916,
+    "ci": [
+     -0.0038830448168072624,
+     -0.0013251374356044654
+    ],
+    "n_groups": 10,
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "n_boot": 1000,
+    "lower_in": 8,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_eicu_landmark.npz"
+   },
+   "strict group minus pooled": {
+    "d": -0.009178660349157864,
+    "ci": [
+     -0.011277219270759661,
+     -0.0065276595673978335
+    ],
+    "n_groups": 10,
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "n_boot": 1000,
+    "lower_in": 10,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_eicu_landmark.npz"
+   }
+  },
+  "eicu_all": {
+   "complete-pipeline penalty: strict group minus strict random": {
+    "d": -0.008209326562000019,
+    "ci": [
+     -0.01049575224404671,
+     -0.005066403883370093
+    ],
+    "n_groups": 10,
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "n_boot": 1000,
+    "lower_in": 9,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_eicu_all.npz"
+   },
+   "strict random minus pooled": {
+    "d": -0.0029819769443501067,
+    "ci": [
+     -0.0039160546997598356,
+     -0.0021536578174285157
+    ],
+    "n_groups": 10,
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "n_boot": 1000,
+    "lower_in": 9,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_eicu_all.npz"
+   },
+   "strict group minus pooled": {
+    "d": -0.011191303506350125,
+    "ci": [
+     -0.01326643738486811,
+     -0.008127621390090229
+    ],
+    "n_groups": 10,
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "n_boot": 1000,
+    "lower_in": 10,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_eicu_all.npz"
+   }
+  }
+ },
+ "date": "2026-11-01 15:01:32"
+}

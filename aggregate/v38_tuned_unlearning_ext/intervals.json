@@ -1,0 +1,226 @@
+{
+ "results": {
+  "AUROC | exact group minus exact random": {
+   "d": -0.010641441779956993,
+   "ci": [
+    -0.0157342646486367,
+    -0.006127939979579598
+   ],
+   "n_groups": 25,
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_boot_valid": 1000,
+   "draws_file": "draws.npz"
+  },
+  "AUROC | exact group minus original": {
+   "d": -0.008345151493112062,
+   "ci": [
+    -0.013197896074912103,
+    -0.003907904550186703
+   ],
+   "n_groups": 25,
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_boot_valid": 1000,
+   "draws_file": "draws.npz"
+  },
+  "unflagged per 1,000 | exact group minus exact random": {
+   "d": 1.0592052936553955,
+   "ci": [
+    0.13766367733478546,
+    2.2058191299438477
+   ],
+   "n_groups": 25,
+   "n_boot": 1000,
+   "p_exact": 0.022,
+   "n_boot_valid": 1000,
+   "draws_file": "draws.npz"
+  },
+  "unflagged per 1,000 | exact group minus original": {
+   "d": 0.7837252616882324,
+   "ci": [
+    -0.21055160462856293,
+    1.6137415170669556
+   ],
+   "n_groups": 25,
+   "n_boot": 1000,
+   "p_exact": 0.18,
+   "n_boot_valid": 1000,
+   "draws_file": "draws.npz"
+  },
+  "AUROC | neggrad group minus neggrad random": {
+   "d": -0.0010083981674900366,
+   "ci": [
+    -0.00198835243995011,
+    0.00010330066859604396
+   ],
+   "n_groups": 25,
+   "n_boot": 1000,
+   "p_exact": 0.078,
+   "n_boot_valid": 1000,
+   "draws_file": "draws.npz"
+  },
+  "AUROC | neggrad group minus original": {
+   "d": 0.0016015171288912943,
+   "ci": [
+    0.0003016446253766747,
+    0.003066635013186945
+   ],
+   "n_groups": 25,
+   "n_boot": 1000,
+   "p_exact": 0.02,
+   "n_boot_valid": 1000,
+   "draws_file": "draws.npz"
+  },
+  "unflagged per 1,000 | neggrad group minus neggrad random": {
+   "d": 0.06458496302366257,
+   "ci": [
+    -0.13262595236301422,
+    0.2948090732097626
+   ],
+   "n_groups": 25,
+   "n_boot": 1000,
+   "p_exact": 0.496,
+   "n_boot_valid": 1000,
+   "draws_file": "draws.npz"
+  },
+  "unflagged per 1,000 | neggrad group minus original": {
+   "d": 0.16411514580249786,
+   "ci": [
+    -0.38468149304389954,
+    0.5562652349472046
+   ],
+   "n_groups": 25,
+   "n_boot": 1000,
+   "p_exact": 0.692,
+   "n_boot_valid": 1000,
+   "draws_file": "draws.npz"
+  },
+  "AUROC | fu_community group minus fu_community random": {
+   "d": 0.0016337306918411442,
+   "ci": [
+    -0.000769520638237848,
+    0.003852023124714406
+   ],
+   "n_groups": 25,
+   "n_boot": 1000,
+   "p_exact": 0.162,
+   "n_boot_valid": 1000,
+   "draws_file": "draws.npz"
+  },
+  "AUROC | fu_community group minus original": {
+   "d": 0.0015183689739294204,
+   "ci": [
+    0.0001337741127638621,
+    0.0030014594458491754
+   ],
+   "n_groups": 25,
+   "n_boot": 1000,
+   "p_exact": 0.028,
+   "n_boot_valid": 1000,
+   "draws_file": "draws.npz"
+  },
+  "unflagged per 1,000 | fu_community group minus fu_community random": {
+   "d": -0.45474547147750854,
+   "ci": [
+    -1.1804534196853638,
+    0.09708061069250107
+   ],
+   "n_groups": 25,
+   "n_boot": 1000,
+   "p_exact": 0.09,
+   "n_boot_valid": 1000,
+   "draws_file": "draws.npz"
+  },
+  "unflagged per 1,000 | fu_community group minus original": {
+   "d": 0.16072982549667358,
+   "ci": [
+    -0.37988921999931335,
+    0.5602833032608032
+   ],
+   "n_groups": 25,
+   "n_boot": 1000,
+   "p_exact": 0.686,
+   "n_boot_valid": 1000,
+   "draws_file": "draws.npz"
+  },
+  "AUROC | neggrad group minus exact group (tuned method against exact retraining)": {
+   "d": 0.009946668622003356,
+   "ci": [
+    0.005646919934201794,
+    0.014842387450521875
+   ],
+   "n_groups": 25,
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_boot_valid": 1000,
+   "draws_file": "draws.npz"
+  },
+  "AUROC | fu_community group minus exact group (tuned method against exact retraining)": {
+   "d": 0.009863520467041482,
+   "ci": [
+    0.005630014192590486,
+    0.014671731454558766
+   ],
+   "n_groups": 25,
+   "n_boot": 1000,
+   "p_exact": 0.002,
+   "n_boot_valid": 1000,
+   "draws_file": "draws.npz"
+  }
+ },
+ "lower_in": {
+  "exact": 24,
+  "neggrad": 20,
+  "fu_community": 11
+ },
+ "cfg": {
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "seeds_tune": [
+   0
+  ],
+  "grid": "ext",
+  "lrs": [
+   1e-05,
+   3e-05,
+   0.0001,
+   0.001
+  ],
+  "epochs": [
+   1,
+   2,
+   4
+  ],
+  "forget_weights": {
+   "neggrad": [
+    0.0,
+    0.02,
+    0.05,
+    0.2,
+    0.5
+   ],
+   "fu_community": [
+    0.0,
+    0.03,
+    0.1,
+    0.3,
+    1.0
+   ]
+  },
+  "batch": 2048,
+  "forget_cap": 0.6,
+  "fu_beta": 1.0,
+  "fu_gamma": 1.0,
+  "fu_min_group_in_batch": 5,
+  "select_val_frac": 0.2,
+  "min_patients": 300,
+  "attack_sample": 5000,
+  "n_boot": 1000,
+  "version": "v38.1"
+ },
+ "date": "2026-11-01 04:33:40"
+}
