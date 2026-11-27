@@ -16,6 +16,7 @@ pseudo-communities (full mode only). Outputs: ROOT/results/v5_partitions[_quick]
 """
 import os, sys, json, time, glob, zipfile, platform
 import numpy as np
+import boot_draws
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -277,20 +278,22 @@ def summary():
     tab = W[cols].round(4); tab.insert(0, "n_train_pat", S[S.model == "original"].set_index(["family", "group"])["n_train_patients"].astype(int))
     print(tab.to_string())
     print("\nchange in ECE"); print(WE[cols].round(4).to_string())
-    out = {}
+    out = {}; DRAWS = {}; LAST_DRAWS = []
     def paired(a, b):
         d = (a - b).dropna().values
         if len(d) < 2: return dict(d=float(d.mean()) if len(d) else float("nan"), ci=[float("nan")] * 2, frac_worse=float("nan"), n=int(len(d)))
-        r = np.random.RandomState(0); bs = [r.choice(d, len(d), True).mean() for _ in range(5000)]
-        return dict(d=float(d.mean()), ci=[float(np.percentile(bs, 2.5)), float(np.percentile(bs, 97.5))], frac_worse=float((d < 0).mean()), n=int(len(d)))
+        r = np.random.RandomState(0); bs = [r.choice(d, len(d), True).mean() for _ in range(5000)]; LAST_DRAWS.append(np.asarray(bs, float))   # v9 revision (M6)
+        return dict(d=float(d.mean()), ci=[float(np.percentile(bs, 2.5)), float(np.percentile(bs, 97.5))], frac_worse=float((d < 0).mean()), n=int(len(d)), p_exact=boot_draws.exact_p(bs))
     print("\npaired contrasts, group removal minus matched random removal (over groups)")
     for fam in W.index.get_level_values(0).unique():
         w = W.loc[fam]; we = WE.loc[fam]
         for a, b in [("exact_group", "exact_random_pat"), ("exact_group", "exact_random_adm"), ("finetune_group", "finetune_random_pat"), ("neggrad_group", "neggrad_random_pat")]:
             if a in w.columns and b in w.columns:
-                pa, pe = paired(w[a], w[b]), paired(we[a], we[b]); out[f"{fam}|{a}_vs_{b}"] = dict(auroc=pa, ece=pe)
+                LAST_DRAWS.clear(); pa, pe = paired(w[a], w[b]), paired(we[a], we[b]); out[f"{fam}|{a}_vs_{b}"] = dict(auroc=pa, ece=pe)
+                if len(LAST_DRAWS) == 2: DRAWS[f"{fam}|{a}_vs_{b}|auroc"], DRAWS[f"{fam}|{a}_vs_{b}|ece"] = LAST_DRAWS   # v9 revision (M6)
                 print(f"  {fam:20s} {a:15s} vs {b:18s} n={pa['n']:2d} dAUROC {pa['d']:+.4f} [{pa['ci'][0]:+.4f},{pa['ci'][1]:+.4f}] worse {100*pa['frac_worse']:.0f}%  dECE {pe['d']:+.4f}")
     with open(f"{OUT}/paired.json", "w") as f: json.dump(out, f, indent=1)
+    boot_draws.attach({}, DRAWS, f"{OUT}/draws_paired.npz")   # v9 revision (M6): draws kept
     cl = S[S.model.isin(["original", "exact_group"])].pivot_table(index=["family", "group"], columns="model", values=["sens_top_decile", "ppv_top_decile", "cal_slope", "nb_0.2"])
     print("\nclinical metrics on the group's held-out patients, original vs exact removal of the group (top-decile threshold)")
     print(cl.round(3).to_string())

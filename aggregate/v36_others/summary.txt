@@ -1,4 +1,4 @@
-v36 other patients' AUROC (2026-10-31 00:43; 1000 draws)
+v36 other patients' AUROC (2026-11-19 21:30; 1000 draws)
   MIMIC-IV | all | other patients' AUROC, exact retrain, standard pipeline, minus pooled          +0.0020 [+0.0014, +0.0026] p 0.0020  per-group range -0.0006 to +0.0045 (n=25)
   MIMIC-IV | all | other patients' AUROC, strict base minus pooled                                +0.0022 [+0.0016, +0.0027] p 0.0020  per-group range -0.0003 to +0.0041 (n=25)
   eICU | all | other patients' AUROC, exact retrain, standard pipeline, minus pooled              -0.0022 [-0.0031, -0.0015] p 0.0020  per-group range -0.0079 to +0.0002 (n=10)

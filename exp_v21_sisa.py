@@ -25,6 +25,7 @@ results/v5_partitions/{runs,ckpt}, results/v19_protocol/preds (optional). Writes
 """
 import os, json, time, glob, copy, gc
 import numpy as np
+import boot_draws
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -34,6 +35,7 @@ from sklearn.metrics import roc_auc_score
 QUICK = os.environ.get("QUICK", "0") == "1"
 ROOT = os.environ.get("ROOT", os.path.expanduser("~/mimic")); V5 = f"{ROOT}/results/v5_partitions"
 OUT = f"{ROOT}/results/v21_sisa" + ("_quick" if QUICK else ""); V19 = f"{ROOT}/results/v19_protocol"
+OUTW = OUT + os.environ.get("OUT_TAG", ""); os.makedirs(OUTW, exist_ok=True)   # summary outputs (OUT_TAG=_b10k for the 10,000-draw rerun); runs and preds are read from OUT
 for d in ["ckpt", "preds", "runs"]: os.makedirs(f"{OUT}/{d}", exist_ok=True)
 CFG = dict(seeds=[0] if QUICK else [0, 1, 2], lr=1e-3, batch=256, max_epochs=3 if QUICK else 50, patience=5, val_frac=0.2,
            min_patients=300, n_shards=25, n_boot=int(os.environ.get("NBOOT", 50 if QUICK else 1000)), version="v21.0")
@@ -174,7 +176,7 @@ for g in groups:
         save_json(path, rec)
 recs = [json.load(open(f)) for f in sorted(glob.glob(f"{OUT}/runs/*.json"))]
 rows = [dict(group=r["group"], seed=r["seed"], arm=a, **m) for r in recs for a, m in r["arms"].items()]
-S = pd.DataFrame(rows).groupby(["group", "arm"]).mean(numeric_only=True).reset_index(); S.to_csv(f"{OUT}/summary.csv", index=False)
+S = pd.DataFrame(rows).groupby(["group", "arm"]).mean(numeric_only=True).reset_index(); S.to_csv(f"{OUTW}/summary.csv", index=False)
 W = S.pivot_table(index="group", columns="arm", values="auroc"); show = [a for a in ARMS + CONF if a in W]
 print("\nAUROC on each group's held-out patients, seed means"); print(W[show].round(4).to_string())
 O = pd.DataFrame([dict(group=r["group"], seed=r["seed"], **r["others"]) for r in recs]).groupby("group").mean(numeric_only=True)
@@ -224,11 +226,12 @@ if names and DO_SUMMARY:
         for k, v in contrasts(st).items(): boots[k].append(v)
         if (b + 1) % 200 == 0: log(f"  bootstrap draw {b + 1}")
     res = {k: dict(d=float(pt[k]), ci=[float(np.nanpercentile(boots[k], 2.5)), float(np.nanpercentile(boots[k], 97.5))], n_groups=len(names), n_boot=CFG["n_boot"]) for k in pt}
+    res = boot_draws.attach(res, boots, f"{OUTW}/draws.npz")   # v9 revision (M6): draws kept, exact p-values
     lw = {k: int(sum((W.loc[g, a] - W.loc[g, b]) < 0 for g in names)) for k, (a, b) in pairs.items()}
     print(f"\n== {len(names)} clustered groups, two-stage bootstrap ({CFG['n_boot']} draws)")
     for k, v in res.items(): print(f"  {k:90s} {v['d']:+.4f} [{v['ci'][0]:+.4f}, {v['ci'][1]:+.4f}]" + (f"  lower in {lw[k]} of {len(names)}" if k in lw else ""))
     oth = dict(mean_abs_change_mean=float(O.mean_abs_change.mean()), max_abs_change_max=float(O.max_abs_change.max()),
                others_auroc_full_minus_minus_mean=float((O.auroc_sisa_full - O.auroc_sisa_minus).mean()))
     print("\nother patients:", {k: round(v, 5) for k, v in oth.items()})
-    save_json(f"{OUT}/intervals.json", dict(results=res, lower_in=lw, others=oth, full_test=full_test, confinement_arms=have_conf, date=time.strftime("%Y-%m-%d %H:%M:%S")))
+    save_json(f"{OUTW}/intervals.json", dict(results=res, lower_in=lw, others=oth, full_test=full_test, confinement_arms=have_conf, date=time.strftime("%Y-%m-%d %H:%M:%S")))
 log(f"done, results in {OUT}")

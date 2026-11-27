@@ -1,0 +1,10 @@
+v29 (2026-11-19 21:44; 1000 draws; MIMIC seeds [0, 1, 2])
+Training randomness (seed mean [evaluation 95%] | seeds, range | sd | combined 95%):
+  eICU, 10 consortia: Consortium withdrawal minus matched random removal ( −0.0066 [−0.0082, −0.0043] | n=10 −0.0076..−0.0049 | sd 0.0010 | [−0.0086, −0.0045]
+  eICU, 10 consortia: Consortium withdrawal minus pooled model             −0.0092 [−0.0110, −0.0070] | n=10 −0.0105..−0.0077 | sd 0.0010 | [−0.0113, −0.0072]
+  eICU, 10 consortia: Federation: consortium withdrawal minus random remov −0.0032 [−0.0049, −0.0010] | n=3 −0.0039..−0.0027 | sd 0.0006 | [−0.0052, −0.0011]
+  eICU, 10 consortia: Centralised model: confined (strict) minus adapted p −0.0011 [−0.0018, −0.0005] | n=10 −0.0019..+0.0000 | sd 0.0006 | [−0.0019, −0.0004]
+  eICU, 10 consortia: Centralised model: confined (strict) minus pooled mo +0.0002 [−0.0011, +0.0013] | n=10 −0.0012..+0.0014 | sd 0.0007 | [−0.0011, +0.0015]
+Equivalence at ±0.005 (90% interval, smallest margin, TOST p; then with the seed component):
+  eICU, 10 consortia: Centralised model: confined (strict) minus adapted p [−0.0017, −0.0006] 0.0017 p=0.0000 | [−0.0018, −0.0005] 0.0018 p=0.0000
+  eICU, 10 consortia: Centralised model: confined (strict) minus pooled mo [−0.0010, +0.0011] 0.0011 p=0.0000 | [−0.0009, +0.0013] 0.0013 p=0.0000

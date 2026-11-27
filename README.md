@@ -18,7 +18,7 @@ The groups in this study were hospitals and groups of patients built from United
 
 ## Data and code
 
-No patient data are included. MIMIC-IV v3.1 and eICU-CRD v2.0 are available to credentialed users through PhysioNet under their data use agreements. The scripts expect the raw PhysioNet csv.gz files under `~/mimic/hosp` and `~/mimic/eicu`, write derived cohorts to `~/mimic/derived` and results to `~/mimic/results`. All analyses were run locally; only aggregate results leave the analysis machine. `aggregate/figure_data_v5.csv` holds every value plotted in Figures 1 and 2, and `aggregate/v27_churn/`, `aggregate/v28_multiplicity/` `aggregate/v29_seeds_equivalence*/` `aggregate/v31_fold_manifests/` `aggregate/v32_pooled_full_adapt/` and `aggregate/v33_strict_multigroup/` the aggregate results behind Tables S14 and S18 to S23.
+No patient data are included. MIMIC-IV v3.1 and eICU-CRD v2.0 are available to credentialed users through PhysioNet under their data use agreements. The scripts expect the raw PhysioNet csv.gz files under `~/mimic/hosp` and `~/mimic/eicu`, write derived cohorts to `~/mimic/derived` and results to `~/mimic/results`. All analyses were run locally; only aggregate results leave the analysis machine. `aggregate/v9_figures/figure_data_v9.csv` holds every value plotted in Figures 1, 2 and S1, and the other folders in `aggregate/` hold copies of the smaller aggregate result files named in `RESULTS_MANIFEST.md`.
 
 ## Scripts behind the manuscript, in the order they were run
 
@@ -57,7 +57,23 @@ No patient data are included. MIMIC-IV v3.1 and eICU-CRD v2.0 are available to c
 | `exp_v31_fold_manifests.py` | Provenance of every cross-fitting fold model (v17, v20): both candidate half splits tested against the cached model, the resolved split's excluded patients written to a local manifest, aggregate gaps and checkpoint SHA-256 to `manifest.csv` (Note 5, Table S22) | `results/v31_fold_manifests` |
 | `exp_v32_pooled_full_adapt.py` | Full pooled-adaptation comparator: the pooled model with a component fitted on all of the group's training patients, type chosen on a held-back fifth, against the adapted cross-fitted comparator and the confined system (Note 5, Tables S11, S12 and S23); `PART`, `SEEDS` | `results/v32_pooled_full_adapt` |
 | `exp_v33_strict_multigroup.py` | Several groups withdrawn at once on the retained-only pipeline: one common base without 5, 10 or 15 most isolated or random groups, each group's component chosen by validation (Note 4, Tables S10 and S14); `SEEDS`, `SIZES`, `FAMILIES` | `results/v33_strict_multigroup` |
-| `figures_v5.py` | Figures 1 and 2 and `figure_data_v5.csv` | |
+| `figures_v5.py` | Figures 1 and 2 and `figure_data_v5.csv` of the October drafts (superseded by `figures_v9.py`) | |
+| `exp_v34_isolation.py` | Withdrawal penalty against feature-space isolation for all 49 groups, equal-pool isolation ratio (Figure 1D) | `results/v34_isolation` |
+| `exp_v35_landmark.py` | eICU contrasts among stays still in the unit at 24 hours, the primary eICU cohort, from cached predictions | `results/v35_landmark` |
+| `exp_v36_others.py` | Other patients' AUROC under each single-group base (Table 3 row A1) | `results/v36_others` |
+| `boot_draws.py` | Module used by the scripts above: keeps every bootstrap draw and adds exact percentile p-values | `draws*.npz` beside each script's results |
+| `exp_v37_exact_p.py` | Exact bootstrap p-values, Holm and Benjamini-Hochberg over 71 contrasts (Note 14, Table S19); `FAMILY=v9` | `results/v37_exact_p` |
+| `export_cluster_assign.py` | Writes the 25 clustered groups as fitted in v5, for v38 | `derived/cluster_assign_v5.csv` |
+| `exp_v38_tuned_unlearning.py` | NegGrad+ and Fair Unlearning tuned on retained validation data (Note 3, Tables S7 and S27); `GRID=ext`, `ONLY_GROUPS` | `results/v38_tuned_unlearning_ext` |
+| `exp_v38m_matched.py` | Tuned unlearning at exact retraining's level of removal, against exact retraining (post hoc) | `results/v38_tuned_unlearning_ext/matched.json` |
+| `exp_v39_eicu_seed_preds.py` | Prediction cache for eICU seeds 3 to 9, for the ten-seed check (Tables S20 and S21) | `results/v39_eicu_seed_core` |
+| `exp_v40_boot10k.py` | 10,000-draw bootstrap for the three contrasts whose Holm decision depended on resolution | `results/v40_boot10k` |
+| `exp_v41_baseline.py` | Baseline characteristics by dataset and split (Table S25) | `results/v41_baseline` |
+| `exp_v42_strict_penalty.py` | Withdrawal penalty with the whole pipeline refitted in both arms (Table S28) | `results/v42_strict_penalty` |
+| `exp_v43_isolation_adjusted.py` | Adjusted regressions of the penalty on the equal-pool isolation ratio (Note 16, Table S26) | `results/v43_isolation_adjusted` |
+| `exp_v44_participant_flow.py` | Participant flow and participants and outcome events by group and consortium (Tables S29 to S31) | `results/v44_participant_flow` |
+| `figures_v9.py` | Figures 1, 2 and S1 of the submitted manuscript and `figure_data_v9.csv` | `nejmai_build/v9_figures` (copy in `aggregate/v9_figures/`) |
+| `run_air_rerun.sh`, `run_three_seed_summaries.sh` | Drivers for the November 2026 rerun of every eICU analysis and the tuned-unlearning grid on the analysis machine, and for the three-seed summaries reported in the Appendix | `results/air_rerun.log`, `results/three_seed_summaries.log` |
 | `si_tables_v6.py` | Supplementary Tables S1 to S17 (Table S18 is built from `results/v27_churn/churn.json`, Table S19 by `exp_v28_multiplicity.py`) | |
 
 The residual component in v11.1, v13.1, v14.1 and v14b leaves the shared model's logit effectively unpenalised and lets a logit-only recalibration compete in cross-validation. Earlier versions (v11.0, v13.0, v14.0) penalised the logit and are superseded. Superseded scripts kept for provenance: `exp_v7_eicu_consortium.py` and `exp_v7_eicu_consortium_v71.py` (fixed-epoch eICU training; v7.0 capped one control), `exp_v2_sameheldout.py`, `exp_v3_verify.py`, `exp_v4_fairunlearn.py` and `figure1.py` (earlier analyses on groups fitted to all patients), and `figures_v4.py`, `si_tables_v4.py` and `aggregate/figure_data_v4.csv` (the 18 October figures and tables).

@@ -18,7 +18,7 @@ same stay count as the withdrawal, overlap with the consortium allowed; the esti
 Group-arm checkpoints (exact_group, finetune_group, neggrad_group) are reused from v7.0 when present; only the
 random-arm models retrain.
 
-Env: ROOT (default ~/mimic), QUICK=1, CTRL=whole|outside. Reads ROOT/derived/eicu_cohort.parquet and the originals in
+Env: ROOT (default ~/mimic), QUICK=1, CTRL=whole|outside, SEEDS (comma list, default 0,1,2; v9 revision, M6: seeds 3 to 9 extend the chain). Reads ROOT/derived/eicu_cohort.parquet and the originals in
 ROOT/results/model_cache_eicu (orig_s{seed}); writes ROOT/results/v7_eicu_consortium[_quick]/{runs,ckpt,...}.
 """
 import os, json, time, glob, zipfile, platform
@@ -36,7 +36,7 @@ ORIG_CACHE = f"{ROOT}/results/model_cache_eicu_es"
 CTRL = os.environ.get("CTRL", "whole"); assert CTRL in ("whole", "outside")
 OUT = f"{ROOT}/results/v7_eicu_consortium_es" + ("" if CTRL == "whole" else "_outside") + ("_quick" if QUICK else "")
 RUNS, CKPT = f"{OUT}/runs", f"{OUT}/ckpt"; os.makedirs(RUNS, exist_ok=True); os.makedirs(CKPT, exist_ok=True)
-CFG = dict(seeds=[0] if QUICK else [0, 1, 2], epochs=3 if QUICK else 30, patience=3, val_frac=0.1, unlearn_epochs=1 if QUICK else 2, lr=1e-3, unlearn_lr=1e-4,
+CFG = dict(seeds=[0] if QUICK else [int(x) for x in os.environ.get("SEEDS", "0,1,2").split(",")], epochs=3 if QUICK else 30, patience=3, val_frac=0.1, unlearn_epochs=1 if QUICK else 2, lr=1e-3, unlearn_lr=1e-4,
            neggrad_alpha=0.05, neggrad_cap=0.6, batch=2048, n_boot=30 if QUICK else 200, min_stays=800, fixed_cut=0.1,
            nb_thresholds=[0.05, 0.1, 0.15, 0.2, 0.3], version="v7.2", control=CTRL, early_stopping="validation log loss, best weights restored")
 DEVICE = "cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu")

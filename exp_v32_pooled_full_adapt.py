@@ -14,6 +14,7 @@ Writes results/v32_pooled_full_adapt/{runs, preds, summary_mimic.csv, summary_ei
 """
 import os, json, time, glob, copy, platform
 import numpy as np
+import boot_draws
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -268,6 +269,7 @@ if recs_m:
             for k, v in contrasts(st).items(): boots[k].append(v)
             if (b + 1) % 200 == 0: log(f"  MIMIC-IV {label}: draw {b + 1}")
         res = {k: dict(d=float(pt[k]), ci=[float(np.nanpercentile(boots[k], 2.5)), float(np.nanpercentile(boots[k], 97.5))], n_groups=len(subset), n_boot=CFG["n_boot"]) for k in pt}
+        res = boot_draws.attach(res, boots, f"{OUT}/draws_{label.replace(' ', '_')}.npz")   # v9 revision (M6): draws kept, exact p-values
         lw = {k: int(sum((W.loc[g_.replace("__", "/"), a] - W.loc[g_.replace("__", "/"), b]) < 0 for g_ in subset)) for k, (a, b) in pairs.items()}
         report(f"MIMIC-IV {label}, two-stage bootstrap", res, lw, len(subset)); return dict(results=res, lower_in=lw)
     if names:
@@ -314,6 +316,7 @@ if recs_e:
             for k, v in contrasts(stats(np.array(list(w)), w)).items(): boots[k].append(v)
             if (b + 1) % 200 == 0: log(f"  eICU {pop}: draw {b + 1}")
         res = {k: dict(d=float(pt[k]), ci=[float(np.nanpercentile(boots[k], 2.5)), float(np.nanpercentile(boots[k], 97.5))], n_boot=CFG["n_boot"]) for k in pt}
+        res = boot_draws.attach(res, boots, f"{OUT}/draws_{label.replace(' ', '_')}.npz")   # v9 revision (M6): draws kept, exact p-values
         lw = {k: int(sum((W.loc[c, a] - W.loc[c, b]) < 0 for c in keys)) for k, (a, b) in pairs.items()}
         report(f"eICU {label}, hospital-cluster bootstrap", res, lw, len(keys)); return dict(results=res, lower_in=lw)
     if keys: OUTJ["eicu_all"] = run_boot_e("all", "all held-out stays"); OUTJ["eicu_landmark"] = run_boot_e("landmark", "stays in the unit at 24 h")

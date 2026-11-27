@@ -2,7 +2,7 @@
 Figure 1: A, excess loss per group (clustered MIMIC-IV groups, census and era groups with the white group marked and excluded from
 the summary, eICU consortia among stays still in the unit at 24 hours); B, events unflagged at matched alert counts (eICU landmark);
 C, per-consortium centralised and federated excess loss (landmark); D, excess loss against the equal-pool isolation ratio, fit over
-the 48 groups with a matched control. Figure 2: A, MIMIC-IV permission states; B, eICU permission states (landmark); C, schematic;
+the 48 groups with a matched control. Figure 2: A, schematic; B, MIMIC-IV permission states; C, eICU permission states (landmark);
 D, confined minus adapted pooled comparator against the equal-pool ratio. Figure S1: Figure 1D with the isolation ratio of
 Supplementary Note 2. Writes Figure1_v9, Figure2_v9, FigureS1_v9 (.pdf, .png) and figure_data_v9.csv to OUT.
 Run: ROOT=~/mimic OUT=~/mimic/nejmai_build/v9_figures python3 figures_v9.py
@@ -45,7 +45,7 @@ white = (cen.family == "race") & (cen.group == "white"); cen_m = cen[~white]
 fig = plt.figure(figsize=(180 * MM, 150 * MM)); gs = GridSpec(2, 3, figure=fig, height_ratios=[1, 1.25], hspace=0.6, wspace=0.75)
 ax = fig.add_subplot(gs[0, :]); r = np.random.RandomState(3)
 blocks = [("Clustered groups,\nMIMIC-IV (n=25)", clu.d.values, iv(I13, "MIMIC communities | base_vs_random (structured minus random withdrawal)"), "two-stage bootstrap (v13)"),
-          (f"Census, insurance and era\ngroups, MIMIC-IV (n={len(cen_m)})", cen_m.d.values, gboot(cen_m.d.values), "bootstrap over groups; white group excluded"),
+          (f"Administrative groups,\nMIMIC-IV (n={len(cen_m)})", cen_m.d.values, gboot(cen_m.d.values), "bootstrap over groups; white group excluded"),
           ("eICU hospital consortia, in\nthe unit at 24 h (n=10)", PC.penalty_landmark.values, iv(L35, "AUROC | centralised penalty: retrained without the consortium minus random removal"), "hospital-cluster bootstrap (v35)")]
 for i, (lab, vals, (d, lo, hi), how) in enumerate(blocks):
     yv = 2 - i; ax.scatter(vals, yv + r.uniform(-0.18, 0.18, len(vals)), s=9, color=BLUE, alpha=0.55, linewidths=0, zorder=2)
@@ -53,7 +53,7 @@ for i, (lab, vals, (d, lo, hi), how) in enumerate(blocks):
     ax.text(1.01, yv - 0.32, f"{fmt(d)}\n({fmt(lo)} to {fmt(hi)})", va="center", ha="left", fontsize=6.5, color="#52514e", transform=mtrans.blended_transform_factory(ax.transAxes, ax.transData))
     lab = lab.replace("\n", " "); keep(1, "A", lab + " mean", d, lo, hi, how); [keep(1, "A", f"{lab} point", v) for v in vals]
 wv = float(cen[white].d.iloc[0]); ax.scatter([wv], [1], marker="x", s=22, color=INK, linewidths=0.9, zorder=3)
-ax.annotate("white group (control capped,\nexcluded from the summary)", xy=(wv, 1), xytext=(-0.036, 0.55), ha="center", va="center", fontsize=6.5, color="#52514e", arrowprops=dict(arrowstyle="-", lw=0.4, color=GREY))
+ax.annotate("white group (control capped,\nexcluded from the mean)", xy=(wv, 1), xytext=(-0.036, 0.55), ha="center", va="center", fontsize=6.5, color="#52514e", arrowprops=dict(arrowstyle="-", lw=0.4, color=GREY))
 keep(1, "A", "white group (excluded)", wv, source="v5")
 ax.axvline(0, color=GREY, lw=0.6, ls=(0, (2, 2))); ax.set_yticks([2, 1, 0]); ax.set_yticklabels([b[0] for b in blocks]); ax.set_ylim(-0.7, 2.5); ax.set_xlim(-0.048, 0.014)
 ax.set_xlabel("Change in the group's held-out AUROC, group withdrawal minus matched random removal (negative values are losses)"); ax.set_title("A", loc="left", fontweight="bold")
@@ -81,7 +81,7 @@ ax3.legend(frameon=False, loc="lower left", bbox_to_anchor=(-0.05, 1.0), ncol=1,
 # D (and Figure S1 with the Note 2 ratio)
 def iso_panel(ax, xcol, xlabel, panel, fig_id):
     D = ISOD.copy(); m = ~D.control_capped.astype(bool); x, y = D[xcol].values, D.penalty.values
-    sty = {"clustered": (BLUE, "o", "Clustered"), "census or era": (ORANGE, "s", "Census and era"), "consortium": (AQUA, "^", "eICU consortia")}
+    sty = {"clustered": (BLUE, "o", "Clustered"), "census or era": (ORANGE, "s", "Administrative"), "consortium": (AQUA, "^", "eICU consortia")}
     for fg, (c, mk, lb) in sty.items():
         k = (D.family_group == fg).values & m.values; ax.scatter(x[k], y[k], s=12, color=c, marker=mk, alpha=0.75, linewidths=0, label=lb)
     ax.scatter(x[~m.values], y[~m.values], marker="x", s=20, color=INK, linewidths=0.8, label="White (not fitted)")
@@ -114,8 +114,26 @@ chosen = {}
 for g in groups:
     ch = [json.load(open(f"{RES}/v19_protocol/runs/{g.replace('/', '__')}__s{s}.json"))["selection"]["chosen"] for s in range(3)]
     top = sorted(set(ch), key=lambda k: (-ch.count(k), k)); chosen[g] = top[0] if ch.count(top[0]) >= 2 else "mixed"
-fig = plt.figure(figsize=(180 * MM, 140 * MM)); gs = GridSpec(2, 2, figure=fig, hspace=0.75, wspace=0.45, width_ratios=[1.3, 1], height_ratios=[1, 1.25])
-ax = fig.add_subplot(gs[0, 0]); r = np.random.RandomState(4)
+fig = plt.figure(figsize=(180 * MM, 155 * MM)); gs = GridSpec(2, 2, figure=fig, hspace=0.45, wspace=0.95, width_ratios=[1, 1], height_ratios=[1.2, 1])
+LAB2 = ["Base alone (state 3)", "Base + control component", "Base + chosen component\n(state 2)", "Adapted pooled comparator"]
+# A: schematic
+ax = fig.add_subplot(gs[0, 0]); pc = ax.get_position(); ax.set_position([0.0, pc.y0 - 0.02, pc.x1 + 0.03, pc.height + 0.05]); ax.set_xlim(0, 100); ax.set_ylim(0, 100); ax.axis("off")
+ax.set_title("A  The three permission states", loc="left", fontweight="bold", fontsize=8)
+def box(x, y, w, h, text, fc="white", ec=INK, ls="-", fs=6.9):
+    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0,rounding_size=1.5", fc=fc, ec=ec, lw=0.8, ls=ls))
+    ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=fs, linespacing=1.15)
+ax.text(24, 100, "Shared model", ha="center", va="top", fontsize=7.8, fontweight="bold"); ax.text(76, 100, "Group's component", ha="center", va="top", fontsize=7.8, fontweight="bold")
+rowsC = [(64, "State 1, pooled", "Trained on retained\npatients' data and\nthe group's data", "#e3edf9", BLUE, "None", "white", GREY, (0, (2, 2))),
+         (34, "State 2, confined", "Base trained on retained\npatients' data only\n(provenance, checksum)", "#f1f1ef", GREY, "Fitted on the group's data,\ntype chosen by validation,\napplied to its patients only", "#e3edf9", BLUE, "-"),
+         (4, "State 3, withdrawn", "Base unchanged\n(same checksum)", "#f1f1ef", GREY, "Deleted", "white", GREY, (0, (2, 2)))]
+for y, lab, t1, f1, e1, t2, f2, e2, ls2 in rowsC:
+    ax.text(2, y + 22, lab, ha="left", va="bottom", fontsize=7.6, fontweight="bold")
+    box(1, y, 46, 21, t1, fc=f1, ec=e1); box(53, y, 46, 21, t2, fc=f2, ec=e2, ls=ls2)
+ax.annotate("", xy=(76, 25.5), xytext=(76, 33.5), arrowprops=dict(arrowstyle="->", lw=0.9, color=INK)); ax.text(78, 29.5, "withdraw: delete", ha="left", va="center", fontsize=7)
+ax.annotate("", xy=(50, 14), xytext=(50, 74), arrowprops=dict(arrowstyle="->", lw=0.9, color=INK))
+ax.text(48.2, 44, "withdraw: retrain", ha="center", va="center", fontsize=7, rotation=90)
+# B: MIMIC-IV arms
+ax = fig.add_subplot(gs[0, 1]); r = np.random.RandomState(4)
 arms = [("Base alone (state 3)", S19["strict_base"] - S19["pooled"], iv(I19["all"]["results"], "strict base minus pooled"), GREY, "o", "v19"),
         ("Base + control component", S16["strict_control"] - S16["pooled"], (ctrl["d"], ctrl["ci"][0], ctrl["ci"][1]), ORANGE, "s", "v16 two-stage bootstrap"),
         ("Base + chosen component (state 2)", S19["chosen"] - S19["pooled"], iv(I19["all"]["results"], "chosen component minus pooled"), BLUE, "o", "v19"),
@@ -123,10 +141,11 @@ arms = [("Base alone (state 3)", S19["strict_base"] - S19["pooled"], iv(I19["all
 for i, (lab, vals, (d, lo, hi), c, mk, src) in enumerate(arms):
     yv = len(arms) - 1 - i; ax.scatter(vals.values, yv + r.uniform(-0.2, 0.2, len(vals)), s=7, color=c, alpha=0.45, linewidths=0, marker=mk)
     ax.plot([lo, hi], [yv - 0.36, yv - 0.36], color=INK, lw=1.1); ax.scatter([d], [yv - 0.36], s=13, color=INK, marker="D", zorder=3)
-    keep(2, "A", lab + " mean", d, lo, hi, src); [keep(2, "A", f"{lab} point {g}", v) for g, v in vals.items()]
-ax.axvline(0, color=GREY, lw=0.6, ls=(0, (2, 2))); ax.set_yticks(range(len(arms))[::-1]); ax.set_yticklabels([a[0] for a in arms])
-ax.set_xlabel("Change in AUROC relative to the pooled model"); ax.set_title("A  MIMIC-IV, 25 clustered groups", loc="left", fontweight="bold")
-ax = fig.add_subplot(gs[0, 1])
+    keep(2, "B", lab + " mean", d, lo, hi, src); [keep(2, "B", f"{lab} point {g}", v) for g, v in vals.items()]
+ax.axvline(0, color=GREY, lw=0.6, ls=(0, (2, 2))); ax.set_yticks(range(len(arms))[::-1]); ax.set_yticklabels(LAB2)
+ax.set_xlabel("Change in AUROC relative to the pooled model"); ax.set_title("B  MIMIC-IV, 25 clustered groups", loc="left", fontweight="bold", fontsize=8)
+# C: eICU arms
+ax = fig.add_subplot(gs[1, 0])
 cb = iv(L35, "AUROC | control component minus strict base"); bp = iv(L35, "AUROC | strict base minus pooled model (centralised)")
 arms_e = [("Base alone (state 3)", PL.auroc_base - PL.auroc_pooled, bp, GREY, "o"),
           ("Base + control component", PL.auroc_control - PL.auroc_pooled, (bp[0] + cb[0], np.nan, np.nan), ORANGE, "s"),
@@ -135,36 +154,21 @@ arms_e = [("Base alone (state 3)", PL.auroc_base - PL.auroc_pooled, bp, GREY, "o
 for i, (lab, vals, (d, lo, hi), c, mk) in enumerate(arms_e):
     yv = len(arms_e) - 1 - i; ax.scatter(vals.values, yv + r.uniform(-0.18, 0.18, len(vals)), s=10, color=c, alpha=0.6, linewidths=0, marker=mk)
     if np.isfinite(lo): ax.plot([lo, hi], [yv - 0.33, yv - 0.33], color=INK, lw=1.1)
-    ax.scatter([d], [yv - 0.33], s=13, color=INK, marker="D", zorder=3); keep(2, "B", lab + " mean", d, lo, hi, "v35 landmark"); [keep(2, "B", f"{lab} point {g}", v) for g, v in vals.items()]
-ax.axvline(0, color=GREY, lw=0.6, ls=(0, (2, 2))); ax.set_yticks(range(len(arms_e))[::-1]); ax.set_yticklabels([]); ax.set_xticks([-0.02, -0.01, 0, 0.005])
-ax.set_xlabel("Change in AUROC relative to the pooled model"); ax.set_title("B  eICU centralised, 10 consortia, in the unit at 24 h", loc="left", fontweight="bold")
-# C: schematic, enlarged
-ax = fig.add_subplot(gs[1, 0]); pc = ax.get_position(); ax.set_position([0.02, pc.y0, pc.x1 + 0.02, pc.height]); ax.set_xlim(0, 100); ax.set_ylim(0, 100); ax.axis("off"); ax.set_title("C  The three permission states", loc="left", fontweight="bold")
-def box(x, y, w, h, text, fc="white", ec=INK, ls="-", fs=6.5):
-    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0,rounding_size=1.5", fc=fc, ec=ec, lw=0.8, ls=ls))
-    ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=fs, linespacing=1.15)
-ax.text(24, 100, "Shared model", ha="center", va="top", fontsize=7, fontweight="bold"); ax.text(76, 100, "Group's component", ha="center", va="top", fontsize=7, fontweight="bold")
-rowsC = [(64, "State 1, pooled", "Trained on the pool\nand the group's data", "#e3edf9", BLUE, "None", "white", GREY, (0, (2, 2))),
-         (34, "State 2, confined", "Base trained on the\npool only (provenance\nrecord, checksum)", "#f1f1ef", GREY, "Fitted on the group's data,\ntype chosen by validation,\napplied to its patients only", "#e3edf9", BLUE, "-"),
-         (4, "State 3, withdrawn", "Base unchanged\n(same checksum)", "#f1f1ef", GREY, "Deleted", "white", GREY, (0, (2, 2)))]
-for y, lab, t1, f1, e1, t2, f2, e2, ls2 in rowsC:
-    ax.text(2, y + 22, lab, ha="left", va="bottom", fontsize=7, fontweight="bold")
-    box(2, y, 44, 21, t1, fc=f1, ec=e1); box(54, y, 44, 21, t2, fc=f2, ec=e2, ls=ls2)
-ax.annotate("", xy=(76, 25.5), xytext=(76, 33.5), arrowprops=dict(arrowstyle="->", lw=0.9, color=INK)); ax.text(78, 29.5, "withdraw: delete", ha="left", va="center", fontsize=6.5)
-ax.annotate("", xy=(50, 14), xytext=(50, 74), arrowprops=dict(arrowstyle="->", lw=0.9, color=INK))
-ax.text(48.3, 44, "withdraw: retrain", ha="center", va="center", fontsize=6.5, rotation=90)
+    ax.scatter([d], [yv - 0.33], s=13, color=INK, marker="D", zorder=3); keep(2, "C", lab + " mean", d, lo, hi, "v35 landmark"); [keep(2, "C", f"{lab} point {g}", v) for g, v in vals.items()]
+ax.axvline(0, color=GREY, lw=0.6, ls=(0, (2, 2))); ax.set_yticks(range(len(arms_e))[::-1]); ax.set_yticklabels(LAB2); ax.set_xticks([-0.02, -0.01, 0, 0.005])
+ax.set_xlabel("Change in AUROC relative to the pooled model"); ax.set_title("C  eICU centralised, 10 consortia, in the unit at 24 h", loc="left", fontweight="bold", fontsize=8)
 # D: confined minus adapted comparator against the equal-pool ratio
 ax = fig.add_subplot(gs[1, 1]); dd = S24["confined_chosen"] - S24["pooled_cf_chosen"]
 eq = ISOD[ISOD.family_group == "clustered"].set_index("group").ratio_equal; xi = eq.reindex([g.split("/")[1] for g in dd.index]).values
-MK = {"residual": ("o", "Residual component"), "head": ("^", "Representation head"), "finetuned": ("D", "Fine-tuned copy"), "mixed": ("X", "No type in 2 of 3 seeds")}
+MK = {"residual": ("o", "Residual component"), "head": ("^", "Representation head"), "finetuned": ("D", "Fine-tuned copy"), "mixed": ("X", "No majority type")}
 for kind, (mk, lab) in MK.items():
     m = np.array([chosen[g] == kind for g in dd.index]); iso_m = np.array([g in ISO for g in dd.index])
-    ax.scatter(xi[m & ~iso_m], dd.values[m & ~iso_m], s=16, facecolors="none", edgecolors=BLUE, linewidths=0.8, marker=mk, label=lab)
-    ax.scatter(xi[m & iso_m], dd.values[m & iso_m], s=18, color=BLUE, marker=mk)
-ax.scatter([], [], s=18, color=BLUE, marker="s", label="Filled: five most isolated")
+    ax.scatter(xi[m & ~iso_m], dd.values[m & ~iso_m], s=18, facecolors="none", edgecolors=BLUE, linewidths=0.8, marker=mk, label=lab)
+    ax.scatter(xi[m & iso_m], dd.values[m & iso_m], s=20, color=BLUE, marker=mk)
+ax.scatter([], [], s=20, color=BLUE, marker="s", label="Filled, five most isolated")
 for g, x, v in zip(dd.index, xi, dd.values): keep(2, "D", g, v, source=f"v24 summary; equal-pool ratio {x:.3f}; chosen {chosen[g]}")
 ax.axhline(0, color=GREY, lw=0.6, ls=(0, (2, 2))); ax.set_xlabel("Equal-pool isolation ratio")
-ax.set_ylabel("AUROC, confined system minus\nadapted pooled comparator"); ax.legend(frameon=False, loc="lower left", bbox_to_anchor=(-0.05, 1.0), ncol=2, handletextpad=0.3, labelspacing=0.2, columnspacing=0.8, borderaxespad=0.1, fontsize=6.5)
-ax.set_title("D  Confined minus adapted comparator", loc="left", fontweight="bold", pad=34)
+ax.set_ylabel("AUROC, confined system minus\nadapted pooled comparator"); ax.legend(frameon=False, loc="upper left", bbox_to_anchor=(1.0, 1.0), ncol=1, handletextpad=0.3, labelspacing=0.3, borderaxespad=0.2, fontsize=7)
+ax.set_title("D  MIMIC-IV, confined minus adapted comparator", loc="left", fontweight="bold", fontsize=8)
 fig.savefig(f"{OUT}/Figure2_v9.pdf", bbox_inches="tight"); fig.savefig(f"{OUT}/Figure2_v9.png", dpi=300, bbox_inches="tight"); plt.close(fig)
 pd.DataFrame(rows).to_csv(f"{OUT}/figure_data_v9.csv", index=False); print("written", OUT, len(rows), "values")

@@ -1,0 +1,102 @@
+{
+ "flow": {
+  "mimic": {
+   "source": {
+    "units": 546028,
+    "patients": 223452,
+    "hospitals": 1
+   },
+   "excluded_died_in_hospital": 11801,
+   "excluded_died_30d_no_readmission": 8626,
+   "excluded_discharge_not_after_admission": 77,
+   "analysed": {
+    "units": 525524,
+    "patients": 215575,
+    "hospitals": 1,
+    "events": 109326
+   },
+   "training": {
+    "units": 419460,
+    "patients": 172460,
+    "hospitals": 1,
+    "events": 86733
+   },
+   "held_out": {
+    "units": 106064,
+    "patients": 43115,
+    "hospitals": 1,
+    "events": 22593
+   }
+  },
+  "eicu": {
+   "source": {
+    "units": 200859,
+    "patients": 139367,
+    "hospitals": 208
+   },
+   "excluded_discharge_status_not_recorded": 1751,
+   "analysed": {
+    "units": 199108,
+    "patients": 138265,
+    "hospitals": 207,
+    "events": 18004
+   },
+   "training": {
+    "units": 159197,
+    "patients": 110612,
+    "hospitals": 206,
+    "events": 14516
+   },
+   "validation": {
+    "units": 15713,
+    "patients": 11061,
+    "hospitals": 202,
+    "events": 1497
+   },
+   "fit": {
+    "units": 143484,
+    "patients": 99551,
+    "hospitals": 206,
+    "events": 13019
+   },
+   "held_out": {
+    "units": 39911,
+    "patients": 27653,
+    "hospitals": 206,
+    "events": 3488
+   },
+   "held_out_landmark": {
+    "units": 26349,
+    "patients": 20778,
+    "hospitals": 205,
+    "events": 2307
+   }
+  }
+ },
+ "checks": [
+  {
+   "check": "MIMIC-IV: sequential exclusions reproduce the cohort's admissions",
+   "ok": true
+  },
+  {
+   "check": "MIMIC-IV: readmission labels reproduce the cohort's",
+   "ok": true
+  },
+  {
+   "check": "MIMIC-IV: 39 groups (25 clustered, 14 administrative)",
+   "ok": true
+  },
+  {
+   "check": "MIMIC-IV: patients, admissions and training prevalence match the v5 records (39 of 39 groups have a record)",
+   "ok": true
+  },
+  {
+   "check": "eICU-CRD: the discharge-status rule reproduces the cohort's stays",
+   "ok": true
+  },
+  {
+   "check": "eICU-CRD: 10 consortia",
+   "ok": true
+  }
+ ]
+}

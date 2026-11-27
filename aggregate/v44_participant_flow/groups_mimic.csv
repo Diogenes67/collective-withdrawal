@@ -1,0 +1,40 @@
+family,name,group,train_patients,train_admissions,train_events,heldout_patients,heldout_admissions,heldout_events
+community_trainfit,c00,Clustered group c00,2624,5363,853,649,1344,210
+community_trainfit,c01,Clustered group c01,17153,44445,9282,4340,11511,2543
+community_trainfit,c02,Clustered group c02,4713,6102,445,1178,1496,85
+community_trainfit,c03,Clustered group c03,3132,7593,1814,800,2017,492
+community_trainfit,c04,Clustered group c04,4459,14057,3231,1058,3105,638
+community_trainfit,c05,Clustered group c05,49915,93017,15278,12526,23630,4026
+community_trainfit,c06,Clustered group c06,5376,22470,6568,1301,5761,1768
+community_trainfit,c07,Clustered group c07,3456,10614,2402,867,2874,708
+community_trainfit,c08,Clustered group c08,2694,7022,1672,668,1713,411
+community_trainfit,c09,Clustered group c09,17988,48529,9587,4485,12180,2588
+community_trainfit,c10,Clustered group c10,3727,7039,1821,943,1928,529
+community_trainfit,c11,Clustered group c11,5686,16848,3353,1413,4369,985
+community_trainfit,c12,Clustered group c12,701,2829,853,177,772,264
+community_trainfit,c13,Clustered group c13,3106,13163,3470,820,3478,836
+community_trainfit,c14,Clustered group c14,6344,16440,4463,1560,3855,1082
+community_trainfit,c15,Clustered group c15,7201,16321,4082,1808,4066,955
+community_trainfit,c16,Clustered group c16,3522,9051,1804,854,2138,414
+community_trainfit,c17,Clustered group c17,3141,9146,2048,770,2234,496
+community_trainfit,c18,Clustered group c18,2471,6767,1415,653,2030,433
+community_trainfit,c19,Clustered group c19,5195,12394,2146,1374,3127,524
+community_trainfit,c20,Clustered group c20,3554,6765,692,876,1729,168
+community_trainfit,c21,Clustered group c21,4428,8661,1233,1064,2118,344
+community_trainfit,c22,Clustered group c22,2359,9103,2970,596,2132,744
+community_trainfit,c23,Clustered group c23,4530,11589,2301,1067,2804,560
+community_trainfit,c24,Clustered group c24,4985,14132,2950,1268,3653,790
+anchor_year,2008_2010,Anchor-year group 2008 to 2010,52066,175914,40096,13139,44842,10577
+anchor_year,2011_2013,Anchor-year group 2011 to 2013,36566,88642,17168,9119,22115,4482
+anchor_year,2014_2016,Anchor-year group 2014 to 2016,33033,69747,13581,8123,17547,3435
+anchor_year,2017_2019,Anchor-year group 2017 to 2019,29062,53126,10141,7341,13514,2606
+anchor_year,2020_2022,Anchor-year group 2020 to 2022,21733,32031,5747,5393,8046,1493
+insurance,medicaid,Medicaid,31240,85478,19805,7832,22356,5478
+language,non_english,Non-English speakers,15940,40901,8210,4068,10518,2256
+race,asian,"Race, Asian",7649,15368,2953,1907,3868,778
+race,black,"Race, Black",22903,70376,15611,5646,17717,4170
+race,hispanic,"Race, Hispanic",9632,25539,5084,2422,6718,1471
+race,native,"Race, combined Native category",576,1362,290,145,342,70
+race,other,"Race, other",8304,17006,3229,2152,4306,808
+race,unknown,"Race, unknown",9565,12923,1114,2372,3220,325
+race,white,"Race, white",113831,276886,58452,28471,69893,14971

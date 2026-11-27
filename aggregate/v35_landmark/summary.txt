@@ -1,4 +1,4 @@
-v35 landmark (2026-10-30 23:20); 1000 hospital-cluster draws in 5 chunks
+v35 landmark (2026-11-19 21:10); 1000 hospital-cluster draws in 5 chunks
 == landmark: 26349 of 39911 held-out stays, mortality 0.0876, 205 hospitals
   AUROC | centralised penalty: retrained without the consortium minus random removal                             -0.0049 [-0.0064, -0.0032] p 0.0020  lower in 9 of 10
   AUROC | retrained without the consortium minus pooled model                                                    -0.0074 [-0.0090, -0.0058] p 0.0020  lower in 10 of 10
@@ -12,8 +12,8 @@ v35 landmark (2026-10-30 23:20); 1000 hospital-cluster draws in 5 chunks
   AUROC | consortium-specific gain in the federation (component minus control)                                   +0.0099 [+0.0068, +0.0132] p 0.0020  lower in 0 of 10
   AUROC | strict base minus pooled model (centralised)                                                           -0.0092 [-0.0112, -0.0066] p 0.0020  lower in 10 of 10
   AUROC | confined (strict) minus pooled model                                                                   -0.0004 [-0.0018, +0.0008] p 0.5100  lower in 7 of 10  TOST 90% [-0.0016, +0.0006] smallest margin 0.0016 p 0.0000
-  AUROC | confined (strict) minus adapted pooled comparator                                                      -0.0017 [-0.0025, -0.0008] p 0.0020  lower in 8 of 10  TOST 90% [-0.0023, -0.0009] smallest margin 0.0023 p 0.0000
-  AUROC | adapted pooled comparator minus pooled model                                                           +0.0012 [+0.0001, +0.0023] p 0.0260  lower in 4 of 10
+  AUROC | confined (strict) minus adapted pooled comparator                                                      -0.0014 [-0.0024, -0.0007] p 0.0020  lower in 8 of 10  TOST 90% [-0.0022, -0.0008] smallest margin 0.0022 p 0.0000
+  AUROC | adapted pooled comparator minus pooled model                                                           +0.0010 [-0.0001, +0.0023] p 0.0840  lower in 4 of 10
   AUROC | control component minus strict base                                                                    +0.0001 [-0.0004, +0.0008] p 0.5740  lower in 4 of 10
   AUROC | deletion: confined minus strict base                                                                   +0.0087 [+0.0059, +0.0111] p 0.0020  lower in 0 of 10
   deaths unflagged per 1,000 | retrained without the consortium minus pooled model                               +1.2551 [+0.6285, +1.7932] p 0.0020
@@ -24,7 +24,7 @@ v35 landmark (2026-10-30 23:20); 1000 hospital-cluster draws in 5 chunks
   deaths unflagged per 1,000 | consortium component minus full federation                                        -2.9419 [-3.8879, -1.8122] p 0.0020
   deaths unflagged per 1,000 | consortium component minus control component                                      -1.5944 [-2.3222, -0.5474] p 0.0040
   deaths unflagged per 1,000 | confined (strict) minus pooled model                                              -0.1723 [-0.5703, +0.5996] p 0.8660
-  deaths unflagged per 1,000 | confined (strict) minus adapted pooled comparator                                 +0.0492 [-0.2677, +0.5831] p 0.5100
+  deaths unflagged per 1,000 | confined (strict) minus adapted pooled comparator                                 +0.0236 [-0.2417, +0.6401] p 0.4740
   deaths unflagged per 1,000 | strict base minus pooled model                                                    +1.8737 [+0.6715, +2.6412] p 0.0020
 == all: 39911 of 39911 held-out stays, mortality 0.0874, 206 hospitals
   AUROC | centralised penalty: retrained without the consortium minus random removal                             -0.0066 [-0.0083, -0.0045] p 0.0020  lower in 9 of 10
@@ -39,8 +39,8 @@ v35 landmark (2026-10-30 23:20); 1000 hospital-cluster draws in 5 chunks
   AUROC | consortium-specific gain in the federation (component minus control)                                   +0.0125 [+0.0084, +0.0159] p 0.0020  lower in 0 of 10
   AUROC | strict base minus pooled model (centralised)                                                           -0.0112 [-0.0133, -0.0081] p 0.0020  lower in 10 of 10
   AUROC | confined (strict) minus pooled model                                                                   +0.0001 [-0.0013, +0.0012] p 0.9580  lower in 6 of 10  TOST 90% [-0.0011, +0.0010] smallest margin 0.0011 p 0.0000
-  AUROC | confined (strict) minus adapted pooled comparator                                                      -0.0013 [-0.0021, -0.0006] p 0.0020  lower in 9 of 10  TOST 90% [-0.0020, -0.0007] smallest margin 0.0020 p 0.0000
-  AUROC | adapted pooled comparator minus pooled model                                                           +0.0014 [+0.0001, +0.0023] p 0.0180  lower in 2 of 10
+  AUROC | confined (strict) minus adapted pooled comparator                                                      -0.0011 [-0.0019, -0.0006] p 0.0020  lower in 8 of 10  TOST 90% [-0.0018, -0.0007] smallest margin 0.0018 p 0.0000
+  AUROC | adapted pooled comparator minus pooled model                                                           +0.0012 [+0.0001, +0.0023] p 0.0400  lower in 2 of 10
   AUROC | control component minus strict base                                                                    +0.0004 [-0.0000, +0.0009] p 0.0560  lower in 4 of 10
   AUROC | deletion: confined minus strict base                                                                   +0.0113 [+0.0077, +0.0137] p 0.0020  lower in 0 of 10
   deaths unflagged per 1,000 | retrained without the consortium minus pooled model                               +1.7609 [+1.1400, +2.2184] p 0.0020
@@ -51,7 +51,7 @@ v35 landmark (2026-10-30 23:20); 1000 hospital-cluster draws in 5 chunks
   deaths unflagged per 1,000 | consortium component minus full federation                                        -2.6933 [-3.5971, -1.9256] p 0.0020
   deaths unflagged per 1,000 | consortium component minus control component                                      -1.6058 [-2.3258, -0.9792] p 0.0020
   deaths unflagged per 1,000 | confined (strict) minus pooled model                                              -0.1845 [-0.4174, +0.4659] p 0.8500
-  deaths unflagged per 1,000 | confined (strict) minus adapted pooled comparator                                 +0.0556 [-0.0938, +0.4844] p 0.2240
+  deaths unflagged per 1,000 | confined (strict) minus adapted pooled comparator                                 +0.1148 [-0.0453, +0.6044] p 0.0980
   deaths unflagged per 1,000 | strict base minus pooled model                                                    +2.2836 [+1.1981, +3.0804] p 0.0020
 per consortium (landmark): penalty, federated penalty, confined minus adapted, confined minus pooled, base minus pooled
   bedsize_100_-_249      +0.0006 +0.0035 +0.0003 -0.0009 -0.0018
@@ -59,8 +59,8 @@ per consortium (landmark): penalty, federated penalty, confined minus adapted, c
   bedsize_<100           -0.0048 +0.0018 +0.0010 +0.0052 -0.0053
   bedsize_>=_500         -0.0021 -0.0111 -0.0035 -0.0037 -0.0063
   region_Midwest         -0.0044 +0.0025 -0.0020 -0.0024 -0.0071
-  region_Northeast       -0.0071 -0.0080 -0.0027 +0.0011 -0.0210
-  region_South           -0.0015 +0.0012 -0.0017 -0.0021 -0.0051
+  region_Northeast       -0.0071 -0.0080 -0.0000 +0.0011 -0.0210
+  region_South           -0.0015 +0.0012 -0.0016 -0.0021 -0.0051
   region_West            -0.0087 -0.0042 -0.0007 +0.0023 -0.0100
   teaching_f             -0.0076 +0.0111 -0.0021 -0.0011 -0.0175
   teaching_t             -0.0074 -0.0065 -0.0034 -0.0025 -0.0090

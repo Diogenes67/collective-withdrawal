@@ -15,7 +15,10 @@
      0.007035260616539757
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.206,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_5.npz"
    },
    "common base + chosen component minus single-exclusion confined system": {
     "d": -0.011216227365826304,
@@ -24,7 +27,10 @@
      -0.00023810818435033811
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.044,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_5.npz"
    },
    "common base + chosen component minus adapted pooled comparator": {
     "d": -0.011785412252302608,
@@ -33,7 +39,10 @@
      0.004447267560020689
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.138,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_5.npz"
    },
    "common base minus single-exclusion strict base": {
     "d": -0.02496563245565806,
@@ -42,7 +51,10 @@
      -0.004309638897725169
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.01,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_5.npz"
    },
    "common base minus pooled": {
     "d": -0.046544780026071784,
@@ -51,7 +63,10 @@
      -0.01913945736469524
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_5.npz"
    },
    "deletion of the component: common base + component minus common base": {
     "d": 0.03574424727366741,
@@ -60,7 +75,10 @@
      0.06276759588118858
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.018,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_5.npz"
    },
    "events unflagged per 1,000 at matched flag rate, common base + component minus pooled": {
     "d": 0.5241043348390519,
@@ -69,7 +87,10 @@
      1.9390174813833696
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.816,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_5.npz"
    },
    "events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined": {
     "d": 0.7072017665425306,
@@ -78,7 +99,10 @@
      2.3439982446184704
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.818,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_5.npz"
    }
   },
   "lower_in": {
@@ -119,7 +143,10 @@
      0.022582233551165554
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_5.npz"
    },
    "common base + chosen component minus single-exclusion confined system": {
     "d": 0.0013299160583887027,
@@ -128,7 +155,10 @@
      0.00603222507536654
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.618,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_5.npz"
    },
    "common base + chosen component minus adapted pooled comparator": {
     "d": 0.0011134962014615502,
@@ -137,7 +167,10 @@
      0.006134420850245379
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.648,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_5.npz"
    },
    "common base minus single-exclusion strict base": {
     "d": 6.39730880914069e-05,
@@ -146,7 +179,10 @@
      0.007458417616072712
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.96,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_5.npz"
    },
    "common base minus pooled": {
     "d": -0.007319419990459042,
@@ -155,7 +191,10 @@
      -0.0011363580097326267
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.03,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_5.npz"
    },
    "deletion of the component: common base + component minus common base": {
     "d": 0.0203789048526841,
@@ -164,7 +203,10 @@
      0.028948021601188596
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_5.npz"
    },
    "events unflagged per 1,000 at matched flag rate, common base + component minus pooled": {
     "d": -1.9413450516415025,
@@ -173,7 +215,10 @@
      0.3758227942980634
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.092,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_5.npz"
    },
    "events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined": {
     "d": -0.2668351649152669,
@@ -182,7 +227,10 @@
      1.2136367258534022
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.714,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_5.npz"
    }
   },
   "lower_in": {
@@ -228,7 +276,10 @@
      0.010039110689386482
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.774,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_10.npz"
    },
    "common base + chosen component minus single-exclusion confined system": {
     "d": -0.007304233513243152,
@@ -237,7 +288,10 @@
      0.0012213892384670035
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.1,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_10.npz"
    },
    "common base + chosen component minus adapted pooled comparator": {
     "d": -0.007965030984026133,
@@ -246,7 +300,10 @@
      0.0011781325054201215
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.092,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_10.npz"
    },
    "common base minus single-exclusion strict base": {
     "d": -0.00921155212159005,
@@ -255,7 +312,10 @@
      0.0032452326344560244
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.166,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_10.npz"
    },
    "common base minus pooled": {
     "d": -0.02334022637398414,
@@ -264,7 +324,10 @@
      -0.006667018095230677
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.008,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_10.npz"
    },
    "deletion of the component: common base + component minus common base": {
     "d": 0.02126495525091885,
@@ -273,7 +336,10 @@
      0.03655625068524098
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.026,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_10.npz"
    },
    "events unflagged per 1,000 at matched flag rate, common base + component minus pooled": {
     "d": -0.986023888823906,
@@ -282,7 +348,10 @@
      0.3557393123426354
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.148,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_10.npz"
    },
    "events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined": {
     "d": 0.07852178807111798,
@@ -291,7 +360,10 @@
      1.2437463673410256
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.872,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_10.npz"
    }
   },
   "lower_in": {
@@ -342,7 +414,10 @@
      0.019256060505622338
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_10.npz"
    },
    "common base + chosen component minus single-exclusion confined system": {
     "d": -5.832591694299172e-06,
@@ -351,7 +426,10 @@
      0.0057688254125720165
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.922,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_10.npz"
    },
    "common base + chosen component minus adapted pooled comparator": {
     "d": 0.00026645179733120194,
@@ -360,7 +438,10 @@
      0.005770410120430102
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.892,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_10.npz"
    },
    "common base minus single-exclusion strict base": {
     "d": -0.002786455797101006,
@@ -369,7 +450,10 @@
      0.005008571428691771
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.478,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_10.npz"
    },
    "common base minus pooled": {
     "d": -0.009533633359416593,
@@ -378,7 +462,10 @@
      -0.003567441038743949
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_10.npz"
    },
    "deletion of the component: common base + component minus common base": {
     "d": 0.021746645079270776,
@@ -387,7 +474,10 @@
      0.027498610837353325
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_10.npz"
    },
    "events unflagged per 1,000 at matched flag rate, common base + component minus pooled": {
     "d": -1.8304837487643824,
@@ -396,7 +486,10 @@
      -0.10563736237207366
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.04,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_10.npz"
    },
    "events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined": {
     "d": -0.27372717260753066,
@@ -405,7 +498,10 @@
      1.1247933206608696
     ],
     "n_groups": 10,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.634,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_10.npz"
    }
   },
   "lower_in": {
@@ -461,7 +557,10 @@
      0.01287996193960238
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.666,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_15.npz"
    },
    "common base + chosen component minus single-exclusion confined system": {
     "d": -0.005981728852830355,
@@ -470,7 +569,10 @@
      0.0022636489335661207
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.178,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_15.npz"
    },
    "common base + chosen component minus adapted pooled comparator": {
     "d": -0.006374634879219091,
@@ -479,7 +581,10 @@
      0.0008929798195220193
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.12,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_15.npz"
    },
    "common base minus single-exclusion strict base": {
     "d": -0.011856950822193882,
@@ -488,7 +593,10 @@
      -0.0027882011739627597
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.012,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_15.npz"
    },
    "common base minus pooled": {
     "d": -0.02259319176317238,
@@ -497,7 +605,10 @@
      -0.011035231898213283
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_15.npz"
    },
    "deletion of the component: common base + component minus common base": {
     "d": 0.024464286384863088,
@@ -506,7 +617,10 @@
      0.033427944331348186
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_15.npz"
    },
    "events unflagged per 1,000 at matched flag rate, common base + component minus pooled": {
     "d": -1.825558974673174,
@@ -515,7 +629,10 @@
      -0.5496368000727825
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.008,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_15.npz"
    },
    "events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined": {
     "d": -0.009727890956024509,
@@ -524,7 +641,10 @@
      0.866867746652211
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.804,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_most_isolated_15.npz"
    }
   },
   "lower_in": {
@@ -585,7 +705,10 @@
      0.009453351032021131
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.956,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_15.npz"
    },
    "common base + chosen component minus single-exclusion confined system": {
     "d": -0.009804652952214983,
@@ -594,7 +717,10 @@
      -0.0035486909931541173
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_15.npz"
    },
    "common base + chosen component minus adapted pooled comparator": {
     "d": -0.008972372675592692,
@@ -603,7 +729,10 @@
      -0.003067878748219776
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.004,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_15.npz"
    },
    "common base minus single-exclusion strict base": {
     "d": -0.0226087894158666,
@@ -612,7 +741,10 @@
      -0.01138779120990731
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_15.npz"
    },
    "common base minus pooled": {
     "d": -0.030288330166942122,
@@ -621,7 +753,10 @@
      -0.01612642780198645
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_15.npz"
    },
    "deletion of the component: common base + component minus common base": {
     "d": 0.030319549061520804,
@@ -630,7 +765,10 @@
      0.04492409227695871
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_15.npz"
    },
    "events unflagged per 1,000 at matched flag rate, common base + component minus pooled": {
     "d": -0.6699174954776586,
@@ -639,7 +777,10 @@
      0.672083738987141
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.294,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_15.npz"
    },
    "events unflagged per 1,000 at matched flag rate, common base + component minus single-exclusion confined": {
     "d": 0.5795183251404467,
@@ -648,7 +789,10 @@
      1.8173608372619408
     ],
     "n_groups": 15,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.304,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_random_15.npz"
    }
   },
   "lower_in": {
@@ -718,5 +862,5 @@
   "n_boot": 1000,
   "version": "v33.0"
  },
- "date": "2026-10-25 14:03:54"
+ "date": "2026-10-31 12:52:18"
 }

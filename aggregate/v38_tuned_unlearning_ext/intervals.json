@@ -1,10 +1,10 @@
 {
  "results": {
   "AUROC | exact group minus exact random": {
-   "d": -0.010641441779956993,
+   "d": -0.010641477127960756,
    "ci": [
-    -0.0157342646486367,
-    -0.006127939979579598
+    -0.01573436277768908,
+    -0.006127926425432417
    ],
    "n_groups": 25,
    "n_boot": 1000,
@@ -13,10 +13,10 @@
    "draws_file": "draws.npz"
   },
   "AUROC | exact group minus original": {
-   "d": -0.008345151493112062,
+   "d": -0.008345145596886497,
    "ci": [
-    -0.013197896074912103,
-    -0.003907904550186703
+    -0.013197897241934663,
+    -0.0039079127657592775
    ],
    "n_groups": 25,
    "n_boot": 1000,
@@ -25,10 +25,10 @@
    "draws_file": "draws.npz"
   },
   "unflagged per 1,000 | exact group minus exact random": {
-   "d": 1.0592052936553955,
+   "d": 1.0592018886678993,
    "ci": [
-    0.13766367733478546,
-    2.2058191299438477
+    0.13766280086939373,
+    2.2058162987118566
    ],
    "n_groups": 25,
    "n_boot": 1000,
@@ -37,10 +37,10 @@
    "draws_file": "draws.npz"
   },
   "unflagged per 1,000 | exact group minus original": {
-   "d": 0.7837252616882324,
+   "d": 0.7837211597398559,
    "ci": [
-    -0.21055160462856293,
-    1.6137415170669556
+    -0.21054934138677842,
+    1.6137403629988034
    ],
    "n_groups": 25,
    "n_boot": 1000,
@@ -49,106 +49,106 @@
    "draws_file": "draws.npz"
   },
   "AUROC | neggrad group minus neggrad random": {
-   "d": -0.0010083981674900366,
+   "d": -0.0009962516109741815,
    "ci": [
-    -0.00198835243995011,
-    0.00010330066859604396
+    -0.0020069465943651286,
+    0.0001090998456921924
    ],
    "n_groups": 25,
    "n_boot": 1000,
-   "p_exact": 0.078,
+   "p_exact": 0.07,
    "n_boot_valid": 1000,
    "draws_file": "draws.npz"
   },
   "AUROC | neggrad group minus original": {
-   "d": 0.0016015171288912943,
+   "d": 0.0016682867917181144,
    "ci": [
-    0.0003016446253766747,
-    0.003066635013186945
+    0.0003456669999578137,
+    0.0030926340215924595
    ],
    "n_groups": 25,
    "n_boot": 1000,
-   "p_exact": 0.02,
+   "p_exact": 0.012,
    "n_boot_valid": 1000,
    "draws_file": "draws.npz"
   },
   "unflagged per 1,000 | neggrad group minus neggrad random": {
-   "d": 0.06458496302366257,
+   "d": 0.08337084729545324,
    "ci": [
-    -0.13262595236301422,
-    0.2948090732097626
+    -0.14154938545311552,
+    0.3044412836318894
    ],
    "n_groups": 25,
    "n_boot": 1000,
-   "p_exact": 0.496,
+   "p_exact": 0.46,
    "n_boot_valid": 1000,
    "draws_file": "draws.npz"
   },
   "unflagged per 1,000 | neggrad group minus original": {
-   "d": 0.16411514580249786,
+   "d": 0.1662645302163628,
    "ci": [
-    -0.38468149304389954,
-    0.5562652349472046
+    -0.4004105086213731,
+    0.5381186408499904
    ],
    "n_groups": 25,
    "n_boot": 1000,
-   "p_exact": 0.692,
+   "p_exact": 0.726,
    "n_boot_valid": 1000,
    "draws_file": "draws.npz"
   },
   "AUROC | fu_community group minus fu_community random": {
-   "d": 0.0016337306918411442,
+   "d": 0.0021742304832850045,
    "ci": [
-    -0.000769520638237848,
-    0.003852023124714406
+    -0.0002280059644874963,
+    0.004585874806173397
    ],
    "n_groups": 25,
    "n_boot": 1000,
-   "p_exact": 0.162,
+   "p_exact": 0.082,
    "n_boot_valid": 1000,
    "draws_file": "draws.npz"
   },
   "AUROC | fu_community group minus original": {
-   "d": 0.0015183689739294204,
+   "d": 0.001584742652536284,
    "ci": [
-    0.0001337741127638621,
-    0.0030014594458491754
+    0.00018815096163064072,
+    0.0030570895289681703
    ],
    "n_groups": 25,
    "n_boot": 1000,
-   "p_exact": 0.028,
+   "p_exact": 0.024,
    "n_boot_valid": 1000,
    "draws_file": "draws.npz"
   },
   "unflagged per 1,000 | fu_community group minus fu_community random": {
-   "d": -0.45474547147750854,
+   "d": -0.4849406303010801,
    "ci": [
-    -1.1804534196853638,
-    0.09708061069250107
+    -1.278112355673042,
+    0.0662323978620348
    ],
    "n_groups": 25,
    "n_boot": 1000,
-   "p_exact": 0.09,
+   "p_exact": 0.1,
    "n_boot_valid": 1000,
    "draws_file": "draws.npz"
   },
   "unflagged per 1,000 | fu_community group minus original": {
-   "d": 0.16072982549667358,
+   "d": 0.1724713294828314,
    "ci": [
-    -0.37988921999931335,
-    0.5602833032608032
+    -0.4000426183428876,
+    0.5421877004165212
    ],
    "n_groups": 25,
    "n_boot": 1000,
-   "p_exact": 0.686,
+   "p_exact": 0.722,
    "n_boot_valid": 1000,
    "draws_file": "draws.npz"
   },
   "AUROC | neggrad group minus exact group (tuned method against exact retraining)": {
-   "d": 0.009946668622003356,
+   "d": 0.010013432388604611,
    "ci": [
-    0.005646919934201794,
-    0.014842387450521875
+    0.005772072572680169,
+    0.014863254233738799
    ],
    "n_groups": 25,
    "n_boot": 1000,
@@ -157,10 +157,10 @@
    "draws_file": "draws.npz"
   },
   "AUROC | fu_community group minus exact group (tuned method against exact retraining)": {
-   "d": 0.009863520467041482,
+   "d": 0.00992988824942278,
    "ci": [
-    0.005630014192590486,
-    0.014671731454558766
+    0.005703201767671672,
+    0.014780196040909181
    ],
    "n_groups": 25,
    "n_boot": 1000,
@@ -171,8 +171,8 @@
  },
  "lower_in": {
   "exact": 24,
-  "neggrad": 20,
-  "fu_community": 11
+  "neggrad": 21,
+  "fu_community": 6
  },
  "cfg": {
   "seeds": [
@@ -222,5 +222,5 @@
   "n_boot": 1000,
   "version": "v38.1"
  },
- "date": "2026-11-01 04:33:40"
+ "date": "2026-11-24 17:34:43"
 }

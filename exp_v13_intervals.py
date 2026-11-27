@@ -23,6 +23,7 @@ the bootstrap can be rerun without touching a model.
 """
 import os, json, time, glob
 import numpy as np
+import boot_draws
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -92,9 +93,9 @@ def missed_per_1000(yy, pp, thr):
 def flagged_per_1000(yy, pp, thr): return float((pp >= thr).mean() * 1000)
 def pct(v): v = np.asarray(v, float); v = v[~np.isnan(v)]; return [float(np.percentile(v, 2.5)), float(np.percentile(v, 97.5))] if len(v) else [float("nan")] * 2
 
-results = {}
+results = {}; DRAWS = {}
 def record(key, point, boots, extra=None):
-    results[key] = dict(d=float(point), ci=pct(boots), n_boot=int(len(boots)), **(extra or {}))
+    results[key] = dict(d=float(point), ci=pct(boots), n_boot=int(len(boots)), **(extra or {})); DRAWS[key] = np.asarray(boots, float)   # v9 revision (M6)
     log(f"  {key:60s} {point:+.4f} [{results[key]['ci'][0]:+.4f}, {results[key]['ci'][1]:+.4f}]")
 
 # =====================================================================================================  MIMIC
@@ -305,6 +306,7 @@ if PART in ("eicu", "both"): run_eicu()
 if os.environ.get("MEMBERSHIP_ONLY") == "1":
     log("membership only; intervals.json left untouched")
 else:
+    results = boot_draws.attach(results, DRAWS, f"{OUT}/draws.npz")   # v9 revision (M6): draws kept, exact p-values (run with PART=both)
     json.dump(dict(cfg=CFG, results=results, date=time.strftime("%Y-%m-%d %H:%M:%S"), device=DEVICE, torch=torch.__version__),
               open(f"{OUT}/intervals.json", "w"), indent=1)
     pd.DataFrame([dict(key=k, d=v["d"], lo=v["ci"][0], hi=v["ci"][1], n_boot=v["n_boot"]) for k, v in results.items()]).to_csv(f"{OUT}/intervals.csv", index=False)

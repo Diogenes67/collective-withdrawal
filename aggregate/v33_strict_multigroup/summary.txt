@@ -1,4 +1,4 @@
-v33 strict multi-group withdrawal (2026-10-25 13:54); seeds [0, 1, 2]
+v33 strict multi-group withdrawal (2026-10-31 12:37); seeds [0, 1, 2]
 == most_isolated_5: c02, c05, c12, c15, c20; retained 70.2% of training rows; vocabulary overlap 94/100; base unchanged True; others' AUROC (74371 rows) pooled 0.6810 common base 0.6820
      pooled  single_strict_base  single_confined  adapted_pooled  common_base  common_confined type
 c02  0.5891              0.5913           0.6009          0.5671       0.5633           0.5708  RRR

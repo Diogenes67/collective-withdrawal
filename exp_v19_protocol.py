@@ -15,6 +15,7 @@ results/v5_partitions, results/v16_strict/ckpt, results/v17_crossfit/preds. Writ
 """
 import os, json, time, glob, hashlib, copy
 import numpy as np
+import boot_draws
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -26,6 +27,7 @@ from sklearn.model_selection import GroupKFold
 QUICK = os.environ.get("QUICK", "0") == "1"
 ROOT = os.environ.get("ROOT", os.path.expanduser("~/mimic")); V5 = f"{ROOT}/results/v5_partitions"
 OUT = f"{ROOT}/results/v19_protocol" + ("_quick" if QUICK else "")
+OUTW = OUT + os.environ.get("OUT_TAG", ""); os.makedirs(OUTW, exist_ok=True)   # summary outputs (OUT_TAG=_b10k for the 10,000-draw rerun); runs and preds are read from OUT
 V16 = f"{ROOT}/results/v16_strict" + ("_quick" if QUICK else ""); V17 = f"{ROOT}/results/v17_crossfit" + ("_quick" if QUICK else "")
 for d in ["runs", "preds"]: os.makedirs(f"{OUT}/{d}", exist_ok=True)
 CFG = dict(seeds=[int(x) for x in os.environ["SEEDS"].split(",")] if os.environ.get("SEEDS") else ([0] if QUICK else [0, 1, 2]), epochs=2 if QUICK else 12, lr=1e-3, batch=2048, n_top=100, min_patients=300,
@@ -217,8 +219,11 @@ for gi, g in enumerate(groups):
 if os.environ.get("SUMMARY", "1") == "0": log("SUMMARY=0; stopping before the summary stage"); raise SystemExit(0)
 # ---------------------------------------------------------------- summary from disk
 recs = [json.load(open(f)) for f in sorted(glob.glob(f"{OUT}/runs/*.json"))]
+_SS = os.environ.get("SUMMARY_SEEDS", "0,1,2")   # v9 revision: the summary uses the main analysis seeds unless SUMMARY_SEEDS=all
+_SS = None if _SS == "all" else [int(x) for x in _SS.split(",")]
+recs = [r_ for r_ in recs if _SS is None or r_["seed"] in _SS]
 rows = [dict(group=r["group"], seed=r["seed"], arm=a, **m) for r in recs for a, m in r["arms"].items()]
-S = pd.DataFrame(rows).groupby(["group", "arm"]).mean(numeric_only=True).reset_index(); S.to_csv(f"{OUT}/summary.csv", index=False)
+S = pd.DataFrame(rows).groupby(["group", "arm"]).mean(numeric_only=True).reset_index(); S.to_csv(f"{OUTW}/summary.csv", index=False)
 W = S.pivot_table(index="group", columns="arm", values="auroc"); ch = pd.Series({r["group"]: r["selection"]["chosen"] for r in recs}).groupby(level=0).agg(lambda x: ",".join(x))
 print("\nAUROC on each group's held-out patients, seed means"); print(pd.concat([W[ARMS].round(4), ch.rename("chosen per seed")], axis=1).to_string())
 print("\nchoices:", pd.Series([r["selection"]["chosen"] for r in recs]).value_counts().to_dict())
@@ -229,7 +234,7 @@ def missed_at_k(yv, pv, k): top = np.argsort(-pv, kind="mergesort")[:k]; return 
 P = {}
 for f in glob.glob(f"{OUT}/preds/*.npz"):
     Z = np.load(f); g, s_ = os.path.basename(f)[:-4].rsplit("__s", 1); P[(g.replace("__", "/"), int(s_))] = {k: Z[k] for k in Z.files}
-seeds = sorted(set(s_ for _, s_ in P)); names = sorted(set(g for g, _ in P if all((g, s_) in P for s_ in seeds)))
+seeds = [s__ for s__ in sorted(set(s_ for _, s_ in P)) if _SS is None or s__ in _SS]; names = sorted(set(g for g, _ in P if all((g, s_) in P for s_ in seeds)))
 pairs = {"chosen component minus pooled + cross-fitted component (protocol vs best pooled)": ("chosen", "pooled_cf"),
          "chosen component minus pooled": ("chosen", "pooled"), "chosen component minus strict base": ("chosen", "strict_base"),
          "residual minus pooled + cross-fitted component": ("residual", "pooled_cf"), "head minus pooled + cross-fitted component": ("head", "pooled_cf"),
@@ -258,6 +263,7 @@ if names:
                 u, gidx = pat_idx[g]; idx = np.concatenate([gidx[j] for j in r.choice(len(u), len(u), True)]); st.append(stats(g, idx))
             for k, v in contrasts(st).items(): boots[k].append(v)
         res = {k: dict(d=float(pt[k]), ci=[float(np.nanpercentile(boots[k], 2.5)), float(np.nanpercentile(boots[k], 97.5))], n_groups=len(subset), n_boot=CFG["n_boot"]) for k in pt}
+        res = boot_draws.attach(res, boots, f"{OUTW}/draws_{label.replace(' ', '_')}.npz")   # v9 revision (M6): draws kept, exact p-values
         lw = {k: int(sum((W.loc[g, a] - W.loc[g, b]) < 0 for g in subset)) for k, (a, b) in pairs.items()}
         print(f"\n== {label}: {len(subset)} groups, two-stage bootstrap ({CFG['n_boot']} draws)")
         for k, v in res.items(): print(f"  {k:95s} {v['d']:+.4f} [{v['ci'][0]:+.4f}, {v['ci'][1]:+.4f}]" + (f"  lower in {lw[k]} of {len(subset)}" if k in lw else ""))
@@ -266,5 +272,5 @@ if names:
     iso = [g for g in names if g in ISO]; rest = [g for g in names if g not in ISO]
     if len(iso) >= 2: out["most_isolated"] = run_boot(iso, "five most isolated groups")
     if len(rest) >= 2: out["others"] = run_boot(rest, "other groups")
-    save_json(f"{OUT}/intervals.json", dict(**out, date=time.strftime("%Y-%m-%d %H:%M:%S")))
+    save_json(f"{OUTW}/intervals.json", dict(**out, date=time.strftime("%Y-%m-%d %H:%M:%S")))
 log(f"done, results in {OUT}")

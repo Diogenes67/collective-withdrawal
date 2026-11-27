@@ -16,6 +16,7 @@ Writes results/v33_strict_multigroup/{runs, preds, ckpt, summary.csv, intervals.
 """
 import os, json, time, glob, copy, hashlib, platform
 import numpy as np
+import boot_draws
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -28,6 +29,7 @@ QUICK = os.environ.get("QUICK", "0") == "1"
 ROOT = os.environ.get("ROOT", os.path.expanduser("~/mimic")); R = f"{ROOT}/results"
 V5 = f"{R}/v5_partitions"; V14 = f"{R}/v14_commonbase"; V19 = f"{R}/v19_protocol"; V24 = f"{R}/v24_symmetric_mimic"
 OUT = f"{R}/v33_strict_multigroup" + ("_quick" if QUICK else "")
+OUTW = OUT + os.environ.get("OUT_TAG", ""); os.makedirs(OUTW, exist_ok=True)   # summary outputs (OUT_TAG=_b10k for the 10,000-draw rerun); runs and preds are read from OUT
 for d in ["runs", "preds", "ckpt"]: os.makedirs(f"{OUT}/{d}", exist_ok=True)
 SEEDS = [0] if QUICK else [int(x) for x in os.environ.get("SEEDS", "0,1,2").split(",")]
 SIZES = [2] if QUICK else [int(x) for x in os.environ.get("SIZES", "5,10,15").split(",")]
@@ -37,7 +39,7 @@ CFG = dict(seeds=SEEDS, sizes=SIZES, epochs=2 if QUICK else 12, lr=1e-3, batch=2
            full_lr=1e-4, full_batch=256, full_max_epochs=2 if QUICK else 30, full_patience=5, full_val_frac=0.2, select_val_frac=0.2,
            n_boot=int(os.environ.get("NBOOT", 30 if QUICK else 1000)), version="v33.0")
 DEVICE = os.environ.get("DEVICE") or ("cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu"))
-t0 = time.time(); LOG = open(f"{OUT}/log.txt", "a")
+t0 = time.time(); LOG = open(f"{OUTW}/log.txt", "a")
 def log(m):
     line = f"[{time.time()-t0:7.1f}s] {m}"; print(line, flush=True); LOG.write(line + "\n"); LOG.flush()
 log(f"device {DEVICE}; quick={QUICK}; seeds {SEEDS}; sizes {SIZES}; families {FAMILIES}; out {OUT}")
@@ -232,7 +234,7 @@ if os.environ.get("SUMMARY", "1") == "0": log("SUMMARY=0; stopping before the su
 # ---------------------------------------------------------------- summary and two-stage bootstrap per set
 recs = [json.load(open(f)) for f in sorted(glob.glob(f"{OUT}/runs/*.json"))]
 rows = [dict(set=r["set"], seed=r["seed"], group=n, arm=a, **m) for r in recs for n, per in r["groups"].items() for a, m in per["arms"].items()]
-S = pd.DataFrame(rows).groupby(["set", "group", "arm"]).mean(numeric_only=True).reset_index(); S.to_csv(f"{OUT}/summary.csv", index=False)
+S = pd.DataFrame(rows).groupby(["set", "group", "arm"]).mean(numeric_only=True).reset_index(); S.to_csv(f"{OUTW}/summary.csv", index=False)
 def fast_auc(yv, pv):
     o = np.argsort(pv, kind="mergesort"); rk = np.empty(len(pv)); rk[o] = np.arange(1, len(pv) + 1); n1 = yv.sum(); n0 = len(yv) - n1
     return (rk[yv == 1].sum() - n1 * (n1 + 1) / 2) / (n1 * n0) if n1 and n0 else np.nan
@@ -270,6 +272,7 @@ for sname, members in SETS.items():
         st = [stats(n, np.concatenate([pat[n][j] for j in r_.choice(len(pat[n]), len(pat[n]), True)])) for n in r_.choice(members, len(members), True)]
         for k, v in contrasts(st).items(): boots[k].append(v)
     res = {k: dict(d=float(pt[k]), ci=[float(np.nanpercentile(boots[k], 2.5)), float(np.nanpercentile(boots[k], 97.5))], n_groups=len(members), n_boot=CFG["n_boot"]) for k in pt}
+    res = boot_draws.attach(res, boots, f"{OUTW}/draws_{sname}.npz")   # v9 revision (M6): draws kept, exact p-values
     lw = {k: int(sum((W.loc[n, a] - W.loc[n, b]) < 0 for n in members)) for k, (a, b) in pairs.items()}
     oth = dict(pooled=float(np.mean([r["others"]["pooled"] for r in rs])), common_base=float(np.mean([r["others"]["common_base"] for r in rs])), n_rows=rs[0]["others"]["n_rows"])
     ch = pd.Series([per["chosen"][0].upper() for r in sorted(rs, key=lambda r: r["seed"]) for n, per in r["groups"].items()], index=[n for r in sorted(rs, key=lambda r: r["seed"]) for n in r["groups"]]).groupby(level=0).agg("".join)
@@ -278,5 +281,5 @@ for sname, members in SETS.items():
     LINES.append(pd.concat([W[ARMS].round(4), ch.rename("type")], axis=1).to_string())
     for k, v in res.items(): LINES.append(f"  {k:100s} {v['d']:+.4f} [{v['ci'][0]:+.4f}, {v['ci'][1]:+.4f}]" + (f"  lower in {lw[k]} of {len(members)}" if k in lw else ""))
     OUTJ[sname] = dict(members=members, results=res, lower_in=lw, others=oth, choices=ch.to_dict(), share_of_training=rs[0]["share_of_training"])
-save_json(f"{OUT}/intervals.json", dict(**OUTJ, cfg=CFG, date=time.strftime("%Y-%m-%d %H:%M:%S")))
-open(f"{OUT}/summary.txt", "w").write("\n".join(LINES) + "\n"); print("\n" + "\n".join(LINES)); log(f"done, results in {OUT}")
+save_json(f"{OUTW}/intervals.json", dict(**OUTJ, cfg=CFG, date=time.strftime("%Y-%m-%d %H:%M:%S")))
+open(f"{OUTW}/summary.txt", "w").write("\n".join(LINES) + "\n"); print("\n" + "\n".join(LINES)); log(f"done, results in {OUT}")

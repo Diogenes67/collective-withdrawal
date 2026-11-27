@@ -1,4 +1,4 @@
-v34 isolation regression (2026-10-31 00:44); eICU penalties from the landmark cohort; 5000 bootstrap draws over groups
+v34 isolation regression (2026-11-19 21:44); eICU penalties from the landmark cohort; 5000 bootstrap draws over groups
   ratio_equal  all 49 groups                                                n=49 slope -0.0181 [-0.0226, -0.0124] p_exact 0.0004 Spearman -0.543
   ratio_equal  48 groups, white group excluded (capped control)             n=48 slope -0.0188 [-0.0238, -0.0142] p_exact 0.0004 Spearman -0.613
   ratio_equal  all groups, family intercepts                                n=49 slope -0.0183 [-0.0252, -0.0099] p_exact 0.0072 Spearman -0.543

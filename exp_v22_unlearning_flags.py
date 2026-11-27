@@ -14,6 +14,7 @@ Env: ROOT, QUICK=1, DEVICE, NBOOT. Writes results/v22_unlearning_flags/{preds, s
 """
 import os, json, time, glob
 import numpy as np
+import boot_draws
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -126,6 +127,7 @@ for b in range(CFG["n_boot"]):
     for kk, v in contrasts(st).items(): boots[kk].append(v)
     if (b + 1) % 200 == 0: log(f"  bootstrap draw {b + 1}")
 res = {k: dict(d=float(pt[k]), ci=[float(np.nanpercentile(boots[k], 2.5)), float(np.nanpercentile(boots[k], 97.5))], n_groups=len(keys), n_boot=CFG["n_boot"]) for k in pt}
+res = boot_draws.attach(res, boots, f"{OUT}/draws.npz")   # v9 revision (M6): draws kept, exact p-values
 lw = {m: dict(auroc=int(sum(W.loc[k, m] < W.loc[k, m + "_random"] for k in keys)), unflagged=int(sum(U.loc[k, m] > U.loc[k, m + "_random"] for k in keys))) for m in meths}
 print(f"\n== {len(keys)} clustered groups, two-stage bootstrap ({CFG['n_boot']} draws)")
 for k, v in res.items(): print(f"  {k:70s} {v['d']:+.4f} [{v['ci'][0]:+.4f}, {v['ci'][1]:+.4f}]")

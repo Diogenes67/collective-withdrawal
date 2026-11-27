@@ -7,6 +7,7 @@ as exp_v5_partitions. Env: ROOT (default ~/mimic), QUICK=1. Output ROOT/results/
 """
 import os, json, time, glob, zipfile, platform
 import numpy as np
+import boot_draws
 import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.metrics import roc_auc_score
@@ -107,19 +108,20 @@ def summary():
                 rows.append(dict(community=rc["community"], n_train_patients=rc["n_train_patients"], model_class=kind, model=name,
                                  auroc=m["auroc"], d_auroc=m["auroc"] - a0, ece=m["ece"], d_ece=m["ece"] - e0, brier=m["brier"], full_test_auroc=m["full_test_auroc"]))
     R = pd.DataFrame(rows); R.to_csv(f"{OUT}/results.csv", index=False); pd.set_option("display.width", 200)
-    out = {}
+    out = {}; DRAWS = {}
     for kind in ["gbdt", "logreg"]:
         W = R[R.model_class == kind].pivot(index="community", columns="model", values="d_auroc")
         WE = R[R.model_class == kind].pivot(index="community", columns="model", values="d_ece")
         print(f"\n{kind}: mean change in AUROC on the community's held-out patients"); print(W.mean().round(4).to_string())
         for b in ["exact_random_pat", "exact_random_adm"]:
             d = (W["exact_group"] - W[b]).values; de = (WE["exact_group"] - WE[b]).values; r = np.random.RandomState(0)
-            bs = [r.choice(d, len(d), True).mean() for _ in range(5000)]
+            bs = [r.choice(d, len(d), True).mean() for _ in range(5000)]; DRAWS[f"{kind}|exact_group_vs_{b}"] = np.asarray(bs, float)   # v9 revision (M6)
             out[f"{kind}|exact_group_vs_{b}"] = dict(d_auroc=float(d.mean()), ci=[float(np.percentile(bs, 2.5)), float(np.percentile(bs, 97.5))],
-                                                     frac_worse=float((d < 0).mean()), d_ece=float(de.mean()), n=int(len(d)))
+                                                     frac_worse=float((d < 0).mean()), d_ece=float(de.mean()), n=int(len(d)), p_exact=boot_draws.exact_p(bs))
             print(f"  paired vs {b}: dAUROC {d.mean():+.4f} [{np.percentile(bs, 2.5):+.4f},{np.percentile(bs, 97.5):+.4f}] worse {100*(d<0).mean():.0f}%  dECE {de.mean():+.4f} (n={len(d)})")
         print(f"  full-test AUROC original {R[(R.model_class==kind)&(R.model=='original')].full_test_auroc.mean():.4f}")
     with open(f"{OUT}/paired.json", "w") as f: json.dump(out, f, indent=1)
+    boot_draws.attach({}, DRAWS, f"{OUT}/draws_paired.npz")   # v9 revision (M6): draws kept
 def export():
     z = f"{OUT}/v8_modelclass_results.zip"
     with zipfile.ZipFile(z, "w", zipfile.ZIP_DEFLATED) as zf:

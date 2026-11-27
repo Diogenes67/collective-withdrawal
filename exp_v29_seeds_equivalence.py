@@ -30,7 +30,7 @@ ROOT = os.environ.get("ROOT", os.path.expanduser("~/mimic")); R = f"{ROOT}/resul
 NBOOT = int(os.environ.get("NBOOT", 20 if QUICK else 1000)); TAG = os.environ.get("TAG", "")
 OUT = f"{R}/v29_seeds_equivalence{TAG}" + ("_quick" if QUICK else ""); os.makedirs(OUT, exist_ok=True)
 SEEDS = [int(x) for x in os.environ.get("SEEDS", "0,1,2").split(",")]   # MIMIC-IV seeds; seeds beyond the v13 cache are read from results/v30_seed_core/preds
-ESEEDS = [0, 1, 2]; MARGIN = 0.005; Z95, Z90 = 1.959964, 1.644854
+ESEEDS = [int(x) for x in os.environ.get("ESEEDS", "0,1,2").split(",")]; MARGIN = 0.005; Z95, Z90 = 1.959964, 1.644854   # v9 revision (M6): eICU seeds beyond the v13 cache are read from results/v39_eicu_seed_core
 t0 = time.time(); LOG = open(f"{OUT}/log.txt", "a")
 def log(m):
     line = f"[{time.time()-t0:7.1f}s] {m}"; print(line, flush=True); LOG.write(line + "\n"); LOG.flush()
@@ -121,6 +121,9 @@ def run_mimic():
 def run_eicu():
     import pandas as pd
     V13 = f"{R}/v13_intervals_1"; P13 = np.load(f"{V13}/preds_eicu.npz", allow_pickle=True)["P"].item(); cons = {k: set(v) for k, v in json.load(open(f"{V13}/membership_eicu.json")).items()}
+    V39 = f"{R}/v39_eicu_seed_core/preds_eicu.npz"   # v9 revision (M6): original, exact_group and exact_random for the extra seeds (exp_v39_eicu_seed_preds.py)
+    if os.path.exists(V39):
+        P39 = np.load(V39, allow_pickle=True)["P"].item(); P13 = {**P39, **P13}; log(f"eICU: {len(P39)} extra-seed prediction arrays merged from v39")
     df = pd.read_parquet(f"{ROOT}/derived/eicu_cohort.parquet", columns=["uniquepid", "hospitalid", "died"])
     rng = np.random.RandomState(0); ups = df.uniquepid.unique(); rng.shuffle(ups); test_p = set(ups[: int(0.2 * len(ups))])
     is_test = df.uniquepid.isin(test_p).values; hosp_te = df.hospitalid.values[is_test]; y_te = df.died.values[is_test].astype(np.float64)
@@ -128,27 +131,34 @@ def run_eicu():
     V25 = {}
     for k in keys:
         for s in ESEEDS:
-            Z = np.load(f"{R}/v25_symmetric_eicu/preds/{k}__s{s}.npz"); V25[(k, s)] = dict(y=Z["y"].astype(np.float64), hosp=Z["hosp"], pooled=Z["pooled"], sym=Z["pooled_cf_chosen"], strict=Z["confined_strict_chosen"])
-        assert len(V25[(k, 0)]["y"]) == int(np.isin(hosp_te, list(cons[k])).sum()), f"{k}: v25 rows differ from the consortium's held-out stays"
-    h_rows25 = {k: {h: np.where(V25[(k, 0)]["hosp"] == h)[0] for h in np.unique(V25[(k, 0)]["hosp"])} for k in keys}
-    log(f"eICU: {len(keys)} consortia, {len(hospitals)} held-out hospitals; v25 caches aligned")
+            f25 = f"{R}/v25_symmetric_eicu/preds/{k}__s{s}.npz"
+            if not os.path.exists(f25): continue
+            Z = np.load(f25); V25[(k, s)] = dict(y=Z["y"].astype(np.float64), hosp=Z["hosp"], pooled=Z["pooled"], sym=Z["pooled_cf_chosen"], strict=Z["confined_strict_chosen"])
+        assert (k, ESEEDS[0]) in V25 and len(V25[(k, ESEEDS[0])]["y"]) == int(np.isin(hosp_te, list(cons[k])).sum()), f"{k}: v25 rows differ from the consortium's held-out stays"
+    h_rows25 = {k: {h: np.where(V25[(k, ESEEDS[0])]["hosp"] == h)[0] for h in np.unique(V25[(k, ESEEDS[0])]["hosp"])} for k in keys}
     CON13 = [("Consortium withdrawal minus matched random removal (exact retraining)", "exact_group", "exact_random", False), ("Consortium withdrawal minus pooled model", "exact_group", "original", False),
              ("Federation: consortium withdrawal minus random removal", "fl_without", "fl_random", False)]
     CON25 = [("Centralised model: confined (strict) minus adapted pooled comparator", "strict", "sym", True), ("Centralised model: confined (strict) minus pooled model", "strict", "pooled", True)]
     arms13 = sorted({a for _, a, b, _ in CON13 for a in (a, b)}); arms25 = sorted({a for _, a, b, _ in CON25 for a in (a, b)})
+    # seeds available per arm: the federation exists for the v13 seeds only; the centralised and strict arms for every seed with a cache
+    have13 = {a: [s for s in ESEEDS if all((k, s, a) in P13 for k in keys)] for a in arms13}; have25 = {a: [s for s in ESEEDS if all((k, s) in V25 for k in keys)] for a in arms25}
+    CON = CON13 + CON25; cseeds = {c[0]: [s for s in ESEEDS if s in (have13 if c in CON13 else have25)[c[1]] and s in (have13 if c in CON13 else have25)[c[2]]] for c in CON}
+    log(f"eICU: {len(keys)} consortia, {len(hospitals)} held-out hospitals; seeds per contrast: " + "; ".join(f"{c[0][:40]}: {cseeds[c[0]]}" for c in CON))
     def stats(rows13, rows25):
         out = {}
         for k in keys:
-            r13 = rows13[k]; r25 = rows25[k]; y13 = y_te[r13]; y25 = V25[(k, 0)]["y"][r25]
-            out[k] = {s: {**{a: auc(y13, P13[(k, s, a)][r13]) for a in arms13}, **{a: auc(y25, V25[(k, s)][a][r25]) for a in arms25}} for s in ESEEDS}
+            r13 = rows13[k]; r25 = rows25[k]; y13 = y_te[r13]; y25 = V25[(k, ESEEDS[0])]["y"][r25]; out[k] = {}
+            for s in ESEEDS:
+                o = {a: auc(y13, P13[(k, s, a)][r13]) for a in arms13 if (k, s, a) in P13}
+                if (k, s) in V25: o.update({a: auc(y25, V25[(k, s)][a][r25]) for a in arms25})
+                out[k][s] = o
         return out
-    full = stats({k: np.where(np.isin(hosp_te, list(cons[k])))[0] for k in keys}, {k: np.arange(len(V25[(k, 0)]["y"])) for k in keys})
-    CON = CON13 + CON25
-    est = {c[0]: [float(np.mean([full[k][s][c[1]] - full[k][s][c[2]] for k in keys])) for s in ESEEDS] for c in CON}
+    full = stats({k: np.where(np.isin(hosp_te, list(cons[k])))[0] for k in keys}, {k: np.arange(len(V25[(k, ESEEDS[0])]["y"])) for k in keys})
+    est = {c[0]: [float(np.mean([full[k][s][c[1]] - full[k][s][c[2]] for k in keys])) for s in cseeds[c[0]]] for c in CON}
     cache = f"{OUT}/draws_eicu.npz"
     if os.path.exists(cache): D = np.load(cache, allow_pickle=True)["D"].item(); log("eICU: draws loaded from cache")
     else:
-        D = {c[0]: {"mean": [], "seed": [[] for _ in ESEEDS]} for c in CON}; r = np.random.RandomState(0)
+        D = {c[0]: {"mean": [], "seed": [[] for _ in cseeds[c[0]]]} for c in CON}; r = np.random.RandomState(0)
         log(f"eICU: bootstrap {NBOOT} draws over {len(hospitals)} held-out hospitals (one draw feeds all consortia)")
         for b in range(NBOOT):
             drawn = r.choice(hospitals, len(hospitals), True)
@@ -156,7 +166,7 @@ def run_eicu():
             rows25 = {k: np.concatenate([h_rows25[k][h] for h in drawn if h in h_rows25[k]] or [np.zeros(0, int)]) for k in keys}
             S = stats(rows13, rows25)
             for c in CON:
-                per_seed = [float(np.nanmean([S[k][s][c[1]] - S[k][s][c[2]] for k in keys])) for s in ESEEDS]
+                per_seed = [float(np.nanmean([S[k][s][c[1]] - S[k][s][c[2]] for k in keys])) for s in cseeds[c[0]]]
                 D[c[0]]["mean"].append(float(np.mean(per_seed)))
                 for i, v in enumerate(per_seed): D[c[0]]["seed"][i].append(v)
             if (b + 1) % 100 == 0: log(f"  draw {b + 1}")

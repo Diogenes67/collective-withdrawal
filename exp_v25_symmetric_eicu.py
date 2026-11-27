@@ -11,6 +11,7 @@ Env: ROOT, QUICK=1, DEVICE, SEED, IDX, SUMMARY=0, NBOOT. Writes results/v25_symm
 """
 import os, json, time, glob, copy, gc
 import numpy as np
+import boot_draws
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -241,6 +242,7 @@ def run_boot(pop, label):
         for k, v in contrasts(stats(np.array(list(w)), w)).items(): boots[k].append(v)
         if (b + 1) % 200 == 0: log(f"  {pop}: draw {b + 1}")
     res = {k: dict(d=float(pt[k]), ci=[float(np.nanpercentile(boots[k], 2.5)), float(np.nanpercentile(boots[k], 97.5))], n_boot=CFG["n_boot"]) for k in pt}
+    res = boot_draws.attach(res, boots, f"{OUT}/draws_{pop}.npz")   # v9 revision (M6): draws kept, exact p-values
     lw = {k: int(sum((W.loc[c, a] - W.loc[c, b]) < 0 for c in keys)) for k, (a, b) in pairs.items()}
     print(f"\n== {label}: {len(keys)} consortia, hospital-cluster bootstrap ({CFG['n_boot']} draws)")
     for k, v in res.items(): print(f"  {k:95s} {v['d']:+.4f} [{v['ci'][0]:+.4f}, {v['ci'][1]:+.4f}]" + (f"  lower in {lw[k]} of {len(keys)}" if k in lw else ""))

@@ -1,4 +1,4 @@
-v42 complete-pipeline penalty (2026-11-01 14:58:05); 1000 draws
+v42 complete-pipeline penalty (2026-11-19 21:06:11); 1000 draws
 MIMIC-IV, 25 clustered groups, seeds [0, 1, 2] (reference-retraining penalty, v5: -0.0106 [-0.0157, -0.0061])
   complete-pipeline penalty: strict group minus strict random    -0.0096 [-0.0163, -0.0040] p 0.0020  lower in 19 of 25
   strict random minus pooled                                     +0.0028 [-0.0001, +0.0059] p 0.0640  lower in 7 of 25

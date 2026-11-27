@@ -15,6 +15,7 @@ cohorts (for labels and ids). Writes results/v13_intervals/matched_flags.{json,c
 """
 import os, json, time
 import numpy as np
+import boot_draws
 import pandas as pd
 
 QUICK = os.environ.get("QUICK", "0") == "1"
@@ -23,9 +24,10 @@ NBOOT = int(os.environ.get("NBOOT", 20 if QUICK else 1000))
 IN = f"{ROOT}/results/v13_intervals_1" + ("_quick" if QUICK else ""); OUT = IN
 t0 = time.time()
 def log(m): print(f"[{time.time()-t0:7.1f}s] {m}", flush=True)
-SEEDS = [0, 1, 2]; results = {}
+SEEDS = [0, 1, 2]; results = {}; DRAWS = {}
 def pct(v): v = np.asarray(v, float); v = v[~np.isnan(v)]; return [float(np.percentile(v, 2.5)), float(np.percentile(v, 97.5))] if len(v) else [float("nan")] * 2
 def record(key, point, boots):
+    DRAWS[key] = np.asarray(boots, float)   # v9 revision (M6)
     results[key] = dict(d=float(point), ci=pct(boots), n_boot=int(len(boots))); log(f"  {key:70s} {point:+.3f} [{results[key]['ci'][0]:+.3f}, {results[key]['ci'][1]:+.3f}]")
 def flag_topk(p, k):
     """Flag the k highest-scoring rows (ties broken by order); returns boolean mask."""
@@ -127,6 +129,7 @@ def run_eicu():
 
 if PART in ("mimic", "both"): run_mimic()
 if PART in ("eicu", "both"): run_eicu()
+results = boot_draws.attach(results, DRAWS, f"{OUT}/draws_matched_flags.npz")   # v9 revision (M6): draws kept, exact p-values (run with PART=both)
 json.dump(dict(results=results, n_boot=NBOOT, date=time.strftime("%Y-%m-%d %H:%M:%S")), open(f"{OUT}/matched_flags.json", "w"), indent=1)
 pd.DataFrame([dict(key=k, d=v["d"], lo=v["ci"][0], hi=v["ci"][1]) for k, v in results.items()]).to_csv(f"{OUT}/matched_flags.csv", index=False)
 log(f"done, {len(results)} intervals in {OUT}/matched_flags.json")

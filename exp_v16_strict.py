@@ -21,6 +21,7 @@ Writes results/v16_strict/{runs/*.json, preds/*.npz, ckpt/, summary.csv, interva
 """
 import os, json, time, glob, hashlib
 import numpy as np
+import boot_draws
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -202,9 +203,26 @@ for gi, g in enumerate(groups):
         a = rec["arms"]; log(f"  s{s}: pooled {a['pooled']['auroc']:.4f} strict base {a['strict_base']['auroc']:.4f} +resid {a['strict_resid']['auroc']:.4f} "
                              f"+head {a['strict_head']['auroc']:.4f} +control {a['strict_control']['auroc']:.4f} ({time.time()-ts:.0f}s)")
 
+if os.environ.get("OTHERS") == "1":
+    # v9 revision (review item M7): the strict base's predictions on the held-out patients outside the group, from the cached
+    # checkpoints and the retained-only pipeline, for exp_v36_others.py. No training; nothing else is written.
+    os.makedirs(f"{OUT}/preds_others", exist_ok=True)
+    for gi, g in enumerate(groups):
+        tag = g["key"].replace("/", "__"); others = test_idx[~g["mem"][test_idx]]
+        todo = [s for s in CFG["seeds"] if not os.path.exists(f"{OUT}/preds_others/{tag}__s{s}.npz") and os.path.exists(f"{OUT}/ckpt/strict_{tag}_s{s}.pt")]
+        if not todo: continue
+        tg = time.time(); Xr, vocab, n_const = build_X(is_train & ~g["mem"])
+        for s in todo:
+            base = load(f"{OUT}/ckpt/strict_{tag}_s{s}.pt", Xr.shape[1])
+            np.savez_compressed(f"{OUT}/preds_others/{tag}__s{s}.npz", y=y[others], pid=sid[others], pooled=sigmoid(logits(originals[s], Xs[others])), strict_base=sigmoid(logits(base, Xr[others])))
+        log(f"{g['key']}: other patients' predictions cached for seeds {todo} ({len(others)} rows, {time.time()-tg:.0f}s)")
+    log("OTHERS=1 done; summary not run"); raise SystemExit(0)
 if os.environ.get("SUMMARY", "1") == "0": log("SUMMARY=0; stopping before the summary stage"); raise SystemExit(0)
 # ---------------------------------------------------------------- summary from disk
 recs = [json.load(open(f)) for f in sorted(glob.glob(f"{OUT}/runs/*.json"))]
+_SS = os.environ.get("SUMMARY_SEEDS", "0,1,2")   # v9 revision: the summary uses the main analysis seeds unless SUMMARY_SEEDS=all
+_SS = None if _SS == "all" else [int(x) for x in _SS.split(",")]
+recs = [r_ for r_ in recs if _SS is None or r_["seed"] in _SS]
 rows = [dict(group=r["group"], seed=r["seed"], arm=a, **m) for r in recs for a, m in r["arms"].items()]
 S = pd.DataFrame(rows).groupby(["group", "arm"]).mean(numeric_only=True).reset_index(); S.to_csv(f"{OUT}/summary.csv", index=False)
 pd.DataFrame([dict(group=r["group"], seed=r["seed"], **r["provenance"]) for r in recs]).to_csv(f"{OUT}/provenance.csv", index=False)
@@ -220,7 +238,7 @@ def missed_at_k(yv, pv, k): top = np.argsort(-pv, kind="mergesort")[:k]; return 
 P = {}
 for f in glob.glob(f"{OUT}/preds/*.npz"):
     Z = np.load(f); g, s = os.path.basename(f)[:-4].rsplit("__s", 1); P[(g.replace("__", "/"), int(s))] = {k: Z[k] for k in Z.files}
-seeds = sorted(set(s for _, s in P)); names = [g for g in clu if all((g, s) in P for s in seeds)]
+seeds = [s__ for s__ in sorted(set(s for _, s in P)) if _SS is None or s__ in _SS]; names = [g for g in clu if all((g, s) in P for s in seeds)]
 pairs = {"strict base minus pooled": ("strict_base", "pooled"), "strict base + residual minus pooled": ("strict_resid", "pooled"),
          "strict base + residual minus strict base": ("strict_resid", "strict_base"), "strict base + head minus strict base": ("strict_head", "strict_base"),
          "strict base + control minus strict base": ("strict_control", "strict_base"), "strict base + residual minus strict base + control (group-specific)": ("strict_resid", "strict_control")}
@@ -248,6 +266,7 @@ if names:
         for k, v in contrasts(st).items(): boots[k].append(v)
         if (b + 1) % 200 == 0: log(f"  bootstrap draw {b + 1}")
     res = {k: dict(d=float(pt[k]), ci=[float(np.nanpercentile(boots[k], 2.5)), float(np.nanpercentile(boots[k], 97.5))], n_groups=len(names), n_boot=CFG["n_boot"]) for k in pt}
+    res = boot_draws.attach(res, boots, f"{OUT}/draws.npz")   # v9 revision (M6): draws kept, exact p-values
     lw = {k: int(sum((W.loc[g, a] - W.loc[g, b]) < 0 for g in names)) for k, (a, b) in pairs.items()}
     print(f"\n== {len(names)} clustered groups, two-stage bootstrap ({CFG['n_boot']} draws)")
     for k, v in res.items(): print(f"  {k:85s} {v['d']:+.4f} [{v['ci'][0]:+.4f}, {v['ci'][1]:+.4f}]" + (f"  lower in {lw[k]} of {len(names)}" if k in lw else ""))

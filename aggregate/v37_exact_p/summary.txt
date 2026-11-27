@@ -1,22 +1,22 @@
 v37 exact-p multiplicity (family v9): 71 contrasts; 41 with exact percentile p-values; 43 intervals exclude zero; after Holm 33 remain below 0.05, after Benjamini-Hochberg 42.
 Lost under Holm:
-  Withdrawal cost, eICU (24-hour landmark, primary) | Deaths unflagged at a matched flag rate, withdrawal minus random removal: +0.69 (+0.18 to +1.23), p 0.010 (exact), Holm 0.330, BH q 0.018
+  Withdrawal cost, eICU (24-hour landmark, primary) | Deaths unflagged at a matched flag rate, withdrawal minus random removal: +0.69 (+0.18 to +1.23), p 0.010 (exact), Holm 0.340, BH q 0.019
   Remedies (24-hour landmark, primary) | Federation, deaths unflagged, without the consortium minus full federation: +0.62 (+0.16 to +1.00), p 0.008 (exact), Holm 0.280, BH q 0.015
-  Withdrawal cost, MIMIC-IV | Group withdrawal minus random removal, readmissions unflagged at a matched flag rate: +1.06 (+0.12 to +2.21), p 0.022 (exact), Holm 0.660, BH q 0.037
+  Withdrawal cost, MIMIC-IV | Group withdrawal minus random removal, readmissions unflagged at a matched flag rate: +1.06 (+0.12 to +2.21), p 0.022 (exact), Holm 0.682, BH q 0.038
   Withdrawal cost, MIMIC-IV | Logistic regression, withdrawal minus random removal (bootstrap over groups): -0.0024 (-0.0040 to -0.0008), p 0.006 (exact), Holm 0.222, BH q 0.012
-  Remedies | NegGrad+ at exact retraining's removal minus exact retraining (bootstrap over groups): -0.0065 (-0.0114 to -0.0014), p 0.010 (exact), Holm 0.326, BH q 0.018
+  Remedies | NegGrad+ at exact retraining's removal minus exact retraining (bootstrap over groups): -0.0056 (-0.0106 to -0.0007), p 0.026 (exact), Holm 0.792, BH q 0.045
   Confinement, MIMIC-IV | Base alone (retained-only pipeline) minus pooled model: -0.0068 (-0.0123 to -0.0019), p 0.006 (exact), Holm 0.222, BH q 0.012
   Confinement, MIMIC-IV | Confined system minus full pooled comparator: +0.0090 (+0.0035 to +0.0146), p 0.004 (exact), Holm 0.152, BH q 0.008
-  Confinement, MIMIC-IV | Five most isolated groups, base minus pooled model: -0.0216 (-0.0358 to -0.0051), p 0.018 (exact), Holm 0.558, BH q 0.031
-  Confinement, MIMIC-IV | Five most isolated groups, full pooled comparator minus pooled model: +0.0090 (+0.0014 to +0.0193), p 0.012 (exact), Holm 0.384, BH q 0.021
+  Confinement, MIMIC-IV | Five most isolated groups, base minus pooled model: -0.0216 (-0.0358 to -0.0051), p 0.018 (exact), Holm 0.576, BH q 0.032
+  Confinement, MIMIC-IV | Five most isolated groups, full pooled comparator minus pooled model: +0.0090 (+0.0014 to +0.0193), p 0.012 (exact), Holm 0.396, BH q 0.022
   Several groups withdrawn at once, MIMIC-IV | Five most isolated groups, confined on the common base minus single-exclusion confined system: -0.0112 (-0.0276 to -0.0002), p 0.044 (exact), Holm 1.000, BH q 0.073
 Lost under Benjamini-Hochberg:
   Several groups withdrawn at once, MIMIC-IV | Five most isolated groups, confined on the common base minus single-exclusion confined system: Holm 1.000, BH q 0.073
 Exact against normal-approximation p-values, largest differences:
   Five most isolated groups, full pooled comparator minus pooled model: exact 0.012 normal 0.051
   Five most isolated groups, base minus pooled model: exact 0.018 normal 0.006
+  Centralised model: deaths unflagged, confined minus adapted pooled comparator: exact 0.176 normal 0.529
   Readmissions unflagged, base minus pooled model: exact 0.396 normal 0.141
-  Centralised model: deaths unflagged, confined minus adapted pooled comparator: exact 0.296 normal 0.785
   Confined system minus full pooled comparator: exact 0.004 normal 0.002
   Five most isolated groups, confined on the common base minus single-exclusion confined system: exact 0.044 normal 0.109
   Group withdrawal minus random removal, readmissions unflagged at a matched flag rate: exact 0.022 normal 0.047

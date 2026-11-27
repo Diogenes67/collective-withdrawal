@@ -16,6 +16,7 @@ Env: SEEDS (comma list of training seeds, default 0,1,2), SUMMARY=0 (stop before
 """
 import os, json, time, glob, hashlib, copy, gc
 import numpy as np
+import boot_draws
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -206,6 +207,9 @@ for gi, g in enumerate(groups):
 # ---------------------------------------------------------------- summary and two-stage bootstrap
 if os.environ.get("SUMMARY", "1") == "0": raise SystemExit(0)
 recs = [json.load(open(f)) for f in sorted(glob.glob(f"{OUT}/runs/*.json"))]
+_SS = os.environ.get("SUMMARY_SEEDS", "0,1,2")   # v9 revision: the summary uses the main analysis seeds unless SUMMARY_SEEDS=all
+_SS = None if _SS == "all" else [int(x) for x in _SS.split(",")]
+recs = [r_ for r_ in recs if _SS is None or r_["seed"] in _SS]
 S = pd.DataFrame([dict(group=r["group"], seed=r["seed"], arm=a, **m) for r in recs for a, m in r["arms"].items()]).groupby(["group", "arm"]).mean(numeric_only=True).reset_index()
 S.to_csv(f"{OUT}/summary.csv", index=False); W = S.pivot_table(index="group", columns="arm", values="auroc")
 print("\nAUROC on each group's held-out patients, seed means"); print(W[ARMS].round(4).to_string())
@@ -217,7 +221,7 @@ def missed_at_k(yv, pv, k): top = np.argsort(-pv, kind="mergesort")[:k]; return 
 P = {}
 for f in glob.glob(f"{OUT}/preds/*.npz"):
     Z = np.load(f); g_, s_ = os.path.basename(f)[:-4].rsplit("__s", 1); P[(g_.replace("__", "/"), int(s_))] = {k: Z[k] for k in Z.files}
-seeds = sorted(set(s_ for _, s_ in P)); names = sorted(set(g_ for g_, _ in P if all((g_, s_) in P for s_ in seeds)))
+seeds = [s__ for s__ in sorted(set(s_ for _, s_ in P)) if _SS is None or s__ in _SS]; names = sorted(set(g_ for g_, _ in P if all((g_, s_) in P for s_ in seeds)))
 pairs = {"confined (chosen) minus pooled with chosen cross-fitted component (symmetric comparator)": ("confined_chosen", "pooled_cf_chosen"),
          "confined (chosen) minus pooled with cross-fitted residual (v17/v19 comparator)": ("confined_chosen", "pooled_cf_residual"),
          "pooled with chosen cross-fitted component minus pooled": ("pooled_cf_chosen", "pooled"),
@@ -243,6 +247,7 @@ def run_boot(subset, label):
         st = [stats(g_, np.concatenate([pat[g_][j] for j in r.choice(len(pat[g_]), len(pat[g_]), True)])) for g_ in r.choice(subset, len(subset), True)]
         for k, v in contrasts(st).items(): boots[k].append(v)
     res = {k: dict(d=float(pt[k]), ci=[float(np.nanpercentile(boots[k], 2.5)), float(np.nanpercentile(boots[k], 97.5))], n_groups=len(subset), n_boot=CFG["n_boot"]) for k in pt}
+    res = boot_draws.attach(res, boots, f"{OUT}/draws_{label.replace(' ', '_')}.npz")   # v9 revision (M6): draws kept, exact p-values
     lw = {k: int(sum((W.loc[g_, a] - W.loc[g_, b]) < 0 for g_ in subset)) for k, (a, b) in pairs.items()}
     print(f"\n== {label}: {len(subset)} groups, two-stage bootstrap ({CFG['n_boot']} draws)")
     for k, v in res.items(): print(f"  {k:95s} {v['d']:+.4f} [{v['ci'][0]:+.4f}, {v['ci'][1]:+.4f}]" + (f"  lower in {lw[k]} of {len(subset)}" if k in lw else ""))

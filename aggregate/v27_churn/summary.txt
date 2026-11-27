@@ -1,4 +1,4 @@
-v27 churn: other patients' predictions after a withdrawal (2026-10-23 15:55; seeds [0, 1, 2]; 1000 bootstrap draws; capacity = top decile of the held-out set)
+v27 churn: other patients' predictions after a withdrawal (2026-11-19 20:22; seeds [0, 1, 2]; 1000 bootstrap draws; capacity = top decile of the held-out set)
 
 MIMIC-IV, held-out admissions outside the withdrawing group (82434 to 105292 rows), 25 groups
 arm                                                          mean |dp|  p99 |dp|  max |dp|         reclassified/1000              dropped/1000  fixed cut, reclassified/1000

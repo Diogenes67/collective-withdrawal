@@ -18,6 +18,7 @@ results/v23_eicu_strict/{runs, preds, ckpt, provenance.csv, summary.csv, interva
 """
 import os, json, time, glob, copy, gc, hashlib
 import numpy as np
+import boot_draws
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -213,6 +214,20 @@ for gi, g in enumerate(groups):
     del X; gc.collect()
 pd.DataFrame([json.load(open(f))["provenance"] for f in sorted(glob.glob(f"{OUT}/runs/*.json"))]).to_csv(f"{OUT}/provenance.csv", index=False)
 
+if os.environ.get("OTHERS") == "1":
+    # v9 revision (review item M7): the strict base's predictions on the held-out stays outside the consortium, from the cached
+    # checkpoints and the retained-only pipeline, for exp_v36_others.py. No training; nothing else is written.
+    os.makedirs(f"{OUT}/preds_others", exist_ok=True)
+    for gi, g in enumerate(groups):
+        key = f"{g['family']}_{g['name']}"; others = test_idx[~g["mem"][test_idx]]
+        todo = [s for s in CFG["seeds"] if not os.path.exists(f"{OUT}/preds_others/{key}__s{s}.npz") and os.path.exists(f"{OUT}/ckpt/strict_{key}_s{s}.pt")]
+        if not todo: continue
+        tg = time.time(); X, n_miss, n_const = build_X(is_train & ~g["mem"])
+        for s in todo:
+            base = load(f"{OUT}/ckpt/strict_{key}_s{s}.pt", X.shape[1])
+            np.savez_compressed(f"{OUT}/preds_others/{key}__s{s}.npz", y=y[others], hosp=hosp_id[others], landmark=landmark[others], pooled=sigmoid(logits(originals[s], X_std[others])), strict_base=sigmoid(logits(base, X[others])))
+        del X; gc.collect(); log(f"{key}: other patients' predictions cached for seeds {todo} ({len(others)} rows, {time.time()-tg:.0f}s)")
+    log("OTHERS=1 done; summary not run"); raise SystemExit(0)
 # ---------------------------------------------------------------- summary and hospital-cluster bootstrap from disk
 if os.environ.get("SUMMARY", "1") == "0": log("runs only; summary skipped"); raise SystemExit(0)
 recs = [json.load(open(f)) for f in sorted(glob.glob(f"{OUT}/runs/*.json"))]
@@ -258,6 +273,7 @@ def run_boot(pop, label):
         for k, v in contrasts(stats(np.array(list(w)), w)).items(): boots[k].append(v)
         if (b + 1) % 200 == 0: log(f"  {pop}: draw {b + 1}")
     res = {k: dict(d=float(pt[k]), ci=[float(np.nanpercentile(boots[k], 2.5)), float(np.nanpercentile(boots[k], 97.5))], n_boot=CFG["n_boot"]) for k in pt}
+    res = boot_draws.attach(res, boots, f"{OUT}/draws_{pop}.npz")   # v9 revision (M6): draws kept, exact p-values
     lw = {k: int(sum((W.loc[c, a] - W.loc[c, b]) < 0 for c in keys)) for k, (a, b) in pairs.items()}
     print(f"\n== {label}: {len(keys)} consortia, hospital-cluster bootstrap ({CFG['n_boot']} draws)")
     for k, v in res.items(): print(f"  {k:95s} {v['d']:+.4f} [{v['ci'][0]:+.4f}, {v['ci'][1]:+.4f}]" + (f"  lower in {lw[k]} of {len(keys)}" if k in lw else ""))

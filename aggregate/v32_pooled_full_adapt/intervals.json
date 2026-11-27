@@ -8,7 +8,10 @@
      0.004487481818883915
     ],
     "n_groups": 25,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.31,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_clustered_groups.npz"
    },
    "pooled + full residual (in-sample) minus pooled": {
     "d": 0.0011506154996643182,
@@ -17,7 +20,10 @@
      0.003810643317493198
     ],
     "n_groups": 25,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.372,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_clustered_groups.npz"
    },
    "pooled + full head minus pooled": {
     "d": -0.0020604640297582576,
@@ -26,7 +32,10 @@
      0.0018105857937612813
     ],
     "n_groups": 25,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.27,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_clustered_groups.npz"
    },
    "pooled + full fine-tuned copy minus pooled": {
     "d": 0.006536374191902561,
@@ -35,7 +44,10 @@
      0.009136987560429187
     ],
     "n_groups": 25,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_clustered_groups.npz"
    },
    "full comparator minus adapted (cross-fitted) pooled comparator": {
     "d": -0.00826578933460898,
@@ -44,7 +56,10 @@
      -0.002243435710491806
     ],
     "n_groups": 25,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.016,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_clustered_groups.npz"
    },
    "confined (chosen) minus full comparator": {
     "d": 0.009019842724655676,
@@ -53,7 +68,10 @@
      0.014647397854033397
     ],
     "n_groups": 25,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.004,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_clustered_groups.npz"
    },
    "confined (chosen) minus pooled": {
     "d": 0.010504341930711392,
@@ -62,7 +80,10 @@
      0.015460391655186572
     ],
     "n_groups": 25,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_clustered_groups.npz"
    },
    "confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)": {
     "d": 0.003967967738808831,
@@ -71,7 +92,10 @@
      0.008368913022150547
     ],
     "n_groups": 25,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.078,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_clustered_groups.npz"
    },
    "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": {
     "d": 0.0032139143487621346,
@@ -80,7 +104,10 @@
      0.006819211108766092
     ],
     "n_groups": 25,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.176,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_clustered_groups.npz"
    },
    "events unflagged per 1,000 at matched flag rate, confined minus full comparator": {
     "d": -2.5365792534375506,
@@ -89,7 +116,10 @@
      -1.3425217803017782
     ],
     "n_groups": 25,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_clustered_groups.npz"
    },
    "events unflagged per 1,000 at matched flag rate, full comparator minus pooled": {
     "d": 0.9731459683686617,
@@ -98,7 +128,10 @@
      1.3814032634464084
     ],
     "n_groups": 25,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_clustered_groups.npz"
    },
    "events unflagged per 1,000 at matched flag rate, confined minus pooled + full fine-tuned copy": {
     "d": -1.4534787817281747,
@@ -107,7 +140,10 @@
      -0.5312758080955681
     ],
     "n_groups": 25,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.004,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_clustered_groups.npz"
    }
   },
   "lower_in": {
@@ -131,7 +167,10 @@
      0.019341840343596036
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.012,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_five_most_isolated_groups.npz"
    },
    "pooled + full residual (in-sample) minus pooled": {
     "d": 0.006889967646799056,
@@ -140,7 +179,10 @@
      0.015810792643741668
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.028,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_five_most_isolated_groups.npz"
    },
    "pooled + full head minus pooled": {
     "d": 0.0045372530391951885,
@@ -149,7 +191,10 @@
      0.018213104999944225
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.446,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_five_most_isolated_groups.npz"
    },
    "pooled + full fine-tuned copy minus pooled": {
     "d": 0.00819705885237354,
@@ -158,7 +203,10 @@
      0.01711926259100338
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.042,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_five_most_isolated_groups.npz"
    },
    "full comparator minus adapted (cross-fitted) pooled comparator": {
     "d": 0.007966884710012945,
@@ -167,7 +215,10 @@
      0.029402524119807587
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.336,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_five_most_isolated_groups.npz"
    },
    "confined (chosen) minus full comparator": {
     "d": -0.008536069596489249,
@@ -176,7 +227,10 @@
      0.005157623141706585
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.198,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_five_most_isolated_groups.npz"
    },
    "confined (chosen) minus pooled": {
     "d": 0.00041569461342192413,
@@ -185,7 +239,10 @@
      0.01700079708876213
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.978,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_five_most_isolated_groups.npz"
    },
    "confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)": {
     "d": -0.007781364238951616,
@@ -194,7 +251,10 @@
      0.0056375602331686725
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.256,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_five_most_isolated_groups.npz"
    },
    "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": {
     "d": -0.007212179352475312,
@@ -203,7 +263,10 @@
      0.003426318663895593
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.32,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_five_most_isolated_groups.npz"
    },
    "events unflagged per 1,000 at matched flag rate, confined minus full comparator": {
     "d": -0.26903780423331086,
@@ -212,7 +275,10 @@
      1.5970581810625648
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.84,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_five_most_isolated_groups.npz"
    },
    "events unflagged per 1,000 at matched flag rate, full comparator minus pooled": {
     "d": 0.08594037252983214,
@@ -221,7 +287,10 @@
      0.6664043586062034
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.642,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_five_most_isolated_groups.npz"
    },
    "events unflagged per 1,000 at matched flag rate, confined minus pooled + full fine-tuned copy": {
     "d": -0.5002216258494017,
@@ -230,7 +299,10 @@
      1.7045535601011546
     ],
     "n_groups": 5,
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.85,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_five_most_isolated_groups.npz"
    }
   },
   "lower_in": {
@@ -253,7 +325,10 @@
      -0.0013549018913046437,
      0.0011921377362354554
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.852,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_held-out_stays.npz"
    },
    "pooled + full residual (in-sample) minus pooled": {
     "d": 0.0004918363241047441,
@@ -261,7 +336,10 @@
      -0.0010162075776329828,
      0.0019292985284662036
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.552,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_held-out_stays.npz"
    },
    "pooled + full head minus pooled": {
     "d": 5.8196344317751336e-05,
@@ -269,7 +347,10 @@
      -0.0009235088265029678,
      0.0009326188094530271
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.942,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_held-out_stays.npz"
    },
    "pooled + full fine-tuned copy minus pooled": {
     "d": 0.001843539981618747,
@@ -277,47 +358,65 @@
      0.0005510782501997258,
      0.002867803039146579
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_held-out_stays.npz"
    },
    "full comparator minus adapted (cross-fitted) pooled comparator": {
-    "d": -0.001424345032835106,
+    "d": -0.0012710094556514172,
     "ci": [
-     -0.0024000564504876587,
-     -0.00033550230828010826
+     -0.0021244589258422784,
+     -0.000430813097391429
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.008,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_held-out_stays.npz"
    },
    "confined (chosen) minus full comparator": {
-    "d": 0.0002949022176351512,
+    "d": 0.0002941381122497311,
     "ci": [
-     -0.0010088535810648669,
-     0.001321647395512721
+     -0.00110273904709321,
+     0.0013948054011521849
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.822,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_held-out_stays.npz"
    },
    "confined (chosen) minus pooled": {
-    "d": 0.00024716959413028093,
+    "d": 0.00024640548874486077,
     "ci": [
-     -0.0011856774477618866,
-     0.0012123063872574473
+     -0.0012158620941064566,
+     0.0012211032341765589
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.892,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_held-out_stays.npz"
    },
    "confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)": {
-    "d": -0.001596370387488466,
+    "d": -0.0015971344928738863,
     "ci": [
-     -0.0025301874453705726,
-     -0.0007551490810142915
+     -0.002653611243930014,
+     -0.0007857778068390898
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_held-out_stays.npz"
    },
    "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": {
-    "d": -0.00046692757228851135,
+    "d": -0.0006202631494721999,
     "ci": [
-     -0.0012730448085294364,
-     0.0002458666942160012
+     -0.001348529730234289,
+     0.00017316488524925724
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.134,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_held-out_stays.npz"
    },
    "confined strict (chosen) minus full comparator": {
     "d": 0.0001299825649109132,
@@ -325,7 +424,10 @@
      -0.001056817307906053,
      0.0009731488495847756
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.97,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_held-out_stays.npz"
    },
    "confined strict (chosen) minus pooled + full fine-tuned copy": {
     "d": -0.001761290040212704,
@@ -333,15 +435,21 @@
      -0.0026341903292457698,
      -0.0010020033387779796
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_held-out_stays.npz"
    },
    "events unflagged per 1,000 at matched flag rate, confined minus full comparator": {
-    "d": -0.26306832443368294,
+    "d": -0.2742240584809835,
     "ci": [
-     -0.726892356974234,
-     0.2744414810120444
+     -0.7276244743425512,
+     0.3195996427352069
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.394,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_held-out_stays.npz"
    },
    "events unflagged per 1,000 at matched flag rate, full comparator minus pooled": {
     "d": 0.040040224456190286,
@@ -349,15 +457,21 @@
      -0.44933714397192065,
      0.4900718302066538
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.912,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_held-out_stays.npz"
    },
    "events unflagged per 1,000 at matched flag rate, confined minus pooled + full fine-tuned copy": {
-    "d": 0.25851464289215187,
+    "d": 0.2473589088448513,
     "ci": [
-     -0.1948443619711253,
-     0.6156327212374698
+     -0.1685959584257138,
+     0.6793533801786262
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.294,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_all_held-out_stays.npz"
    }
   },
   "lower_in": {
@@ -369,7 +483,7 @@
    "confined (chosen) minus full comparator": 3,
    "confined (chosen) minus pooled": 6,
    "confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)": 8,
-   "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": 8,
+   "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": 9,
    "confined strict (chosen) minus full comparator": 4,
    "confined strict (chosen) minus pooled + full fine-tuned copy": 9
   }
@@ -382,7 +496,10 @@
      -0.0023741175080452164,
      0.0002363631376972444
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.114,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_stays_in_the_unit_at_24_h.npz"
    },
    "pooled + full residual (in-sample) minus pooled": {
     "d": -0.001039854886274738,
@@ -390,7 +507,10 @@
      -0.002466675854695043,
      0.0006638696385372237
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.246,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_stays_in_the_unit_at_24_h.npz"
    },
    "pooled + full head minus pooled": {
     "d": -0.0006604080971457149,
@@ -398,7 +518,10 @@
      -0.0014243034297269298,
      0.0003724467911055666
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.236,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_stays_in_the_unit_at_24_h.npz"
    },
    "pooled + full fine-tuned copy minus pooled": {
     "d": 0.0010131115599580909,
@@ -406,47 +529,65 @@
      -0.00013616707495394222,
      0.002130982353063491
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.078,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_stays_in_the_unit_at_24_h.npz"
    },
    "full comparator minus adapted (cross-fitted) pooled comparator": {
-    "d": -0.002427842523149859,
+    "d": -0.0021505996360008826,
     "ci": [
-     -0.003477788144895976,
-     -0.0009198318510181823
+     -0.0031451075108655654,
+     -0.0010635631282832282
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_stays_in_the_unit_at_24_h.npz"
    },
    "confined (chosen) minus full comparator": {
-    "d": 0.0010651306781372827,
+    "d": 0.0010739824231001283,
     "ci": [
-     -0.0006232191527502446,
-     0.0022918097641157335
+     -0.0008667799411889235,
+     0.0024136801881171144
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.346,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_stays_in_the_unit_at_24_h.npz"
    },
    "confined (chosen) minus pooled": {
-    "d": -0.00013200509815902706,
+    "d": -0.00012315335319618148,
     "ci": [
-     -0.0015812929356864788,
-     0.0010490263849343693
+     -0.0016450038186235224,
+     0.0010273343564340567
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.716,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_stays_in_the_unit_at_24_h.npz"
    },
    "confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)": {
-    "d": -0.001145116658117118,
+    "d": -0.0011362649131542724,
     "ci": [
-     -0.00243461612914391,
-     -8.306821438401663e-05
+     -0.0025208084111946593,
+     -5.530958414238059e-05
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.044,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_stays_in_the_unit_at_24_h.npz"
    },
    "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": {
-    "d": 0.00021759518689545843,
+    "d": -5.9647700253517844e-05,
     "ci": [
-     -0.0006459865847866021,
-     0.0009133383904126229
+     -0.0008395565436338781,
+     0.00090522745468694
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.888,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_stays_in_the_unit_at_24_h.npz"
    },
    "confined strict (chosen) minus full comparator": {
     "d": 0.0007559470160339865,
@@ -454,7 +595,10 @@
      -0.0008121345266368207,
      0.0018127063011323644
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.414,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_stays_in_the_unit_at_24_h.npz"
    },
    "confined strict (chosen) minus pooled + full fine-tuned copy": {
     "d": -0.0014543003202204142,
@@ -462,15 +606,21 @@
      -0.0025442546795031986,
      -0.0005572891690627539
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.002,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_stays_in_the_unit_at_24_h.npz"
    },
    "events unflagged per 1,000 at matched flag rate, confined minus full comparator": {
     "d": -0.3821176672813607,
     "ci": [
-     -1.0484844983338721,
-     0.15487007161825805
+     -0.99628970857594,
+     0.3493663201230859
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.182,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_stays_in_the_unit_at_24_h.npz"
    },
    "events unflagged per 1,000 at matched flag rate, full comparator minus pooled": {
     "d": 0.2101321352463053,
@@ -478,15 +628,21 @@
      -0.3018317853239649,
      0.7232811018549904
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.41,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_stays_in_the_unit_at_24_h.npz"
    },
    "events unflagged per 1,000 at matched flag rate, confined minus pooled + full fine-tuned copy": {
     "d": -0.003208750716319031,
     "ci": [
-     -0.5031401816336031,
-     0.5619220305990137
+     -0.4635456322639069,
+     0.6293664848355643
     ],
-    "n_boot": 1000
+    "n_boot": 1000,
+    "p_exact": 0.94,
+    "n_boot_valid": 1000,
+    "draws_file": "draws_stays_in_the_unit_at_24_h.npz"
    }
   },
   "lower_in": {
@@ -498,7 +654,7 @@
    "confined (chosen) minus full comparator": 3,
    "confined (chosen) minus pooled": 6,
    "confined (chosen) minus pooled + full fine-tuned copy (best full arm in hindsight)": 8,
-   "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": 8,
+   "adapted (cross-fitted) pooled comparator minus pooled + full fine-tuned copy": 9,
    "confined strict (chosen) minus full comparator": 4,
    "confined strict (chosen) minus pooled + full fine-tuned copy": 9
   }
@@ -523,5 +679,5 @@
   "n_boot": 1000,
   "version": "v32.0"
  },
- "date": "2026-10-25 12:25:11"
+ "date": "2026-11-19 21:05:34"
 }

@@ -157,34 +157,34 @@
    }
   },
   "AUROC | confined (strict) minus adapted pooled comparator": {
-   "d": -0.0012943596582094651,
+   "d": -0.0011410240810257766,
    "ci": [
-    -0.0020647031605109975,
-    -0.0005565917243790384
+    -0.0019213116971462637,
+    -0.000550777117580956
    ],
    "n_boot": 1000,
    "p_exact": 0.002,
    "n_consortia": 10,
-   "lower_in": 9,
+   "lower_in": 8,
    "tost": {
     "margin": 0.005,
     "ci90": [
-     -0.001959533201447616,
-     -0.0006774905148731576
+     -0.0017757825716626962,
+     -0.0006651748755770044
     ],
-    "smallest_margin": 0.001959533201447616,
+    "smallest_margin": 0.0017757825716626962,
     "equivalent": true,
     "p_tost": 0.0
    }
   },
   "AUROC | adapted pooled comparator minus pooled model": {
-   "d": 0.00137660924224271,
+   "d": 0.0012232736650590215,
    "ci": [
-    0.0001450209125161875,
-    0.0023070600675661477
+    6.732836893627974e-05,
+    0.002333457469038738
    ],
    "n_boot": 1000,
-   "p_exact": 0.018,
+   "p_exact": 0.04,
    "n_consortia": 10,
    "lower_in": 2
   },
@@ -291,13 +291,13 @@
    "n_consortia": 10
   },
   "deaths unflagged per 1,000 | confined (strict) minus adapted pooled comparator": {
-   "d": 0.055612864447265056,
+   "d": 0.11480965204584948,
    "ci": [
-    -0.09378719278252481,
-    0.4844491512828306
+    -0.04526290656907681,
+    0.6043797478212563
    ],
    "n_boot": 1000,
-   "p_exact": 0.224,
+   "p_exact": 0.098,
    "n_consortia": 10
   },
   "deaths unflagged per 1,000 | strict base minus pooled model": {
@@ -311,5 +311,5 @@
    "n_consortia": 10
   }
  },
- "date": "2026-10-30 23:29:45"
+ "date": "2026-11-19 21:19:08"
 }
