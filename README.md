@@ -1,6 +1,22 @@
-# The cost of collective data withdrawal in clinical AI
+# Evaluation of readmission and in-hospital mortality models under collective data withdrawal
 
-Code for "The Cost of Collective Data Withdrawal from Clinical Prediction Models" (Porter, Krieg, Kirkpatrick, Verjans; submitted to NEJM AI, 2026).
+Code for "Evaluation of Readmission and In-Hospital Mortality Models under Collective Data Withdrawal" (Porter, Krieg, Kirkpatrick, O'Donnell, Verjans; submitted to NEJM AI, 2026).
+
+## Plain-language summary
+
+Hospitals use computer programs to predict which patients are at risk, for example of dying in intensive care or coming back to hospital after going home. These programs learn from past patients' records.
+
+Communities and hospitals can have the right to say "stop using our data". For Indigenous peoples this is part of Indigenous data sovereignty. It is the right to decide how data about their people, lands and resources are used, including the right to say no or to take the data back. It matters because data and blood samples given by Indigenous people have been used for research their communities never agreed to. Who speaks for a community, and how, is for that community to decide.
+
+We asked a simple question. If a group takes its data back, do the predictions get worse for that group's own patients?
+
+Using two large public hospital datasets from the United States, we found they can. When a group of hospitals, or a group of patients who were medically different from everyone else, took its data out, the program became less accurate for those patients than if the same number of random patients had been removed. The more different the group, the bigger the loss.
+
+We then tested a different design. The main program is built without the group's data, and the group's data go into a small separate add-on used only for that group's patients. Predictions with the add-on were about as good as with the usual approach. If the group later wants out, the add-on is deleted and nothing else has to be rebuilt.
+
+The groups in this study were hospitals and groups of patients built from United States records. None of them is an Indigenous nation or community. No Australian data were used, and no Indigenous community took part in or made decisions in this study. Any real use would have to be designed with the communities whose data are involved.
+
+## Data and code
 
 No patient data are included. MIMIC-IV v3.1 and eICU-CRD v2.0 are available to credentialed users through PhysioNet under their data use agreements. The scripts expect the raw PhysioNet csv.gz files under `~/mimic/hosp` and `~/mimic/eicu`, write derived cohorts to `~/mimic/derived` and results to `~/mimic/results`. All analyses were run locally; only aggregate results leave the analysis machine. `aggregate/figure_data_v5.csv` holds every value plotted in Figures 1 and 2, and `aggregate/v27_churn/`, `aggregate/v28_multiplicity/` `aggregate/v29_seeds_equivalence*/` `aggregate/v31_fold_manifests/` `aggregate/v32_pooled_full_adapt/` and `aggregate/v33_strict_multigroup/` the aggregate results behind Tables S14 and S18 to S23.
 
