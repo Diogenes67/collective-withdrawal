@@ -72,6 +72,8 @@ No patient data are included. MIMIC-IV v3.1 and eICU-CRD v2.0 are available to c
 | `exp_v42_strict_penalty.py` | Withdrawal penalty with the whole pipeline refitted in both arms (Table S28) | `results/v42_strict_penalty` |
 | `exp_v43_isolation_adjusted.py` | Adjusted regressions of the penalty on the equal-pool isolation ratio (Note 16, Table S26) | `results/v43_isolation_adjusted` |
 | `exp_v44_participant_flow.py` | Participant flow and participants and outcome events by group and consortium (Tables S29 to S31) | `results/v44_participant_flow` |
+| `exp_v45_mixed_queue.py` | Other patients' flags when a group's component is deleted and one top-decile queue is recomputed over all held-out patients (Table S18, Note 13); cached predictions, no training | `results/v45_mixed_queue` |
+| `exp_v46_isolation_clusters.py` | Isolation slope within the 25 clustered groups, which do not overlap (Note 16) | `results/v46_isolation_clusters` |
 | `figures_v9.py` | Figures 1, 2 and S1 of the submitted manuscript and `figure_data_v9.csv` | `nejmai_build/v9_figures` (copy in `aggregate/v9_figures/`) |
 | `run_air_rerun.sh`, `run_three_seed_summaries.sh` | Drivers for the November 2026 rerun of every eICU analysis and the tuned-unlearning grid on the analysis machine, and for the three-seed summaries reported in the Appendix | `results/air_rerun.log`, `results/three_seed_summaries.log` |
 | `si_tables_v6.py` | Supplementary Tables S1 to S17 (Table S18 is built from `results/v27_churn/churn.json`, Table S19 by `exp_v28_multiplicity.py`) | |
@@ -84,7 +86,7 @@ Every experiment writes one JSON per run atomically, skips finished runs on rest
 
 ## Environment
 
-Python 3.10 or later, PyTorch 2.x (Apple MPS, CUDA or CPU), pandas, pyarrow, scikit-learn, matplotlib. The full set of experiments takes about eight hours on an Apple M4 laptop.
+Python 3.10 or later with the package versions pinned in `requirements.txt` (the environment on the analysis machine, an Apple M4 laptop with PyTorch on MPS; CUDA or CPU also work). Run the scripts in the order of the table above; `run_air_rerun.sh` and `run_three_seed_summaries.sh` give the exact commands for the eICU chain and the three-seed summaries. The full set of experiments takes about eight hours. The release that matches the submitted manuscript is tagged `v1.0-submission`.
 
 ## Licence
 

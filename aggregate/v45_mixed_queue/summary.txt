@@ -1,0 +1,4 @@
+v45 mixed queue: other patients' flags after component deletion, shared top decile recomputed over all held-out patients (seed means; per 1,000 other admissions or stays)
+MIMIC-IV all: groups 25, moved mean 0.76 (range 0.04 to 2.52); dropped 0.61, added 0.16; threshold change mean +0.00069; fixed threshold 0
+eICU all: groups 10, moved mean 3.02 (range 0.44 to 6.83); dropped 1.87, added 1.15; threshold change mean +0.00123; fixed threshold 0
+eICU landmark: groups 10, moved mean 2.86 (range 0.57 to 8.56); dropped 1.83, added 1.03; threshold change mean +0.00140; fixed threshold 0
