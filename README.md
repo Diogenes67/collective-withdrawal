@@ -1,6 +1,6 @@
-# Evaluation of readmission and in-hospital mortality models under collective data withdrawal
+# The cost of collective data withdrawal from readmission and mortality prediction models
 
-Code for "Evaluation of Readmission and In-Hospital Mortality Models under Collective Data Withdrawal" (Porter, Krieg, Kirkpatrick, O'Donnell, Verjans; submitted to NEJM AI, 2026).
+Code for "The Cost of Collective Data Withdrawal from Readmission and Mortality Prediction Models" (Porter, Krieg, Kirkpatrick, O'Donnell, Verjans; submitted to NEJM AI, 2026).
 
 ## Plain-language summary
 
